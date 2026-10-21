@@ -1,0 +1,39 @@
+GiNi - run everything on this Windows computer with a LOCAL MongoDB (no size limit, no virtual environment)
+==========================================================================================================
+Open the project folder in VS Code, then open a terminal (Terminal -> New Terminal). It must show:
+  PS C:\Users\Abubakkar Siddiq\Downloads\GiNi_Manufacturing_App_Fixed\GiNi_Manufacturing_App_Fixed>
+If not, type:
+  cd "C:\Users\Abubakkar Siddiq\Downloads\GiNi_Manufacturing_App_Fixed\GiNi_Manufacturing_App_Fixed"
+
+A. Install MongoDB (once). Either:
+   - type:   winget install -e --id MongoDB.Server
+     (approve the Windows prompt; wait for "Successfully installed"), or
+   - download "MongoDB Community Server", Windows x64, msi, version 8.0 from
+     https://www.mongodb.com/try/download/community  -> run it -> Complete -> keep "Install MongoD as a Service" ticked.
+   Check:   Get-Service MongoDB      -> should say Running
+
+B. Switch on replica-set mode (once; Windows asks for administrator permission - click Yes):
+     powershell -ExecutionPolicy Bypass -File .\gini-1-enable-replica-set.ps1
+   A second window opens and ends with "Done". Close it.
+
+C. Set up everything (once; 10-20 minutes the first time):
+     powershell -ExecutionPolicy Bypass -File .\gini-2-setup.ps1
+   It ends with "SETUP COMPLETE" and prints the demo PINs (keep them to yourself).
+   It only stops early if something needs you - it then says exactly what.
+
+D. Start the app (every time):
+     powershell -ExecutionPolicy Bypass -File .\gini-3-start.ps1
+   Four windows open (API, engine, operator app, admin app) and your browser opens http://localhost:5174.
+   Admin app:    http://localhost:5174   sign in with ADMIN_LOGIN / ADMIN_PASSWORD from backend\.env
+   Operator app: http://localhost:5173   sign in with W0001 and its PIN
+   The simulation clock starts paused - press Play in the admin app.
+
+Stop:  close the four GiNi windows, or   powershell -ExecutionPolicy Bypass -File .\gini-stop.ps1
+       (MongoDB keeps running in the background; your data stays saved.)
+
+What the scripts change in your files:
+  - backend\.env: MONGODB_URI becomes mongodb://localhost:27017/?replicaSet=rs0 (the old file is kept as
+    backend\.env.backup-before-local-mongodb). Missing/placeholder SESSION_SECRET and INTERNAL_SERVICE_TOKEN are
+    generated. DEMO_PIN_SEED and ADMIN_PASSWORD are never changed - the script stops and asks you if they are missing.
+  - backend\python_engine\.env: created if missing, with the same database and the same internal token as the API.
+  - MongoDB's mongod.cfg: two lines added (backup: mongod.cfg.before-gini).

@@ -1,0 +1,2783 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GiNi manufacturing demo API",
+    "version": "1.0.0",
+    "description": "Synthetic demonstration (not a Siemens system). Commands are validated server-side and executed in MongoDB transactions."
+  },
+  "components": {
+    "securitySchemes": {
+      "sessionCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "gini_sid_operator | gini_sid_admin"
+      },
+      "csrf": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-CSRF-Token"
+      },
+      "internalToken": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "summary": "Sign in with employee ID + demo PIN (PIN is a string; leading zeros count). Sets host-only HttpOnly session cookie + CSRF cookie for the calling app.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "loginId": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "pin": {
+                    "type": "string",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "summary": "Revoke the session",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "summary": "Current user, roles and permissions",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/auth/change-pin": {
+      "post": {
+        "summary": "Change own PIN/password",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "currentPin": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "newPin": {
+                    "type": "string",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/health": {
+      "get": {
+        "summary": "Liveness",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        }
+      }
+    },
+    "/api/ready": {
+      "get": {
+        "summary": "Readiness incl. configuration and database",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        }
+      }
+    },
+    "/api/sessions": {
+      "get": {
+        "summary": "List simulation sessions",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a session (scenario_control): mode INTERACTIVE (fork at checkpoint) or REPLAY",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "mode": {
+                    "type": "string",
+                    "description": "INTERACTIVE|REPLAY"
+                  },
+                  "checkpointId": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "sourceRunId": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "makeDefault": {
+                    "type": "string",
+                    "description": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/default": {
+      "get": {
+        "summary": "Default session",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}": {
+      "get": {
+        "summary": "Session incl. shared clock",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/clock": {
+      "post": {
+        "summary": "PLAY | PAUSE | SPEED | SEEK (seek: replay only)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "speed": {
+                    "type": "string",
+                    "description": "number"
+                  },
+                  "seekTo": {
+                    "type": "string",
+                    "description": "date-time"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/reset": {
+      "post": {
+        "summary": "Reset an interactive session to its checkpoint (confirm text \"RESET <sid>\")",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "confirm": {
+                    "type": "string",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/recalculate": {
+      "post": {
+        "summary": "Enqueue a recalculation or recovery-option job (202)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "description": "RECALC|RECOVERY"
+                  },
+                  "orderLineId": {
+                    "type": "string",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/commands/{type}": {
+      "post": {
+        "summary": "Execute a command (Idempotency-Key header required; expected entity version in body where relevant). See x-commands.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/me/home": {
+      "get": {
+        "summary": "My shift, current task, draft inspections, next actions, points",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/me/queue": {
+      "get": {
+        "summary": "My assigned tasks, joinable operations, eligible queue (DR-1.0 order) and planned work",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/me/progress": {
+      "get": {
+        "summary": "My labour categories, completed work, crew shares, points ledger, pending investigations",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/me/tasks/{taskId}": {
+      "get": {
+        "summary": "Task detail (instructions, milestones, crew, material, time)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/overview": {
+      "get": {
+        "summary": "Shift overview (observe)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/workforce": {
+      "get": {
+        "summary": "Full plant workforce (filters: shiftOnly, workCenterId, role, state, q, page)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/workers/{wid}": {
+      "get": {
+        "summary": "Worker timeline",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/work-centers/{wc}": {
+      "get": {
+        "summary": "Work centre detail",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/orders": {
+      "get": {
+        "summary": "Order lines with good/scrap/WIP buckets and forecast band",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/orders/{lineId}": {
+      "get": {
+        "summary": "Order line -> batches -> tanks",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/units/{unitId}": {
+      "get": {
+        "summary": "Tank passport",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/quality": {
+      "get": {
+        "summary": "Holds, returns, investigations, inspections",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/inspections/{id}": {
+      "get": {
+        "summary": "Inspection with versioned checklist and specifications",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/alerts": {
+      "get": {
+        "summary": "Alerts (evaluation + workflow states), notifications, rule evaluation",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/forecasts": {
+      "get": {
+        "summary": "Order forecasts, cutoff bands, work-centre predictions, recovery options",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/actions": {
+      "get": {
+        "summary": "Recovery actions with before/after and verification",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/materials": {
+      "get": {
+        "summary": "Materials, requests, equipment",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/events": {
+      "get": {
+        "summary": "Event delta since cursor (?since=seq)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/support-requests": {
+      "get": {
+        "summary": "Help requests",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/freshness": {
+      "get": {
+        "summary": "Operational / analytical freshness",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/evidence/sign": {
+      "post": {
+        "summary": "Authorise a photo upload (Cloudinary signed fields or local adapter URL)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/evidence/{evidenceId}/complete": {
+      "post": {
+        "summary": "Verify the stored upload server-side",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/sessions/{sid}/evidence/{evidenceId}/view": {
+      "get": {
+        "summary": "Role-restricted evidence delivery",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/workers": {
+      "get": {
+        "summary": "List workers",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create worker (manage_workers)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/workers/{wid}": {
+      "patch": {
+        "summary": "Edit worker",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/workers/{wid}/deactivate": {
+      "post": {
+        "summary": "Deactivate",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/workers/{wid}/activate": {
+      "post": {
+        "summary": "Activate",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/workers/{wid}/reset-pin": {
+      "post": {
+        "summary": "Reset PIN",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/reference": {
+      "get": {
+        "summary": "Reference lists",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/rules": {
+      "get": {
+        "summary": "Rule versions",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      },
+      "put": {
+        "summary": "New rule version (rule_editing)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/audit": {
+      "get": {
+        "summary": "Audit log",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/import-status": {
+      "get": {
+        "summary": "Import manifests, seed runs, reconciliation, quarantine",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/jobs": {
+      "get": {
+        "summary": "Jobs + engine heartbeats",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/jobs/{jobId}/retry": {
+      "post": {
+        "summary": "Retry a dead job",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/notifications": {
+      "get": {
+        "summary": "Notification outbox",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/admin/integrations": {
+      "get": {
+        "summary": "Integration status",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/environment": {
+      "get": {
+        "summary": "Environment banner: environment (FRESH_FACTORY | SYNTHETIC_DEMO), factory name, operating mode, plant date + timezone; database NAME only when signed in. Never secrets.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        }
+      }
+    },
+    "/api/factory/setup": {
+      "get": {
+        "summary": "Fresh factory: 10-step setup checklist with completion state, configurationSaved / readyToRelease / readyToStart (factory_configuration | operational_supervision | manage_workers)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/master": {
+      "get": {
+        "summary": "Fresh factory: all configuration (work centres, stations, skills, equipment, materials, shift templates, products + routes, checklists)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/readiness": {
+      "get": {
+        "summary": "Fresh factory: per-tank readiness (material, station, equipment, qualified worker, crew, checklist) with blockers (?unitId=)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/settings": {
+      "get": {
+        "summary": "Fresh factory settings",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      },
+      "put": {
+        "summary": "Save factory settings: factoryName, siteId, timezone, operatingMode MANUAL_TEAM_TEST|SIMULATED_TEST, serialPrefix, workday (factory_configuration)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "factoryName": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "siteId": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "description": "IANA zone"
+                  },
+                  "operatingMode": {
+                    "type": "string",
+                    "description": "MANUAL_TEAM_TEST|SIMULATED_TEST"
+                  },
+                  "serialPrefix": {
+                    "type": "string",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/work-centers/{id}": {
+      "put": {
+        "summary": "Create / update a work centre (audited; triggers RECALC)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/stations/{id}": {
+      "put": {
+        "summary": "Create / update a station",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/skills/{id}": {
+      "put": {
+        "summary": "Create / update a skill",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/equipment/{id}": {
+      "put": {
+        "summary": "Create / update equipment",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/materials/{id}": {
+      "put": {
+        "summary": "Create / update a material (stock starts at 0; receive with MATERIAL_RECEIPT)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/shifts/{code}": {
+      "put": {
+        "summary": "Create / update a shift template (start/end incl. overnight, breaks, workdays); regenerates the 60-day calendar",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/calendar/regenerate": {
+      "post": {
+        "summary": "Regenerate the shift calendar and rosters 60 days ahead",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/checklists/{gate}": {
+      "put": {
+        "summary": "New checklist version for an inspection gate (old version archived to ctq_check_history; open inspections keep their pinned snapshot)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/products": {
+      "post": {
+        "summary": "Create / revise a product with route, crew, labour standards, milestones, material (DRAFT when incomplete, RELEASED when complete; dryRun supported)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/products/{id}/release": {
+      "post": {
+        "summary": "Release a DRAFT product once it is complete",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/template": {
+      "get": {
+        "summary": "Preview the illustrative (unconfirmed) configuration template",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/template/import": {
+      "post": {
+        "summary": "Import the illustrative template into an EMPTY configuration (confirm \"IMPORT ILLUSTRATIVE TEMPLATE\"); never workers, orders or history",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "confirm": {
+                    "type": "string",
+                    "description": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/factory/reset": {
+      "get": {
+        "summary": "Reset preview: database name, factory name, counts that would be removed (factory_reset; disabled unless ALLOW_FACTORY_RESET=true, never in production)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Guarded reset of operational data (confirmText \"RESET <database>\" + factory name + acknowledge). Keeps admins and the audit; workers / configuration only removed when clearWorkers / clearConfiguration. Never run at start-up",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "confirmText": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "factoryName": {
+                    "type": "string",
+                    "description": "string"
+                  },
+                  "acknowledge": {
+                    "type": "string",
+                    "description": "bool"
+                  },
+                  "clearWorkers": {
+                    "type": "string",
+                    "description": "bool"
+                  },
+                  "clearConfiguration": {
+                    "type": "string",
+                    "description": "bool"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "sessionCookie": [],
+            "csrf": []
+          }
+        ]
+      }
+    },
+    "/api/internal/commands": {
+      "post": {
+        "summary": "Engine agents: batch of commands (Bearer INTERNAL_SERVICE_TOKEN)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "internalToken": []
+          }
+        ]
+      }
+    },
+    "/api/internal/notifications/dispatch": {
+      "post": {
+        "summary": "Engine: dispatch claimed notifications through Nodemailer",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Validation error"
+          },
+          "401": {
+            "description": "Not signed in"
+          },
+          "403": {
+            "description": "Not permitted"
+          },
+          "409": {
+            "description": "Conflict (state/version)"
+          }
+        },
+        "security": [
+          {
+            "internalToken": []
+          }
+        ]
+      }
+    }
+  },
+  "x-commands": [
+    {
+      "type": "ABSENCE_CONFIRM",
+      "permission": [
+        "operational_supervision",
+        "scenario_control"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ACTION_APPROVE",
+      "permission": "approve_transfers",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ACTION_COMPLETE",
+      "permission": "approve_transfers",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ACTION_PROPOSE",
+      "permission": [
+        "operational_supervision",
+        "approve_transfers"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ACTION_REJECT",
+      "permission": "approve_transfers",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ACTION_START",
+      "permission": "approve_transfers",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ALERT_WORKFLOW",
+      "permission": [
+        "operational_supervision",
+        "quality_approval"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ATTENDANCE_CORRECTION",
+      "permission": "operational_supervision",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "BATCH_CREATE",
+      "permission": [
+        "operational_supervision",
+        "scenario_control"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "BATCH_RELEASE",
+      "permission": [
+        "operational_supervision",
+        "scenario_control"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "BATCH_SPLIT",
+      "permission": [
+        "operational_supervision",
+        "scenario_control"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "BREAK_END",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "BREAK_START",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "CLOCK_IN",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection",
+        "operational_supervision"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "CLOCK_OUT",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection",
+        "operational_supervision"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "CONTROL_HEARTBEAT",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection",
+        "scenario_control"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "DISPOSITION_DECIDE",
+      "permission": "quality_approval",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "EQUIPMENT_BREAKDOWN",
+      "permission": [
+        "equipment_status",
+        "scenario_control",
+        "operational_supervision"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "EQUIPMENT_REPAIRED",
+      "permission": [
+        "equipment_status",
+        "scenario_control",
+        "operational_supervision"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "EVIDENCE_MARK_VERIFIED",
+      "permission": [
+        "perform_quality_inspection",
+        "submit_self_check",
+        "report_incoming_defect"
+      ],
+      "agentAllowed": false,
+      "serverOnly": true
+    },
+    {
+      "type": "EVIDENCE_REQUEST_UPLOAD",
+      "permission": [
+        "perform_quality_inspection",
+        "submit_self_check",
+        "report_incoming_defect"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "HELP_REQUEST",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "INCOMING_DEFECT_REPORT",
+      "permission": "report_incoming_defect",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "INSPECTION_ASSIGN",
+      "permission": [
+        "operational_supervision",
+        "quality_disposition"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "INSPECTION_SAVE_DRAFT",
+      "permission": [
+        "perform_quality_inspection",
+        "submit_self_check"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "INSPECTION_START",
+      "permission": [
+        "perform_quality_inspection",
+        "submit_self_check"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "INSPECTION_SUBMIT",
+      "permission": [
+        "perform_quality_inspection",
+        "submit_self_check"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "INVESTIGATION_UPDATE",
+      "permission": "quality_approval",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "MATERIAL_DELIVERY",
+      "permission": [
+        "material_movements",
+        "scenario_control",
+        "operational_supervision"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "MATERIAL_ISSUE",
+      "permission": [
+        "material_movements",
+        "scenario_control"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "MATERIAL_ISSUE_REVERSE",
+      "permission": [
+        "material_movements",
+        "scenario_control"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "MATERIAL_RECEIPT",
+      "permission": [
+        "material_movements",
+        "factory_configuration"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "MATERIAL_REQUEST",
+      "permission": [
+        "material_movements",
+        "operational_supervision",
+        "scenario_control"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "MATERIAL_REQUEST_CANCEL",
+      "permission": [
+        "material_movements",
+        "operational_supervision"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "MATERIAL_SHORTAGE",
+      "permission": [
+        "material_movements",
+        "scenario_control"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "MILESTONE_COMPLETE",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "OPERATION_START",
+      "permission": [
+        "operational_supervision",
+        "operate_own_tasks"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "ORDER_CREATE",
+      "permission": [
+        "operational_supervision",
+        "scenario_control"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "OVERTIME_APPROVE",
+      "permission": [
+        "operational_supervision",
+        "approve_transfers"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "PROCESS_COMPLETE",
+      "permission": [
+        "operational_supervision",
+        "scenario_control"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "RELEASE_CONTROL",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection",
+        "scenario_control"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "RELIEF_CALL_IN",
+      "permission": [
+        "approve_transfers",
+        "operational_supervision"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "REPLACEMENT_APPROVE",
+      "permission": [
+        "operational_supervision",
+        "approve_transfers"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "REPLACEMENT_REQUEST",
+      "permission": [
+        "operational_supervision",
+        "quality_approval"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "RETURN_ARRIVE",
+      "permission": [
+        "material_movements",
+        "operational_supervision",
+        "quality_approval"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "RETURN_DISPATCH",
+      "permission": [
+        "material_movements",
+        "operational_supervision",
+        "quality_approval"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "SCAN_RECORD",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection",
+        "submit_self_check",
+        "operational_supervision",
+        "material_movements"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "SEED_DEFECT",
+      "permission": "scenario_control",
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "SET_ENTRY_LAG",
+      "permission": "scenario_control",
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "SUPPORT_RESOLVE",
+      "permission": [
+        "operational_supervision",
+        "equipment_status"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TAKE_CONTROL",
+      "permission": [
+        "operate_own_tasks",
+        "perform_quality_inspection",
+        "scenario_control"
+      ],
+      "agentAllowed": false,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_ACCEPT",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_ASSIGN",
+      "permission": "operational_supervision",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_FINISH",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_HANDOVER",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_JOIN",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_PAUSE",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_RESUME",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TASK_START",
+      "permission": "operate_own_tasks",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "TRANSFER_ARRIVE",
+      "permission": [
+        "approve_transfers",
+        "operate_own_tasks"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "UNIT_ARRIVE",
+      "permission": [
+        "material_movements",
+        "operational_supervision",
+        "release_gate"
+      ],
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "UNIT_RELEASE",
+      "permission": "release_gate",
+      "agentAllowed": true,
+      "serverOnly": false
+    },
+    {
+      "type": "WORKER_TRANSFER",
+      "permission": "approve_transfers",
+      "agentAllowed": true,
+      "serverOnly": false
+    }
+  ]
+}

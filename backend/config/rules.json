@@ -1,0 +1,398 @@
+{
+ "$comment": "Non-secret, versioned rule configuration (provisional demo values - not Siemens-approved). The API seeds these into rule_settings on first start; edits create new versions (rule_editing permission). Python evaluates the active version effective at the evaluation sim time.",
+ "version": "1.1.0",
+ "effective_from": "2026-09-01T00:00:00Z",
+ "evaluation": {
+  "interval_sim_min": 5,
+  "baseline_days": 5,
+  "time_of_shift_slot_min": 60,
+  "zero_baseline_policy": "ABSOLUTE_THRESHOLD_OR_NEW_BACKLOG",
+  "unknown_policy": "NO_DATA_NEVER_ON_TIME"
+ },
+ "rules": [
+  {
+   "rule_id": "M01",
+   "name": "Low labour efficiency",
+   "scope": "WORK_CENTER",
+   "metric": "labor_efficiency_pct",
+   "formula": "earned eligible standard labour min / eligible actual labour min x 100 over the window",
+   "window_min": 120,
+   "threshold": {
+    "op": "<=",
+    "value": 85,
+    "critical": 70
+   },
+   "min_samples": {
+    "completed_operations": 3,
+    "actual_labor_min": 120
+   },
+   "warmup_min": 60,
+   "persistence": 2,
+   "recovery": 2,
+   "hysteresis": 3,
+   "cooldown_min": 60,
+   "notify": true,
+   "severity": "MEDIUM; HIGH at or below critical",
+   "legacy": "R01 LOW_PRODUCTIVITY (lines/labour-hour replaced by earned standard minutes; no x resource count)"
+  },
+  {
+   "rule_id": "M02",
+   "name": "Earned-work gap against plan",
+   "scope": "WORK_CENTER",
+   "metric": "labor_budget_gap_min",
+   "formula": "eligible actual labour min - earned standard min (shift to date); basis = routing standard at actual crew",
+   "window_min": 480,
+   "threshold": {
+    "op": ">=",
+    "value": 120,
+    "pct_of_earned": 15
+   },
+   "min_samples": {
+    "completed_operations": 3
+   },
+   "warmup_min": 90,
+   "persistence": 2,
+   "recovery": 2,
+   "hysteresis": 20,
+   "cooldown_min": 90,
+   "notify": false,
+   "severity": "MEDIUM",
+   "legacy": "R02 PRODUCTIVITY_GAP (lines gap -> standard-minute gap; completion-bias guard = finished operations only)"
+  },
+  {
+   "rule_id": "M03",
+   "name": "Work-centre performance classification",
+   "scope": "WORK_CENTER",
+   "metric": "labor_efficiency_pct",
+   "classification": {
+    "LOW": "< 85",
+    "ON_TARGET": "85..110",
+    "OVER_TARGET": "> 110"
+   },
+   "min_samples": {
+    "completed_operations": 3
+   },
+   "alert": false,
+   "legacy": "R03 WORKTYPE_PERFORMANCE"
+  },
+  {
+   "rule_id": "M04",
+   "name": "High comparable backlog / queue growth",
+   "scope": "WORK_CENTER",
+   "metric": "queued_std_labor_min",
+   "formula": "standard labour minutes of tanks queued at the work centre vs same-time-of-shift baseline; growth between evaluations",
+   "window_min": 60,
+   "threshold": {
+    "op": ">=",
+    "pct_over_baseline": 30,
+    "min_abs_std_min": 300,
+    "growth_pct": 15,
+    "min_growth_std_min": 100
+   },
+   "min_samples": {
+    "baseline_days": 3
+   },
+   "persistence": 2,
+   "recovery": 2,
+   "cooldown_min": 60,
+   "notify": false,
+   "severity": "MEDIUM",
+   "legacy": "R04 HIGH_BACKLOG + R05 BACKLOG_GROWTH (open lines -> queued standard minutes; previous = 0 gives NEW_BACKLOG)"
+  },
+  {
+   "rule_id": "M05",
+   "name": "Qualified labour-capacity imbalance / staffing gap",
+   "scope": "WORK_CENTER",
+   "metric": "capacity_gap_labor_min",
+   "formula": "remaining standard labour (queued + in-process remaining) - unique qualified remaining productive minutes before shift end",
+   "threshold": {
+    "op": ">=",
+    "value": 60
+   },
+   "persistence": 2,
+   "recovery": 2,
+   "cooldown_min": 60,
+   "notify": true,
+   "severity": "MEDIUM; HIGH if staffing gap >= 2",
+   "legacy": "R06 LABOR_IMBALANCE + R07 ESTIMATED_UNDERSTAFFING"
+  },
+  {
+   "rule_id": "M06",
+   "name": "Excess rework / scrap rate",
+   "scope": "GATE",
+   "metric": "first_attempt_fail_rate_pct",
+   "formula": "failed first-attempt inspections / first-attempt inspections at the gate (window); scrap rate = scrapped / tanks inspected",
+   "window_min": 480,
+   "threshold": {
+    "op": ">=",
+    "fail_rate_pct": 10,
+    "min_pp_over_baseline": 5,
+    "scrap_count": 1
+   },
+   "min_samples": {
+    "inspections": 8
+   },
+   "persistence": 1,
+   "recovery": 2,
+   "cooldown_min": 120,
+   "notify": true,
+   "severity": "MEDIUM; HIGH for any scrap",
+   "legacy": "R08 HIGH_SHORT_RATE / R09 HIGH_CUT_RATE - SHORT/CUT do NOT mean scrap/rework; replaced by gate fail and scrap rates with explicit denominators"
+  },
+  {
+   "rule_id": "M07",
+   "name": "Productivity-quality conflict (correlation, not blame)",
+   "scope": "WORK_CENTER",
+   "metric": "efficiency_up_with_fail_rate_up",
+   "formula": "efficiency improves >= 10 pp while gate fail rate rises >= 40% relative between consecutive 120-min windows",
+   "threshold": {
+    "prod_pp": 10,
+    "quality_rel_pct": 40
+   },
+   "min_samples": {
+    "inspections": 6,
+    "completed_operations": 3
+   },
+   "persistence": 1,
+   "recovery": 2,
+   "cooldown_min": 240,
+   "notify": false,
+   "severity": "LOW",
+   "legacy": "R10 PRODUCTIVITY_QUALITY_CONFLICT"
+  },
+  {
+   "rule_id": "M08",
+   "name": "Workload surge",
+   "scope": "PLANT",
+   "metric": "released_std_labor_min_window",
+   "formula": "standard labour (first WC1 labour operation per product, from the routing) of tanks released into WC1 in the last 120 min - batch releases and replacements - vs the same-slot baseline",
+   "threshold": {
+    "pct_over_baseline": 30,
+    "min_abs_std_min": 600
+   },
+   "min_samples": {
+    "baseline_days": 3
+   },
+   "persistence": 1,
+   "recovery": 2,
+   "cooldown_min": 120,
+   "notify": false,
+   "severity": "LOW",
+   "legacy": "R11 WORKLOAD_SURGE (pieces -> released standard minutes)"
+  },
+  {
+   "rule_id": "M09",
+   "name": "ETC / deadline risk and buffer erosion",
+   "scope": "ORDER_LINE",
+   "metric": "cutoff_band",
+   "formula": "GREEN forecast <= cutoff - buffer; AMBER <= cutoff; RED > cutoff or quantity shortfall; UNKNOWN when not estimable",
+   "threshold": {
+    "fire_on": [
+     "RED"
+    ],
+    "pending_on": [
+     "AMBER"
+    ]
+   },
+   "persistence": 1,
+   "recovery": 1,
+   "cooldown_min": 30,
+   "notify": true,
+   "severity": "HIGH for RED",
+   "legacy": "R12 ETC_COMPLETION_RISK + SMD bands.py cutoff concept (bands.py not supplied; implemented from the prompt definition)"
+  },
+  {
+   "rule_id": "M10",
+   "name": "Upstream starvation / downstream blocking",
+   "scope": "WORK_CENTER",
+   "metric": "minutes_starved_with_crew",
+   "formula": "qualified crew present and stations free but no released tank available (starved), or finished tanks blocked by a full downstream queue",
+   "threshold": {
+    "min_minutes": 20
+   },
+   "persistence": 1,
+   "recovery": 2,
+   "cooldown_min": 60,
+   "notify": false,
+   "severity": "MEDIUM",
+   "legacy": "(new) WIP exhaustion - waiting is not underperformance"
+  },
+  {
+   "rule_id": "M11",
+   "name": "Equipment / material interruption",
+   "scope": "WORKSTATION",
+   "metric": "interruption_open",
+   "formula": "equipment breakdown open, or operation blocked by material shortage",
+   "threshold": {
+    "any": true
+   },
+   "persistence": 1,
+   "recovery": 1,
+   "cooldown_min": 15,
+   "notify": true,
+   "severity": "MEDIUM; HIGH if > 60 min",
+   "legacy": "(new) equipment / material"
+  },
+  {
+   "rule_id": "M12",
+   "name": "Missing qualification / minimum crew",
+   "scope": "WORK_CENTER",
+   "metric": "qualified_available_vs_min_crew",
+   "formula": "ready work exists but qualified available (incl. valid qualification at sim time) < minimum crew",
+   "threshold": {
+    "any": true
+   },
+   "persistence": 2,
+   "recovery": 2,
+   "cooldown_min": 60,
+   "notify": true,
+   "severity": "MEDIUM",
+   "legacy": "(new) qualification / crew rule"
+  },
+  {
+   "rule_id": "M13",
+   "name": "Stale telemetry / assignment delay",
+   "scope": "WORKER",
+   "metric": "stale_or_delay",
+   "formula": "stale: no device/app signal > stale_after_min while a task is active (reported as last-known, never idle); assignment delay: ready work + eligible available worker unassigned > delay_min",
+   "threshold": {
+    "stale_after_min": 15,
+    "assignment_delay_min": 20
+   },
+   "persistence": 2,
+   "recovery": 1,
+   "cooldown_min": 60,
+   "notify": false,
+   "severity": "LOW",
+   "legacy": "S01 OPERATOR_IDLE_WITH_WORK_AVAILABLE (only when ready work AND an eligible available worker exist)"
+  },
+  {
+   "rule_id": "F1",
+   "name": "Stalled Active Assignment",
+   "scope": "OPERATION",
+   "metric": "minutes_since_progress_evidence",
+   "formula": "genuinely started task (WORKING) with fresh activity evidence but no milestone/progress beyond expected interval x factor; excludes cure, breaks, authorised pauses, external holds",
+   "threshold": {
+    "factor": 1.5,
+    "min_excess_min": 20
+   },
+   "persistence": 2,
+   "recovery": 2,
+   "cooldown_min": 60,
+   "notify": true,
+   "severity": "MEDIUM; HIGH if factor >= 2",
+   "legacy": "AR-01 Stalled Active Assignment"
+  },
+  {
+   "rule_id": "F2",
+   "name": "Regional Workload Imbalance",
+   "scope": "AREA",
+   "metric": "load_ratio_spread",
+   "formula": "remaining standard labour by area and skill / uniquely counted qualified remaining capacity; fire when one area ratio > 1.3 while another < 0.7 with transferable qualified people",
+   "threshold": {
+    "high_ratio": 1.3,
+    "low_ratio": 0.7
+   },
+   "min_samples": {
+    "qualified_people": 2
+   },
+   "persistence": 2,
+   "recovery": 2,
+   "cooldown_min": 60,
+   "notify": true,
+   "severity": "MEDIUM",
+   "legacy": "AR-02 Regional Workload Imbalance"
+  },
+  {
+   "rule_id": "F3",
+   "name": "Material Velocity Anomaly",
+   "scope": "MATERIAL",
+   "metric": "issues_per_productive_hour",
+   "formula": "plant-wide NET material issues (issues minus reversals of mistaken issues) per productive labour hour in the session part of the last 120 min vs the same ratio over the baseline days of history known at the fork; zero demand (under 1 productive hour) is not a fault",
+   "threshold": {
+    "rel_pct": 50,
+    "min_abs": 2
+   },
+   "min_samples": {
+    "productive_hours": 1
+   },
+   "persistence": 2,
+   "recovery": 2,
+   "cooldown_min": 120,
+   "notify": true,
+   "severity": "LOW",
+   "legacy": "AR-03 Material Velocity Anomaly"
+  },
+  {
+   "rule_id": "F4",
+   "name": "Location Velocity Anomaly",
+   "scope": "WORKSTATION",
+   "metric": "dwell_vs_baseline",
+   "formula": "tank dwell at a workstation/buffer vs time-of-shift baseline; distinguishes no supply (empty) from slow processing (occupied, slow)",
+   "threshold": {
+    "rel_pct": 50,
+    "min_abs_min": 30
+   },
+   "min_samples": {
+    "baseline_visits": 5
+   },
+   "persistence": 2,
+   "recovery": 2,
+   "cooldown_min": 120,
+   "notify": true,
+   "severity": "LOW",
+   "legacy": "AR-04 Location Velocity Anomaly"
+  },
+  {
+   "rule_id": "F5",
+   "name": "Congestion",
+   "scope": "WORK_CENTER",
+   "metric": "queue_occupancy_pct",
+   "formula": "finite queue occupancy vs configured physical capacity (WORK_CENTER_MASTER.QUEUE_CAPACITY_UNITS) with persistence, plus blocked arrivals; without capacity no congestion is claimed",
+   "threshold": {
+    "occupancy_pct": 85
+   },
+   "persistence": 3,
+   "recovery": 2,
+   "cooldown_min": 60,
+   "notify": true,
+   "severity": "MEDIUM; HIGH at 100% with blocked arrivals",
+   "legacy": "AR-05 Congestion"
+  },
+  {
+   "rule_id": "F6",
+   "name": "Replenishment Delay",
+   "scope": "MATERIAL_REQUEST",
+   "metric": "minutes_past_need_by",
+   "formula": "request outstanding quantity past NEED_BY_AT (partial deliveries reduce outstanding; cancelled requests excluded); linked to material-related waiting",
+   "threshold": {
+    "min_minutes": 10
+   },
+   "persistence": 1,
+   "recovery": 1,
+   "cooldown_min": 60,
+   "notify": true,
+   "severity": "MEDIUM; HIGH if an operation is waiting",
+   "legacy": "AR-06 Replenishment Delay"
+  }
+ ],
+ "cutoff": {
+  "safety_buffer_minutes": 10,
+  "deadline_basis": "ROUTE_COMPLETE (tank route complete; not shipment ready)",
+  "logistics_offset_minutes": 0
+ },
+ "notifications": {
+  "recipients_roles": [
+   "AREA_SUPERVISOR",
+   "SHIFT_MANAGER",
+   "QUALITY_SUPERVISOR"
+  ],
+  "transitions": [
+   "FIRING",
+   "ESCALATED",
+   "RESOLVED"
+  ],
+  "cooldown_seconds": 900,
+  "accelerated_replay_suppression_speed": 30
+ }
+}

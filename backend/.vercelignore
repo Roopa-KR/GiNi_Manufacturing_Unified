@@ -1,0 +1,10 @@
+# keep datasets, the Python engine, test stand-ins and tests out of the API function bundle
+data/
+python_engine/
+seed/
+tests/
+devtools/
+docs/
+scripts/dev/
+*.xlsx
+.local/

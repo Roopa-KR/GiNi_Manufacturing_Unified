@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "role": "admin",
+      "path": "/",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/setup",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/dispatch",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/orders",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/work-centers",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/workforce",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/quality",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/alerts",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/recovery",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/verify",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/materials",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "/admin",
+      "status": "PASS"
+    },
+    {
+      "role": "admin",
+      "path": "tank passport",
+      "status": "PASS"
+    },
+    {
+      "role": "operator",
+      "path": "/",
+      "status": "PASS"
+    },
+    {
+      "role": "operator",
+      "path": "/queue",
+      "status": "PASS"
+    },
+    {
+      "role": "operator",
+      "path": "/progress",
+      "status": "PASS"
+    },
+    {
+      "role": "operator",
+      "path": "/profile",
+      "status": "PASS"
+    },
+    {
+      "role": "inspector",
+      "path": "Work",
+      "status": "PASS"
+    }
+  ],
+  "jsErrors": []
+}

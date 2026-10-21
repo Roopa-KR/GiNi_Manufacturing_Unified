@@ -1,0 +1,99 @@
+# GiNi local stack with Docker Compose: MongoDB 7 single-node REPLICA SET (transactions need one), Express API, Python engine
+# worker, operator app and supervisor/admin app (Vite dev servers proxying /api, so the browser sees one origin per app).
+#
+#   cp backend/.env.example backend/.env                 # fill SESSION_SECRET, INTERNAL_SERVICE_TOKEN, DEMO_PIN_SEED, ADMIN_PASSWORD
+#   docker compose up -d mongo                            # wait until healthy (replica set initiated)
+#   docker compose --profile seed run --rm seed           # explicit seed: workbooks -> MongoDB, reconcile, demo accounts
+#   docker compose up -d                                  # api, engine, operator (5173), admin (5174)
+#   docker compose run --rm api node scripts/create-default-session.js
+#
+# Values below override backend/.env only where the container network differs from a laptop (hostnames, URLs).
+name: gini
+
+services:
+  mongo:
+    image: mongo:7.0.14
+    command: ["--replSet", "rs0", "--bind_ip_all"]
+    ports: ["27017:27017"]
+    volumes: [mongo-data:/data/db]
+    healthcheck:
+      # initiates the one-member replica set on first start, then reports healthy once it is PRIMARY
+      test: ["CMD", "mongosh", "--quiet", "--eval", "try { rs.status().ok } catch (e) { rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'mongo:27017' }] }).ok }"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+      start_period: 10s
+
+  api:
+    image: node:22.22.0-bookworm-slim
+    working_dir: /app
+    volumes: [./backend:/app, api-node-modules:/app/node_modules]
+    command: sh -c "npm install --omit=dev --no-audit --no-fund && node scripts/ensure-indexes.js && node src/server.js"
+    env_file: [./backend/.env]
+    environment:
+      NODE_ENV: development
+      PORT: "5000"
+      MONGODB_URI: mongodb://mongo:27017/?replicaSet=rs0
+      FRONTEND_URL: http://localhost:5173
+      ADMIN_URL: http://localhost:5174
+    ports: ["5000:5000"]
+    depends_on:
+      mongo: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:5000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  engine:
+    build: { context: ./backend, dockerfile: python_engine/Dockerfile }
+    env_file: [./backend/.env]
+    environment:
+      APP_ENV: development
+      MONGODB_URI: mongodb://mongo:27017/?replicaSet=rs0
+      NODE_API_INTERNAL_URL: http://api:5000
+      ENGINE_TICK_SECONDS: "3"
+    depends_on:
+      mongo: { condition: service_healthy }
+      api: { condition: service_healthy }
+    restart: unless-stopped
+
+  operator:
+    image: node:22.22.0-bookworm-slim
+    working_dir: /app
+    volumes: [./frontend:/app, operator-node-modules:/app/node_modules]
+    command: sh -c "npm install --no-audit --no-fund && npx vite --host 0.0.0.0 --port 5173 --strictPort"
+    environment: { DEV_API_PROXY_TARGET: "http://api:5000" }
+    ports: ["5173:5173"]
+    depends_on: [api]
+
+  admin:
+    image: node:22.22.0-bookworm-slim
+    working_dir: /app
+    volumes: [./admin:/app, admin-node-modules:/app/node_modules]
+    command: sh -c "npm install --no-audit --no-fund && npx vite --host 0.0.0.0 --port 5174 --strictPort"
+    environment: { DEV_API_PROXY_TARGET: "http://api:5000" }
+    ports: ["5174:5174"]
+    depends_on: [api]
+
+  # explicit, opt-in seed job (never runs on `up`): put the three *_Final.xlsx workbooks in backend/data/final/
+  seed:
+    profiles: [seed]
+    image: python:3.13.9-slim
+    working_dir: /work/seed
+    volumes: [./backend:/work]
+    env_file: [./backend/.env]
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/?replicaSet=rs0
+    command: >
+      sh -c "pip install --no-cache-dir -q pymongo==4.10.1 dnspython==2.7.0 openpyxl==3.1.5 &&
+             python3 import_workflow.py seed --data ../data/final --bundle-out /work/data/seed_bundle --report-dir /work/docs/test-results/import &&
+             python3 setup_accounts.py --dataset-id $${DATASET_ID:-GINI-SYN-TANKS} --guide /work/data/demo_accounts.csv"
+    depends_on:
+      mongo: { condition: service_healthy }
+
+volumes:
+  mongo-data:
+  api-node-modules:
+  operator-node-modules:
+  admin-node-modules:

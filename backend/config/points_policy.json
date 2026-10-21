@@ -1,0 +1,58 @@
+{
+  "$comment": "Exact points rules (client values). Allocation details and the two attempt adjustments below are policy choices: the shipped defaults keep the client's formula (adjustments OFF). A named person changes them only by saving a confirmed version in Administration -> Points policy (points_policy_versions); every evaluation and ledger row records the policy version it used.",
+  "version": "1.1.0",
+  "status": "CLIENT_FORMULA_ADJUSTMENTS_OFF_UNTIL_CONFIRMED",
+  "rules": {
+    "PTS-NR3": {
+      "points": 3,
+      "category": "QUALITY",
+      "per": "WORK_ORDER",
+      "eligibility": "WO route-complete for required good qty; no rework of any type, no scrap, no FAIL holds, no downstream defects on any tank of the WO",
+      "exclusive_with": "PTS-OF2"
+    },
+    "PTS-OF2": {
+      "points": 2,
+      "category": "QUALITY",
+      "per": "WORK_ORDER",
+      "eligibility": "defect caught and authorised correction completed at its origin station; first-stage scrap never qualifies; no downstream defect",
+      "exclusive_with": "PTS-NR3"
+    },
+    "PTS-DD4": {
+      "points": -4,
+      "category": "QUALITY",
+      "per": "DISTINCT_DOWNSTREAM_DEFECT",
+      "eligibility": "only against confirmed responsible worker/crew after a named reviewer confirms; pending investigations produce no deduction; equipment/material/supplier/process causes produce none"
+    },
+    "PTS-TV1": {
+      "points_per_min": 1,
+      "category": "TIME",
+      "per": "GATE_RELEASED_OPERATION_ATTEMPT",
+      "formula": "STANDARD_ELIGIBLE_MINUTES - ACTUAL_ELIGIBLE_MINUTES (+1/min saved, -1/min exceeded)"
+    }
+  },
+  "allocation": {
+    "wo_award": "proportional to recorded eligible contribution minutes on the WO; no valid denominator -> PENDING",
+    "time_points": "crew share = worker eligible minutes / crew eligible minutes on the attempt; the attempt allowance is split, never duplicated",
+    "crew_deduction": "confirmed responsibility shares (sum 1); default equal shares among confirmed responsible crew",
+    "precision": 2,
+    "residual": "largest remainder, ties by WORKER_ID ascending, so allocations sum exactly"
+  },
+  "eligibility": {
+    "excluded_from_speed": [
+      "PLANNED_BREAK",
+      "EXTERNAL_BLOCK",
+      "EQUIPMENT_DOWN",
+      "MATERIAL_SHORTAGE",
+      "SUPERVISOR_DIRECTED_TRANSFER",
+      "UNATTENDED_PROCESS",
+      "BELOW_MIN_OR_BLOCKED"
+    ],
+    "rework_time": "rework attempts earn time points only against an APPROVED rework standard (rework_standards: named approver, version, effective date); a planning value is never treated as approved - without one the attempt stays PENDING",
+    "inspection_time": "inspection attempts are not time-scored (no inspector speed incentive)"
+  },
+  "attempt_adjustments": {
+    "$comment": "Exceptions beyond the client's TV1 formula. OFF by default; switching one on requires a confirmed policy version (confirmation statement + named confirmer).",
+    "withdraw_positive_time_on_confirmed_workmanship_defect": false,
+    "waive_negative_time_on_confirmed_equipment_cause": false
+  }
+}

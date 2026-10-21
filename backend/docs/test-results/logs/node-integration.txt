@@ -1,0 +1,420 @@
+TAP version 13
+# Subtest: AT2: signing in again and reloading never restarts work, attendance or time; GET requests never mutate
+ok 1 - AT2: signing in again and reloading never restarts work, attendance or time; GET requests never mutate
+  ---
+  duration_ms: 10430.314602
+  type: 'test'
+  ...
+# Subtest: AT3: two browser sessions share one simulation; replay sessions are read-only
+ok 2 - AT3: two browser sessions share one simulation; replay sessions are read-only
+  ---
+  duration_ms: 5486.54158
+  type: 'test'
+  ...
+# Subtest: AT20: concurrent conflicting commands - exactly one wins; duplicate retries replay one result
+ok 3 - AT20: concurrent conflicting commands - exactly one wins; duplicate retries replay one result
+  ---
+  duration_ms: 5200.673477
+  type: 'test'
+  ...
+# Subtest: AT19/AT23: play, speed change and pause keep one continuous timeline - no lost, duplicated or overlapping events or labour
+ok 4 - AT19/AT23: play, speed change and pause keep one continuous timeline - no lost, duplicated or overlapping events or labour
+  ---
+  duration_ms: 29810.459219
+  type: 'test'
+  ...
+# Subtest: AT17: replay hides records not yet KNOWN_AT and shows them once known, without rewriting history
+ok 5 - AT17: replay hides records not yet KNOWN_AT and shows them once known, without rewriting history
+  ---
+  duration_ms: 8471.216486
+  type: 'test'
+  ...
+# Subtest: AT13: a material shortage changes the forecast and names material as the cause
+ok 6 - AT13: a material shortage changes the forecast and names material as the cause
+  ---
+  duration_ms: 13144.636693
+  type: 'test'
+  ...
+# Subtest: AT22: plant attendance reconciles across views; an attendance correction is recorded and visible
+ok 7 - AT22: plant attendance reconciles across views; an attendance correction is recorded and visible
+  ---
+  duration_ms: 882.901931
+  type: 'test'
+  ...
+# Subtest: AT9: repeated recalculation never duplicates points; ledger totals equal the shown totals
+ok 8 - AT9: repeated recalculation never duplicates points; ledger totals equal the shown totals
+  ---
+  duration_ms: 9307.269158
+  type: 'test'
+  ...
+# Subtest: rule settings are versioned and effective-dated: a future version waits, then takes over; the previous stays in history
+ok 9 - rule settings are versioned and effective-dated: a future version waits, then takes over; the previous stays in history
+  ---
+  duration_ms: 5115.426643
+  type: 'test'
+  ...
+# Subtest: worker administration rolls back completely when its audit record cannot be written
+    # Subtest: create: no worker, account, qualification, roster or session row survives a failed audit
+    ok 1 - create: no worker, account, qualification, roster or session row survives a failed audit
+      ---
+      duration_ms: 307.509538
+      type: 'test'
+      ...
+    # Subtest: update + role change: nothing changes when the audit write fails
+    ok 2 - update + role change: nothing changes when the audit write fails
+      ---
+      duration_ms: 158.102229
+      type: 'test'
+      ...
+    # Subtest: deactivate: nothing changes when the audit write fails
+    ok 3 - deactivate: nothing changes when the audit write fails
+      ---
+      duration_ms: 75.316401
+      type: 'test'
+      ...
+    # Subtest: PIN reset: nothing changes when the audit write fails
+    ok 4 - PIN reset: nothing changes when the audit write fails
+      ---
+      duration_ms: 166.94343
+      type: 'test'
+      ...
+    # Subtest: deactivate for real: account blocked, sign-in revoked, audit with before/after, history kept
+    ok 5 - deactivate for real: account blocked, sign-in revoked, audit with before/after, history kept
+      ---
+      duration_ms: 104.029697
+      type: 'test'
+      ...
+    1..5
+ok 10 - worker administration rolls back completely when its audit record cannot be written
+  ---
+  duration_ms: 5394.708371
+  type: 'test'
+  ...
+# Subtest: admin HTTP: Idempotency-Key replays the first result; the same key with another body is refused; history survives deactivation
+ok 11 - admin HTTP: Idempotency-Key replays the first result; the same key with another body is refused; history survives deactivation
+  ---
+  duration_ms: 4931.93822
+  type: 'test'
+  ...
+# Subtest: onboarding: join the current shift vs start with the next shift
+ok 12 - onboarding: join the current shift vs start with the next shift
+  ---
+  duration_ms: 5520.251829
+  type: 'test'
+  ...
+# Subtest: equipment breakdown -> M11 FIRING with one captured notification -> repair -> RESOLVED
+ok 13 - equipment breakdown -> M11 FIRING with one captured notification -> repair -> RESOLVED
+  ---
+  duration_ms: 14993.427447
+  type: 'test'
+  ...
+# Subtest: scrap is permanent; the replacement has a new ID and satisfies existing demand
+ok 14 - scrap is permanent; the replacement has a new ID and satisfies existing demand
+  ---
+  duration_ms: 5377.104455
+  type: 'test'
+  ...
+# Subtest: sessions are isolated: activity in one branch is invisible in another
+ok 15 - sessions are isolated: activity in one branch is invisible in another
+  ---
+  duration_ms: 9956.526178
+  type: 'test'
+  ...
+# Subtest: a human-controlled worker is never acted on by background agents while the clock runs
+ok 16 - a human-controlled worker is never acted on by background agents while the clock runs
+  ---
+  duration_ms: 32588.099173
+  type: 'test'
+  ...
+# recovery simulation for WO-2026-0171-L1: 18 options in 10709 ms
+# Subtest: recovery: options with donor checks, propose -> approve -> execute -> verify; stale proposals are refused
+ok 17 - recovery: options with donor checks, propose -> approve -> execute -> verify; stale proposals are refused
+  ---
+  duration_ms: 21771.039986
+  type: 'test'
+  ...
+# Subtest: incomplete inspection, repeated reinspection failure escalates, failed readings retained
+    # Subtest: missing mandatory answers -> INCOMPLETE hold: not a fail, not a release
+    ok 1 - missing mandatory answers -> INCOMPLETE hold: not a fail, not a release
+      ---
+      duration_ms: 296.342913
+      type: 'test'
+      ...
+    # Subtest: second failed inspection: the disposition is escalated and recorded as such
+    ok 2 - second failed inspection: the disposition is escalated and recorded as such
+      ---
+      duration_ms: 245.668364
+      type: 'test'
+      ...
+    # Subtest: failed readings and every attempt are retained
+    ok 3 - failed readings and every attempt are retained
+      ---
+      duration_ms: 0.540905
+      type: 'test'
+      ...
+    1..3
+ok 18 - incomplete inspection, repeated reinspection failure escalates, failed readings retained
+  ---
+  duration_ms: 7680.662828
+  type: 'test'
+  ...
+# Subtest: downstream defect: unknown case held until a named reason; earlier-station return to an approved alternate station
+    # Subtest: a case without a matrix entry stays held until a named approver states a reason
+    ok 1 - a case without a matrix entry stays held until a named approver states a reason
+      ---
+      duration_ms: 9.65224
+      type: 'test'
+      ...
+    # Subtest: an alternate station needs an explicit reason
+    ok 2 - an alternate station needs an explicit reason
+      ---
+      duration_ms: 12.21977
+      type: 'test'
+      ...
+    # Subtest: return authorised to the earlier origin work centre at the approved alternate station
+    ok 3 - return authorised to the earlier origin work centre at the approved alternate station
+      ---
+      duration_ms: 0.320538
+      type: 'test'
+      ...
+    # Subtest: dispatch -> transit -> arrival, then rework only at the authorised station
+    ok 4 - dispatch -> transit -> arrival, then rework only at the authorised station
+      ---
+      duration_ms: 353.185523
+      type: 'test'
+      ...
+    # Subtest: the disposition is not a finding of blame: the investigation stays open
+    ok 5 - the disposition is not a finding of blame: the investigation stays open
+      ---
+      duration_ms: 0.337478
+      type: 'test'
+      ...
+    1..5
+ok 19 - downstream defect: unknown case held until a named reason; earlier-station return to an approved alternate station
+  ---
+  duration_ms: 5678.731123
+  type: 'test'
+  ...
+# Subtest: a worker productive on one operation cannot join a second one at the same time
+ok 20 - a worker productive on one operation cannot join a second one at the same time
+  ---
+  duration_ms: 4495.00622
+  type: 'test'
+  ...
+# Subtest: retrying ORDER_CREATE with the same Idempotency-Key creates one order; GETs never mutate
+ok 21 - retrying ORDER_CREATE with the same Idempotency-Key creates one order; GETs never mutate
+  ---
+  duration_ms: 6476.433376
+  type: 'test'
+  ...
+# Subtest: reset and archive touch exactly one session; the change log survives a reset
+ok 22 - reset and archive touch exactly one session; the change log survives a reset
+  ---
+  duration_ms: 16208.085071
+  type: 'test'
+  ...
+# Subtest: plant-wide invariant: nobody is productive at two stations at once (all sessions in the database)
+ok 23 - plant-wide invariant: nobody is productive at two stations at once (all sessions in the database)
+  ---
+  duration_ms: 154.570748
+  type: 'test'
+  ...
+# Subtest: responsibility validation, DD4 deduction, corrected shares and equipment cause post linked reversals only
+    # Subtest: invalid responsibility is rejected and nothing is booked
+    ok 1 - invalid responsibility is rejected and nothing is booked
+      ---
+      duration_ms: 3130.925711
+      type: 'test'
+      ...
+    # Subtest: confirmed worker cause: -4 to the named worker, posted once
+    ok 2 - confirmed worker cause: -4 to the named worker, posted once
+      ---
+      duration_ms: 6136.35344
+      type: 'test'
+      ...
+    # Subtest: corrected shares reverse and re-post with links; history is never edited
+    ok 3 - corrected shares reverse and re-post with links; history is never edited
+      ---
+      duration_ms: 3121.718344
+      type: 'test'
+      ...
+    # Subtest: a confirmed equipment cause removes the deduction (no worker fault) by reversal
+    ok 4 - a confirmed equipment cause removes the deduction (no worker fault) by reversal
+      ---
+      duration_ms: 3063.642829
+      type: 'test'
+      ...
+    # Subtest: the change log holds before/after values, actor, correlation and idempotency key - and no secrets
+    ok 5 - the change log holds before/after values, actor, correlation and idempotency key - and no secrets
+      ---
+      duration_ms: 854.231522
+      type: 'test'
+      ...
+    1..5
+ok 24 - responsibility validation, DD4 deduction, corrected shares and equipment cause post linked reversals only
+  ---
+  duration_ms: 21430.18402
+  type: 'test'
+  ...
+# Subtest: batch: four accepted + one scrap shows 4 good (not 5); the accepted replacement satisfies the fifth (Final data, replay)
+ok 25 - batch: four accepted + one scrap shows 4 good (not 5); the accepted replacement satisfies the fifth (Final data, replay)
+  ---
+  duration_ms: 7634.149952
+  type: 'test'
+  ...
+# Subtest: batch split keeps one active membership per tank, mixed states, and membership history in the passport
+ok 26 - batch split keeps one active membership per tank, mixed states, and membership history in the passport
+  ---
+  duration_ms: 8650.303518
+  type: 'test'
+  ...
+# Subtest: validated product and order input: incomplete product refused, complete product + order run through the same engines, isolated per branch
+    # Subtest: an incomplete product is refused with every problem and nothing is written
+    ok 1 - an incomplete product is refused with every problem and nothing is written
+      ---
+      duration_ms: 243.295381
+      type: 'test'
+      ...
+    # Subtest: a complete product (template routing, copied synthetic specs) is released
+    ok 2 - a complete product (template routing, copied synthetic specs) is released
+      ---
+      duration_ms: 425.037771
+      type: 'test'
+      ...
+    # Subtest: order validation refuses unknown products, bad quantities and past due dates
+    ok 3 - order validation refuses unknown products, bad quantities and past due dates
+      ---
+      duration_ms: 7.330881
+      type: 'test'
+      ...
+    # Subtest: a new order + plan releases new tanks that the engines schedule and forecast
+    ok 4 - a new order + plan releases new tanks that the engines schedule and forecast
+      ---
+      duration_ms: 3724.576257
+      type: 'test'
+      ...
+    # Subtest: another branch never sees the order
+    ok 5 - another branch never sees the order
+      ---
+      duration_ms: 156.905372
+      type: 'test'
+      ...
+    1..5
+ok 27 - validated product and order input: incomplete product refused, complete product + order run through the same engines, isolated per branch
+  ---
+  duration_ms: 13904.789311
+  type: 'test'
+  ...
+# Subtest: tank passport: role-limited for operators, full for supervisors, Not recorded instead of invented values, no future records
+ok 28 - tank passport: role-limited for operators, full for supervisors, Not recorded instead of invented values, no future records
+  ---
+  duration_ms: 6552.160635
+  type: 'test'
+  ...
+# Subtest: deadline-aware scheduling: the engine records the next boundaries, exact to the second (the crossing itself is tested in e2e)
+ok 29 - deadline-aware scheduling: the engine records the next boundaries, exact to the second (the crossing itself is tested in e2e)
+  ---
+  duration_ms: 5109.672666
+  type: 'test'
+  ...
+# Subtest: recovery: an explicit no-action option and relief-worker call-ins are offered, executed through commands and scoped to the session
+ok 30 - recovery: an explicit no-action option and relief-worker call-ins are offered, executed through commands and scoped to the session
+  ---
+  duration_ms: 24546.772129
+  type: 'test'
+  ...
+# Subtest: rework standards: validated, versioned, approved by a named person, audited, idempotent
+ok 31 - rework standards: validated, versioned, approved by a named person, audited, idempotent
+  ---
+  duration_ms: 319.273185
+  type: 'test'
+  ...
+# Subtest: points policy: the shipped default is the client formula; a change is a confirmed, versioned, audited decision
+ok 32 - points policy: the shipped default is the client formula; a change is a confirmed, versioned, audited decision
+  ---
+  duration_ms: 68.723294
+  type: 'test'
+  ...
+# Subtest: operational story: finish -> fail -> same-station rework -> reinspect -> release
+    # Subtest: login shows the running task, attendance and prior progress without restarting anything
+    ok 1 - login shows the running task, attendance and prior progress without restarting anything
+      ---
+      duration_ms: 0.665415
+      type: 'test'
+      ...
+    # Subtest: no downstream work can start before inspection and release
+    ok 2 - no downstream work can start before inspection and release
+      ---
+      duration_ms: 10.139292
+      type: 'test'
+      ...
+    # Subtest: rework cannot start at another station without a named approver
+    ok 3 - rework cannot start at another station without a named approver
+      ---
+      duration_ms: 39.773335
+      type: 'test'
+      ...
+    1..3
+ok 33 - operational story: finish -> fail -> same-station rework -> reinspect -> release
+  ---
+  duration_ms: 7998.458596
+  type: 'test'
+  ...
+# Subtest: idempotency, permissions and impersonation
+    # Subtest: PIN is text: a wrong PIN or the PIN without leading zeros fails
+    ok 1 - PIN is text: a wrong PIN or the PIN without leading zeros fails
+      ---
+      duration_ms: 225.700613
+      type: 'test'
+      ...
+    # Subtest: operator cannot create workers
+    ok 2 - operator cannot create workers
+      ---
+      duration_ms: 4.262892
+      type: 'test'
+      ...
+    # Subtest: operator cannot act for another worker
+    ok 3 - operator cannot act for another worker
+      ---
+      duration_ms: 8.516754
+      type: 'test'
+      ...
+    # Subtest: writes require an idempotency key; a replay returns the same result; a reused key with another payload is refused
+    ok 4 - writes require an idempotency key; a replay returns the same result; a reused key with another payload is refused
+      ---
+      duration_ms: 83.127357
+      type: 'test'
+      ...
+    # Subtest: missing CSRF token is refused
+    ok 5 - missing CSRF token is refused
+      ---
+      duration_ms: 118.134098
+      type: 'test'
+      ...
+    # Subtest: foreign origin is refused for unsafe requests
+    ok 6 - foreign origin is refused for unsafe requests
+      ---
+      duration_ms: 5.585891
+      type: 'test'
+      ...
+    1..6
+ok 34 - idempotency, permissions and impersonation
+  ---
+  duration_ms: 4927.819593
+  type: 'test'
+  ...
+# Subtest: admin creates a worker who starts with zero activity and can sign in
+ok 35 - admin creates a worker who starts with zero activity and can sign in
+  ---
+  duration_ms: 9501.628319
+  type: 'test'
+  ...
+1..35
+# tests 67
+# suites 0
+# pass 67
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 341156.829836

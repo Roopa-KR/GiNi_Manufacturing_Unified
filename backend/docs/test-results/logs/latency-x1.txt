@@ -1,0 +1,62 @@
+{
+  "sessionId": "S-5BACA3",
+  "measuredAt": "2026-10-18T21:46:45.417Z",
+  "speed": 1,
+  "iterations": 10,
+  "sessionInitMs": 3147,
+  "A_operatorCommandToVisibleStateMs": {
+    "n": 10,
+    "p50": 41,
+    "p95": 55,
+    "max": 55,
+    "min": 38
+  },
+  "A_commandRoundTripMs": {
+    "n": 10,
+    "p50": 16,
+    "p95": 31,
+    "max": 31,
+    "min": 15
+  },
+  "A_targetMs": 5000,
+  "A_pass": true,
+  "B_eventToAlertMs": {
+    "n": 3,
+    "p50": 1728,
+    "p95": 2896,
+    "max": 2896,
+    "min": 1528
+  },
+  "B_targetMs": 15000,
+  "B_pass": true,
+  "C_eventToForecastMs": {
+    "n": 5,
+    "p50": 3087,
+    "p95": 3570,
+    "max": 3570,
+    "min": 1255
+  },
+  "C_targetMs": 15000,
+  "C_pass": true,
+  "backlog": {
+    "PENDING": 0,
+    "LEASED": 0,
+    "DONE": 138,
+    "FAILED": 0,
+    "DEAD": 0
+  },
+  "engine": {
+    "lastHeartbeatAt": "2026-10-18T21:47:03.975Z",
+    "ageSec": 2.045,
+    "status": "RUNNING"
+  },
+  "database": "TEST SUBSTITUTE (docdb-wire) - not MongoDB",
+  "hardware": {
+    "cpus": 2,
+    "cpuModel": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+    "memoryGb": 8,
+    "platform": "linux 6.18.44-fc-v139",
+    "node": "v22.22.0"
+  },
+  "note": "Single machine running API, engine and database together; agents active at the stated speed. Acceptance targets, not guarantees; re-measure on the deployed stack (Vercel + Render + Atlas) where network round trips add latency."
+}

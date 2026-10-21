@@ -1,0 +1,42 @@
+== node unit
+# tests 20
+# pass 20
+# fail 0
+# skipped 0
+== node integration
+# tests 67
+# pass 67
+# fail 0
+# skipped 0
+== e2e
+# tests 7
+# pass 7
+# fail 0
+# skipped 0
+== pytest engine
+75 passed in 0.50s
+== pytest seed
+7 passed in 79.81s (0:01:19)
+== pytest engine processes (stops the local engine during the test)
+2 errors in 30.40s
+api: 1 engine: 1
+== flags (one pass, all six)
+# tests 6
+# pass 0
+# fail 6
+== latency
+api x1 exit 1
+api x30 exit 1
+browser x1 exit 1
+== done
+== pytest engine processes (rerun)
+2 passed in 43.92s
+== flags (one pass, all six)
+# tests 5
+# pass 5
+# fail 0
+== latency
+api x1 exit 0
+api x30 exit 0
+browser x1 exit 0
+== done2

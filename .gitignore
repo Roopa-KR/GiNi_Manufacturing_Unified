@@ -1,0 +1,25 @@
+# dependencies and builds
+node_modules/
+dist/
+dist-local/
+__pycache__/
+*.pyc
+.venv/
+venv/
+# secrets and local state - never commit
+.env
+.env.*
+!.env.example
+.local/
+*.pem
+# generated seed artefacts and reports (contain no secrets, but are reproducible)
+backend/data/seed_bundle/
+backend/data/*_report.json
+backend/data/demo_accounts.csv
+backend/seed/seed_bundle/
+# local evidence uploads and test artefacts
+.local/
+backend/tests/e2e/.artifacts/
+backend/python_engine/tests_integration/.*.log
+# Vercel
+.vercel/

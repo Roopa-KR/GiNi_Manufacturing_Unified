@@ -1,0 +1,26 @@
+[
+  {
+    "ruleId": "F2",
+    "entity": "AREAS",
+    "sessionId": "S-268FA8",
+    "alertId": "AL-F2-AREAS",
+    "episodeId": "AL-F2-AREAS-E202610151555",
+    "firingAt": "2026-10-15T15:55:00.000Z",
+    "resolvedAt": "2026-10-15T16:30:26.700Z",
+    "uiScreenshot": "F2-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "PENDING",
+        "messageId": null
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<7165a7e17fa35f4b5015ad9559de01ead2cc1716@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 48
+  }
+]

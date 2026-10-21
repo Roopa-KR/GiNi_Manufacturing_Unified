@@ -1,0 +1,131 @@
+TAP version 13
+# Subtest: all within limits -> PASS (boundaries inclusive)
+ok 1 - all within limits -> PASS (boundaries inclusive)
+  ---
+  duration_ms: 1.135401
+  type: 'test'
+  ...
+# Subtest: one reading outside -> FAIL with defect code and preserved readings
+ok 2 - one reading outside -> FAIL with defect code and preserved readings
+  ---
+  duration_ms: 1.503076
+  type: 'test'
+  ...
+# Subtest: failure answer polarity
+ok 3 - failure answer polarity
+  ---
+  duration_ms: 0.203553
+  type: 'test'
+  ...
+# Subtest: missing mandatory reading -> INCOMPLETE, not FAIL
+ok 4 - missing mandatory reading -> INCOMPLETE, not FAIL
+  ---
+  duration_ms: 0.251292
+  type: 'test'
+  ...
+# Subtest: an incomplete answer set with a failing reading is FAIL (a known failure is not hidden)
+ok 5 - an incomplete answer set with a failing reading is FAIL (a known failure is not hidden)
+  ---
+  duration_ms: 0.144233
+  type: 'test'
+  ...
+# Subtest: nodemailer outbox against a local SMTP server and capture transport
+    # Subtest: accepted by SMTP -> SENT with stable Message-ID and dedup header
+    ok 1 - accepted by SMTP -> SENT with stable Message-ID and dedup header
+      ---
+      duration_ms: 75.440014
+      type: 'test'
+      ...
+    # Subtest: a duplicate outbox item for the same transition is refused by the dedup key
+    ok 2 - a duplicate outbox item for the same transition is refused by the dedup key
+      ---
+      duration_ms: 3.488932
+      type: 'test'
+      ...
+    # Subtest: temporary SMTP failure (451) -> RETRY with back-off, not sent twice
+    ok 3 - temporary SMTP failure (451) -> RETRY with back-off, not sent twice
+      ---
+      duration_ms: 12.302456
+      type: 'test'
+      ...
+    # Subtest: permanent rejection (550) -> FAILED
+    ok 4 - permanent rejection (550) -> FAILED
+      ---
+      duration_ms: 10.03238
+      type: 'test'
+      ...
+    # Subtest: SMTP server down -> RETRY
+    ok 5 - SMTP server down -> RETRY
+      ---
+      duration_ms: 10.550788
+      type: 'test'
+      ...
+    # Subtest: recipients outside the allowlist are never emailed
+    ok 6 - recipients outside the allowlist are never emailed
+      ---
+      duration_ms: 11.928561
+      type: 'test'
+      ...
+    # Subtest: capture mode builds the message with Nodemailer (jsonTransport) and sends nothing
+    ok 7 - capture mode builds the message with Nodemailer (jsonTransport) and sends nothing
+      ---
+      duration_ms: 8.160233
+      type: 'test'
+      ...
+    1..7
+ok 6 - nodemailer outbox against a local SMTP server and capture transport
+  ---
+  duration_ms: 300.991344
+  type: 'test'
+  ...
+# Subtest: every unit state in contracts/state_machines.json has next-action guidance
+ok 7 - every unit state in contracts/state_machines.json has next-action guidance
+  ---
+  duration_ms: 2.252517
+  type: 'test'
+  ...
+# Subtest: the states named in the review get specific guidance
+ok 8 - the states named in the review get specific guidance
+  ---
+  duration_ms: 0.396312
+  type: 'test'
+  ...
+# Subtest: history-only and older state names are handled, unknown states are reported, never silent
+ok 9 - history-only and older state names are handled, unknown states are reported, never silent
+  ---
+  duration_ms: 0.199053
+  type: 'test'
+  ...
+# Subtest: Python-created hash verifies in Node; wrong PIN fails
+ok 10 - Python-created hash verifies in Node; wrong PIN fails
+  ---
+  duration_ms: 190.744934
+  type: 'test'
+  ...
+# Subtest: leading zeros are part of the PIN (string, not number)
+ok 11 - leading zeros are part of the PIN (string, not number)
+  ---
+  duration_ms: 185.274046
+  type: 'test'
+  ...
+# Subtest: Node-created hash verifies in Python
+ok 12 - Node-created hash verifies in Python
+  ---
+  duration_ms: 206.584713
+  type: 'test'
+  ...
+# Subtest: malformed or out-of-bounds hashes are rejected, not thrown
+ok 13 - malformed or out-of-bounds hashes are rejected, not thrown
+  ---
+  duration_ms: 0.483456
+  type: 'test'
+  ...
+1..13
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1276.672538

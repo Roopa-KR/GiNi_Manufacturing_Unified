@@ -1,0 +1,16 @@
+OK   admin login
+OK   1 factory
+OK   2 work centres + stations
+OK   5 skills
+OK   6 shift
+OK   7 material + stock
+OK   3 product (draft)
+OK   4 checklist + release product
+OK   8 workers
+OK   9 order wizard
+OK   10 release batch -> identities
+OK   12 dispatch assign
+OK   13-15 operator: clock in, start, finish
+OK   16 inspector: inspect + release
+OK   order state
+ERRORS []

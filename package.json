@@ -1,0 +1,17 @@
+{
+  "name": "gini-manufacturing-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "GiNi manufacturing demonstration: operator app (frontend/), supervisor/admin app (admin/), Express API + Python engine (backend/). Synthetic data; not a Siemens system. The three packages are independent (no npm workspaces) so each Vercel project installs only its own folder.",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend && npm install --prefix admin",
+    "build": "npm run build --prefix frontend && npm run build --prefix admin",
+    "dev:api": "npm run dev --prefix backend",
+    "dev:operator": "npm run dev --prefix frontend",
+    "dev:admin": "npm run dev --prefix admin",
+    "test": "npm test --prefix backend",
+    "test:integration": "npm run test:integration --prefix backend",
+    "test:e2e": "npm run test:e2e --prefix backend"
+  },
+  "engines": { "node": "22.x" }
+}

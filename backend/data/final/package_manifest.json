@@ -1,0 +1,3542 @@
+{
+ "collections": {
+  "action_log": {
+   "content_sha256": "91fec4342529480fa017d9428f666a8488318d617ff67b6dde6e97534a93b4ab",
+   "count": 501,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "ACTION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "ACTION_LOG"
+  },
+  "alert_action_events": {
+   "content_sha256": "175e329a23802fe5f139b4a3cccb203071168581d26ab77dd6efbf398646858f",
+   "count": 200,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "ALERT_ACTION_EVENTS"
+  },
+  "alert_escalation_rules": {
+   "content_sha256": "ccdcb3ebc7b1fdb507e337ae4da6063b8ed3f8c9e5cbe1832cd150105eff178a",
+   "count": 22,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "CONFIG",
+   "sheet": "ALERT_ESCALATION_RULES"
+  },
+  "alert_rule_config": {
+   "content_sha256": "93bda46abb493fbdaac2d396e4d789d3928aff8afbec6b3ffbb742c29b60fa46",
+   "count": 11,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RULE_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "ALERT_RULE_CONFIG"
+  },
+  "app_sessions": {
+   "content_sha256": "d8047b1ede10fe133bb6ee8971d827d8346383679f79190a3c8e71135e94f8ba",
+   "count": 6766,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "SESSION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "APP_SESSIONS"
+  },
+  "app_users": {
+   "content_sha256": "0cee8205017e91b7e766ed52a4b07a9de1c57d75b18f69c37f895bc3f0b00c4b",
+   "count": 196,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "USER_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "APP_USERS"
+  },
+  "assumptions_register": {
+   "content_sha256": "a6c4dce689e5ba762ee0aa7b2ca9abc183c6c23cdc6e16f7ab332b4416dfe25f",
+   "count": 61,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "ASSUMPTION_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "ASSUMPTIONS_REGISTER"
+  },
+  "attendance_corrections": {
+   "content_sha256": "aa688ac5771eee6533c59f8305b46e4c681cd99cf25912b84caeba36967f8e64",
+   "count": 1,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "CORRECTION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "ATTENDANCE_CORRECTIONS"
+  },
+  "attendance_events": {
+   "content_sha256": "24a069f8f6072bf9e25d44d26f7000a0cc2991dcb21e4787370d3263b07b5438",
+   "count": 13433,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "ATTENDANCE_EVENTS"
+  },
+  "attendance_intervals": {
+   "content_sha256": "48426a5ea90213d8ebf7da352dd1ee61ec016b85ca0267d96ba800d4aff63752",
+   "count": 6764,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "INTERVAL_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "ATTENDANCE_INTERVALS"
+  },
+  "batch_events": {
+   "content_sha256": "d1f5ee1e0d1bfb25503b0b53035df7edd4e3167a6482eb79439007e8456ce994",
+   "count": 662,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "BATCH_EVENTS"
+  },
+  "batch_unit_membership": {
+   "content_sha256": "d7ac5dca6d5231b052bfae593ed3eea5c7f38a7d299f90959e7ab94c1f7d5f46",
+   "count": 710,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "MEMBERSHIP_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "BATCH_UNIT_MEMBERSHIP"
+  },
+  "calendar_intervals": {
+   "content_sha256": "1a38a9e9298bc063d024d053c00f5bc4539a36613287891114b09a266daeff7f",
+   "count": 240,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "INTERVAL_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "CALENDAR_INTERVALS"
+  },
+  "checkpoints": {
+   "content_sha256": "4213a725ea18da3e4114c147dc2ec7a1714b98abc0579d9ef576ebec012e2fde",
+   "count": 1,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "CHECKPOINT_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "CHECKPOINTS"
+  },
+  "config": {
+   "content_sha256": "812c272da4f29a6f9b2f7ee567f79f579541dbeb9a6d7823c2e20e4f4c4a96eb",
+   "count": 22,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "PARAMETER"
+   ],
+   "kind": "CONFIG",
+   "sheet": "CONFIG"
+  },
+  "cost_rate_master": {
+   "content_sha256": "719a5031678b8dd5b321d865e970e60bb538ec6a051f3745b8f5d0dc9962641d",
+   "count": 11,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "COST_RATE_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "COST_RATE_MASTER"
+  },
+  "crew_capacity_rules": {
+   "content_sha256": "e1e81cd2087a5dbea7ec90ed6ec4282c9d485a57e21f64af74a0131fc9cfa42a",
+   "count": 36,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "OPERATION_ID",
+    "PRODUCT_ID",
+    "QUALIFIED_CREW_COUNT"
+   ],
+   "kind": "MASTER",
+   "sheet": "CREW_CAPACITY_RULES"
+  },
+  "ctq_check_master": {
+   "content_sha256": "b18e4163dc3db52767dc76ff261b1e0d4675eacd062bcac977818a725d892ab9",
+   "count": 24,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "CHECK_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "CTQ_CHECK_MASTER"
+  },
+  "ctq_specifications": {
+   "content_sha256": "782e73d5ffbfade44033a83945860363abad5858320f9b3fb81c302ca437761f",
+   "count": 86,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "SPEC_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "CTQ_SPECIFICATIONS"
+  },
+  "dataset_version": {
+   "content_sha256": "9ab03abee7dd398f4de4806dbe7209d335547c0523285aa18840ebfc72a51441",
+   "count": 11,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "KEY"
+   ],
+   "kind": "CONFIG",
+   "sheet": "DATASET_VERSION"
+  },
+  "defect_investigations": {
+   "content_sha256": "01f208ef7d8d541fca89a5d7b42a538ba689640adefaac4810822f7820c77f8a",
+   "count": 102,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "INVESTIGATION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "DEFECT_INVESTIGATIONS"
+  },
+  "defect_records": {
+   "content_sha256": "b13f6cc13f831d4a7046343839e7e3e7e128c925b11bd986b1dcdae09756eda4",
+   "count": 189,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "DEFECT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "DEFECT_RECORDS"
+  },
+  "device_heartbeats": {
+   "content_sha256": "ed4078c26b8888a246b0dbdf9fccdc32e33d604e13b3b7305f55d81f94bd43b2",
+   "count": 18651,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "DEVICE_HEARTBEATS"
+  },
+  "dispatch_rules": {
+   "content_sha256": "02acb4a97225697968e0d5fc3df61fe21a4216c40804f2c01535be6639422908",
+   "count": 5,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "DISPATCH_RULE_ID",
+    "RANK_ORDER"
+   ],
+   "kind": "CONFIG",
+   "sheet": "DISPATCH_RULES"
+  },
+  "disposition_matrix": {
+   "content_sha256": "8f85f6062536dfeeabbc254040ac4b947ebcbff6d659b54a28825f9e76496df3",
+   "count": 30,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "POLICY_ID",
+    "DETECTION_POINT",
+    "DEFECT_CODE"
+   ],
+   "kind": "CONFIG",
+   "sheet": "DISPOSITION_MATRIX"
+  },
+  "disposition_policies": {
+   "content_sha256": "9869b40d2fec0a054ab3648f2b053e76684c056066cce3f759583af307fa21f8",
+   "count": 2,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "POLICY_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "DISPOSITION_POLICIES"
+  },
+  "equipment_events": {
+   "content_sha256": "9956d9a66ae1bb66afd9f1426c6f50ad1d17ba1ba5811b08838e9df79fe9378b",
+   "count": 104,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "EQUIPMENT_EVENTS"
+  },
+  "equipment_master": {
+   "content_sha256": "702b3e99c98adb4150d636e2cac3717d9112558a80c301373a1f486e7b9cef2b",
+   "count": 25,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "EQUIPMENT_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "EQUIPMENT_MASTER"
+  },
+  "equipment_operation_map": {
+   "content_sha256": "9978f80e0fee88dfbaac17fd0456928b3b882feec09f819d00ad50edf811c275",
+   "count": 43,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "EQUIPMENT_ID",
+    "OPERATION_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "EQUIPMENT_OPERATION_MAP"
+  },
+  "handovers": {
+   "content_sha256": "57a000b7848175fa9d9047eb02bfb70933e9a55bb535e7f8c3e911dab1cb73e0",
+   "count": 585,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "HANDOVER_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "HANDOVERS"
+  },
+  "hold_cases": {
+   "content_sha256": "4770cb31532340cf00ea37118c125832b54230d0dba96a0a38a57780e5ded086",
+   "count": 124,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "HOLD_ID"
+   ],
+   "kind": "OPERATIONAL_DERIVED",
+   "sheet": "HOLD_CASES"
+  },
+  "inspection_header": {
+   "content_sha256": "0fb3132a212336fd8ed72aa88628a12a47c81249b9df307e59bf97e70924bc6c",
+   "count": 2805,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "INSPECTION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "INSPECTION_HEADER"
+  },
+  "inspection_readings": {
+   "content_sha256": "113dc6edb22fe3f944637cfaf48137893aa754323392bb68922fd23931607e46",
+   "count": 28971,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "READING_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "INSPECTION_READINGS"
+  },
+  "instruction_steps": {
+   "content_sha256": "06450db230f3ca3b60df056e952c96c4fab5beda8e8f97d9c68e8927e7ff0ace",
+   "count": 41,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "STEP_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "INSTRUCTION_STEPS"
+  },
+  "investigation_events": {
+   "content_sha256": "351021d437c4601dfd08138747d10c37b37732026b2a8d478de45f3794c59424",
+   "count": 361,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "INVESTIGATION_EVENTS"
+  },
+  "investigation_evidence": {
+   "content_sha256": "ad305e0abb4e325dbcfe3ff9385de9c95e3d3ebc847e297b8df0412591f3c5d8",
+   "count": 883,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVIDENCE_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "INVESTIGATION_EVIDENCE"
+  },
+  "labor_segments": {
+   "content_sha256": "52d656fc9e4210a9f5d0f619ef746821d7093b7731f9f5a49434d5291404c9dd",
+   "count": 38798,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "SEGMENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "LABOR_SEGMENTS"
+  },
+  "login_events": {
+   "content_sha256": "abab66b0450da4e06feded588f346b7636fabc4e6ccab9313393c2e03875c04e",
+   "count": 44761,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "LOGIN_EVENTS"
+  },
+  "material_events": {
+   "content_sha256": "c7fe876cc3a7014955918a6db6a6a19d1f058333fef2191ee209ce80f54c45ab",
+   "count": 3661,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "MATERIAL_EVENTS"
+  },
+  "material_lots": {
+   "content_sha256": "932d917a42ebf7eee0635226b3179388a0006c616475a10d6c572edfa76c610e",
+   "count": 191,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "MATERIAL_LOT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "MATERIAL_LOTS"
+  },
+  "material_master": {
+   "content_sha256": "55846cf3c0a0fde2a8ebf401160e17dba87fbddfb5838253768292b71f965081",
+   "count": 6,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "MATERIAL_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "MATERIAL_MASTER"
+  },
+  "material_request_events": {
+   "content_sha256": "28fcb481d9c8a946262d8f96bab3ef5ee43e273b61be8d58b92fb5ae1b50e77a",
+   "count": 329,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "MATERIAL_REQUEST_EVENTS"
+  },
+  "material_requests": {
+   "content_sha256": "7f6c761ce5914a7d622e29db1754cfe3d0c3dac300cfe5784c96ece134cbe92c",
+   "count": 127,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "REQUEST_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "MATERIAL_REQUESTS"
+  },
+  "material_requirements": {
+   "content_sha256": "9846d14345c3b5439d17a329db12878e4b7cc4f915013c20226c555f08469691",
+   "count": 12,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "PRODUCT_ID",
+    "MATERIAL_ID",
+    "CONSUMED_AT_OPERATION_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "MATERIAL_REQUIREMENTS"
+  },
+  "milestone_definitions": {
+   "content_sha256": "64ccd33e1b74d413d54651c30f656a6ca4bbdde6ca349d658f6347bf7f38514e",
+   "count": 29,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "MILESTONE_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "MILESTONE_DEFINITIONS"
+  },
+  "notification_log": {
+   "content_sha256": "e383342e0788d15e6248703412a710a23bc70f07d2d180262f626c45e659ba6d",
+   "count": 89,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "NOTIFICATION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "NOTIFICATION_LOG"
+  },
+  "opening_wip": {
+   "content_sha256": "a19df41495dd7d0cf159ffac5395481e1089054a88bab355b0f62cc256e884f4",
+   "count": 35,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "UNIT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "OPENING_WIP"
+  },
+  "operation_crew": {
+   "content_sha256": "f6aa8b3d3b6b81f57e0496a2d4d2d0b6625118acf4dd2b4f756563445d908003",
+   "count": 15701,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "CREW_INTERVAL_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "OPERATION_CREW"
+  },
+  "operation_instances": {
+   "content_sha256": "a20731f0ebc574a30bf3435766f2d541a5e1731ba857f1f8e2bebd04a8146e1c",
+   "count": 6322,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "OPERATION_INSTANCE_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "OPERATION_INSTANCES"
+  },
+  "operation_instructions": {
+   "content_sha256": "6d83a5d1bfff3018a20029bd6369b394272c0cbe1d8284a024d43d455c9b0783",
+   "count": 9,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "INSTRUCTION_VERSION_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "OPERATION_INSTRUCTIONS"
+  },
+  "operation_milestone_events": {
+   "content_sha256": "edd7bd2239c500b0122894c03f2dcf6a166a139da293b24b997f039c3b05c9cc",
+   "count": 11754,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "MILESTONE_EVENT_ID"
+   ],
+   "kind": "OPERATIONAL_DERIVED",
+   "sheet": "OPERATION_MILESTONE_EVENTS"
+  },
+  "operation_skill_requirements": {
+   "content_sha256": "cc5304c1a97444ba6ca920945c2c40ac265974fcc78a9d0f7ff266990c9da5e0",
+   "count": 9,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "OPERATION_ID",
+    "ROLE",
+    "SKILL_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "OPERATION_SKILL_REQUIREMENTS"
+  },
+  "order_lines": {
+   "content_sha256": "bb453c5ebaaddf11112e7697832217f4485b38ebdad98bccf8126b1cf545d59d",
+   "count": 128,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "ORDER_LINE_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "ORDER_LINES"
+  },
+  "overtime_approvals": {
+   "content_sha256": "610d6153e0b9b0ec739a8bfcd543879ceac26809b2232e4c9e2792ad255d6b80",
+   "count": 2,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "OVERTIME_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "OVERTIME_APPROVALS"
+  },
+  "points_ledger": {
+   "content_sha256": "dc68ca8ec09334f0874aa0a00c372af1424bef07ac770fe9b11e02cff61fd55f",
+   "count": 10710,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "POINTS_TRANSACTION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "POINTS_LEDGER"
+  },
+  "product_master": {
+   "content_sha256": "58cd2299dc6d6ea59ca736bdaef1c402dbd7a86ea41a0659e75573bfe2e2780d",
+   "count": 5,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "PRODUCT_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "PRODUCT_MASTER"
+  },
+  "production_batches": {
+   "content_sha256": "0f349db47124ffba44aa595d84591fe6bd1fea068a15eba4d06c413ea3d700b0",
+   "count": 173,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "BATCH_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "PRODUCTION_BATCHES"
+  },
+  "production_events": {
+   "content_sha256": "720951cff60a2a4a3e24b25c5eb86bf9c703357f8ff005b57a10876885e6bfa4",
+   "count": 30427,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "PRODUCTION_EVENTS"
+  },
+  "production_orders": {
+   "content_sha256": "8af8a9db9094655493530823e7a8f7f2a63512220d58051811aec27c3fdd88bb",
+   "count": 91,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "ORDER_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "PRODUCTION_ORDERS"
+  },
+  "production_plan": {
+   "content_sha256": "39da7d2f0ab9fd3835ea58b9cd3c6f14322dfa4eed4d46db87783f0cbeeacb68",
+   "count": 171,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "PLAN_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "PRODUCTION_PLAN"
+  },
+  "quality_dispositions": {
+   "content_sha256": "57554da55c8ecd2371b6b09c7216548cb15c52ba4d0fbd5d41b8a9d063a5c1c9",
+   "count": 2893,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "DISPOSITION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "QUALITY_DISPOSITIONS"
+  },
+  "raw_input_events": {
+   "content_sha256": "7f68d4124c5927ed7479e023e696e162ff47c34b0986d37bba90a86abd3e9ed8",
+   "count": 24973,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "RAW_EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "RAW_INPUT_EVENTS"
+  },
+  "readiness_dimensions": {
+   "content_sha256": "f6e4f791cf75d07cc3333bd0bb2a33e47d0a74011bf827208f83cde9daa276ac",
+   "count": 3,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "CONFIG",
+   "sheet": "READINESS_DIMENSIONS"
+  },
+  "ref_action_comparison": {
+   "content_sha256": "8696f3fd13cc284a88a775227d2751c4f5f0fc3e151123635792c26a1ec22a0a",
+   "count": 7,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "OPTION_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "ACTION_COMPARISON"
+  },
+  "ref_alert_evidence": {
+   "content_sha256": "320b6c4ee451ec3ffe4853fb7d2b64b356efd34f2f347c57c0a9feb38e88c3f0",
+   "count": 979,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "ALERT_ID",
+    "EVIDENCE_AT",
+    "EVIDENCE_TABLE",
+    "REF_ID",
+    "ROLE"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "ALERT_EVIDENCE"
+  },
+  "ref_alert_state_events": {
+   "content_sha256": "6e41b66c645ae9dac9757145378d98c91b755243296bc1ae5bc7a8517786afb9",
+   "count": 318,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "ALERT_ID",
+    "EVENT_TIME",
+    "TO_STATE"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "ALERT_STATE_EVENTS"
+  },
+  "ref_alerts": {
+   "content_sha256": "b38876a3d6e27e7f667a6f71e7956f595d5ba3befda9cc89fd1b726120a7a437",
+   "count": 76,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "ALERT_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "ALERTS"
+  },
+  "ref_batch_snapshot": {
+   "content_sha256": "781e394da73b7baa92981c5ea017aedce93c5f710659be1ed7ca839320c7992a",
+   "count": 7736,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "AS_OF_AT",
+    "BATCH_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "BATCH_SNAPSHOT"
+  },
+  "ref_calculation_definitions": {
+   "content_sha256": "fea9420f29647f11a55e9d1cb0b96dd9f82e674600d3b3e111b3ab40a910c36e",
+   "count": 14,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CALCULATION_DEFINITIONS"
+  },
+  "ref_capacity_envelope": {
+   "content_sha256": "7474bd298f20353a8af33bf984c64e51a748c8b91b4e7d3c8c81b25421eb358b",
+   "count": 5,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CAPACITY_ENVELOPE"
+  },
+  "ref_change_log": {
+   "content_sha256": "30dc3694a6fc2ed0be19d5b8449a8d904ee126027eb678abdc7ed0dc8b6087de",
+   "count": 30,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "CHANGE_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CHANGE_LOG"
+  },
+  "ref_change_log_detail": {
+   "content_sha256": "da7eb8cc17dc11c05e7f8605628b9f8404551f1ba6eea58805a80323e6a3c173",
+   "count": 156,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "CHANGE_ID",
+    "TABLE_NAME",
+    "RECORD_KEY",
+    "CHANGE_TYPE"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CHANGE_LOG_DETAIL"
+  },
+  "ref_checkpoint_queue": {
+   "content_sha256": "6ed64bda337756362359f9c76f74c671e5f50724b5075ca5bea591ba82d9f8ec",
+   "count": 10,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "CHECKPOINT_ID",
+    "WORK_CENTER_ID",
+    "DISPATCH_RANK"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CHECKPOINT_QUEUE"
+  },
+  "ref_checkpoint_worker_state": {
+   "content_sha256": "76fb6a031793ed14d5cd83d678a8fc0dee42a50ff1dda922a4d512cbe981101e",
+   "count": 196,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "CHECKPOINT_ID",
+    "WORKER_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CHECKPOINT_WORKER_STATE"
+  },
+  "ref_client_decisions": {
+   "content_sha256": "409f81f8b537e3109207dde313e47706ee27e5093cbaa3cc9d601636fc0874e7",
+   "count": 29,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "QUESTION_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CLIENT_DECISIONS"
+  },
+  "ref_control_day_review": {
+   "content_sha256": "c67bef7bb00624f0d475e0ed1e9b909740b50cebd1030909b054c12d22745b03",
+   "count": 14,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "CONTROL_DAY_REVIEW"
+  },
+  "ref_daily_wc_summary": {
+   "content_sha256": "b513c57fe93699cf166d7d7ff1d2be6d9862081b1939c005e2c0d6572d03b2d3",
+   "count": 96,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "DAILY_WC_SUMMARY"
+  },
+  "ref_data_dictionary": {
+   "content_sha256": "f9dba2fb937fda25c073202a26b4bdc241494b4decbf2ed11d5776fea84ad15c",
+   "count": 2130,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "DATA_DICTIONARY"
+  },
+  "ref_data_quality_exceptions": {
+   "content_sha256": "41966794e5e655d9d39d99af72125380eda5e28723dcd1df2b943e241ba67f0f",
+   "count": 258,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "DATA_QUALITY_EXCEPTIONS"
+  },
+  "ref_dataset_inventory": {
+   "content_sha256": "a452877be30bb4522b14a5ffd2ee0114233dbe736258591eb30301d5859e7ef4",
+   "count": 149,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "DATASET_INVENTORY"
+  },
+  "ref_expected_results": {
+   "content_sha256": "5ad4f107bd726b8dfb4b422c2842994ecc1b31e2f58603182de118003692088d",
+   "count": 111,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "SCENARIO_ID",
+    "RUN_ID",
+    "METRIC"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "EXPECTED_RESULTS"
+  },
+  "ref_forecast_accuracy": {
+   "content_sha256": "7e6fc7786b6551a94fbf08174f366926e4f433c55a3414086a877947b80c63af",
+   "count": 61,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "FORECAST_RUN_ID",
+    "ORDER_LINE_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "FORECAST_ACCURACY"
+  },
+  "ref_forecast_runs": {
+   "content_sha256": "76c6fe874fe8abf5c591aff08e6376daafb94faf8f64a5698779935b226ca2b8",
+   "count": 143,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "FORECAST_RUN_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "FORECAST_RUNS"
+  },
+  "ref_integrity_before_after": {
+   "content_sha256": "122065f3196c1e1ef9ae6e2dc88a4ac1d0668d23e6682b42f887f9b5f73c21b4",
+   "count": 15,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "INTEGRITY_BEFORE_AFTER"
+  },
+  "ref_operator_insights": {
+   "content_sha256": "84d1fbc991770a935ea09052a362979eef079e2eb72af7302825e1fb8d6927b8",
+   "count": 393,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "INSIGHT_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "OPERATOR_INSIGHTS"
+  },
+  "ref_operator_metrics": {
+   "content_sha256": "191ec73429e189363a6ca3d4a1a71c8eb3c99c63ae1b41e4d000ebcdbec669d7",
+   "count": 4312,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "WORKER_ID",
+    "PERIOD",
+    "SHIFT_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "OPERATOR_METRICS"
+  },
+  "ref_operator_stories": {
+   "content_sha256": "023d67f8acad7d158591f100eddc9dc715787733a3814ba56039d81a170085dc",
+   "count": 8,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "OPERATOR_STORIES"
+  },
+  "ref_order_forecast": {
+   "content_sha256": "886541502dd9e566873f15ef49d8c8512934c5a2dfc9c7eb18cdd42e081bbea5",
+   "count": 1863,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "FORECAST_RUN_ID",
+    "ORDER_LINE_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "ORDER_FORECAST"
+  },
+  "ref_plan_adherence": {
+   "content_sha256": "7396c47e973ac76eb5921ec0626670f4f013bf6373f8fef0a2d4c49277d304da",
+   "count": 23,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "PLAN_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "PLAN_ADHERENCE"
+  },
+  "ref_reference_check_summary": {
+   "content_sha256": "17933bc8ecb1949dcb89efccd8f6c7e5af890f58969762ee43d26f281594c845",
+   "count": 174,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "REFERENCE_CHECK_SUMMARY"
+  },
+  "ref_rework_loop_summary": {
+   "content_sha256": "23d1f5542861abbceea2311a51fb7babd11cb62387afac61494112434b0ef9fa",
+   "count": 10,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "REWORK_LOOP_SUMMARY"
+  },
+  "ref_row_count_comparison": {
+   "content_sha256": "2acf04ad75cccd0166fe1277ded5e53edb810e1e4063cbf1975b5e79bb7099e7",
+   "count": 666,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "ROW_COUNT_COMPARISON"
+  },
+  "ref_run_readiness": {
+   "content_sha256": "66f53ad2131df72fba0e0b601c1950afe82d10454603dd964e1d939902015f18",
+   "count": 14,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "RUN_READINESS"
+  },
+  "ref_scenario_catalog": {
+   "content_sha256": "c07adc16d10d58094f73c1cecc407a12e9b1ed068e88703f44d9cb4ba86a1723",
+   "count": 52,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "SCENARIO_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "SCENARIO_CATALOG"
+  },
+  "ref_seed_reconciliation_totals": {
+   "content_sha256": "420f1beede8746a629f079b97eaf62bae816ef392ec3aa65744ddfae9e616f90",
+   "count": 1402,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "SEED_RECONCILIATION_TOTALS"
+  },
+  "ref_source_conflicts": {
+   "content_sha256": "95c6a110fee4d4e361a555c38b74c1d861b9325dd70bc51d3932df22b40fc119",
+   "count": 15,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "SOURCE_CONFLICTS"
+  },
+  "ref_source_inventory": {
+   "content_sha256": "61b8164d1079c0d18059eb261c7c6fabbae49d92b0f78528c49a06284fe6addb",
+   "count": 100,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "SOURCE_INVENTORY"
+  },
+  "ref_source_to_target_map": {
+   "content_sha256": "0db73b4e9d9ba0047cb6e72b0f1f27257284f708da5a3e3a3ae6291d81af4c58",
+   "count": 24,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "SOURCE_TO_TARGET_MAP"
+  },
+  "ref_table_map": {
+   "content_sha256": "fa96e49e626215c39ad06b74a97d8a4e48afcf46058bd80ea189f30b69c5ff47",
+   "count": 149,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "TABLE_MAP"
+  },
+  "ref_ui_data_mapping": {
+   "content_sha256": "d5f5796ab1bcd2a9e556b0439919db8539408deeb7db3c82abec81786516caaa",
+   "count": 32,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "UI_DATA_MAPPING"
+  },
+  "ref_unit_snapshot": {
+   "content_sha256": "bb34b4a1fce6eb17d38bb1646b391899d6f29082f5842f2fe23d1ea4c79fea7f",
+   "count": 28390,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "AS_OF_AT",
+    "UNIT_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "UNIT_SNAPSHOT"
+  },
+  "ref_validated_content_hashes": {
+   "content_sha256": "1cd7ee9299e8c4a2cd97a54ce569a4f0472a68d46e2c4b9f00316c8e6dd114bd",
+   "count": 133,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "VALIDATED_CONTENT_HASHES"
+  },
+  "ref_validation_before_after": {
+   "content_sha256": "567547ecdee6936f46425910bd1783af71b5e5f4ff4340c55d09e64d72a80eae",
+   "count": 458,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "VALIDATION_BEFORE_AFTER"
+  },
+  "ref_validation_fk_detail": {
+   "content_sha256": "e38f36f70d6f2647781a4bbdb91ce80a4d44fef682c8d86a88c0c684c70b4908",
+   "count": 1604,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "VALIDATION_FK_DETAIL"
+  },
+  "ref_validation_report": {
+   "content_sha256": "9d2fb2daa853584263662d961892f26dbbee020110f4818f050d41380c24b482",
+   "count": 458,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "TEST_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "VALIDATION_REPORT"
+  },
+  "ref_validation_summary": {
+   "content_sha256": "e7ea897040bde93ce510299d93390337e88ba6a3fea84befc2e5a73b166c7b35",
+   "count": 26,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "VALIDATION_SUMMARY"
+  },
+  "ref_walkthrough": {
+   "content_sha256": "f8cac0f25c50045e857b9c83cf8f6c2a2d68d75607d62beecbc9b11953824d80",
+   "count": 12,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WALKTHROUGH"
+  },
+  "ref_wo_award_evaluation": {
+   "content_sha256": "9b8169998ddc6190bc3a5bf56a58deb0899cbc16a9f78ed56064ba7eba81c3fb",
+   "count": 72,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "ORDER_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WO_AWARD_EVALUATION"
+  },
+  "ref_work_center_snapshot": {
+   "content_sha256": "1e69b14995be145f6c0c663ea4251e39ce9f1ba765f129a3233f75003acd552b",
+   "count": 3376,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "AS_OF_AT",
+    "WORK_CENTER_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WORK_CENTER_SNAPSHOT"
+  },
+  "ref_worker_scenario_results": {
+   "content_sha256": "b8a1b8321091f4328ca9d1a16f7a53cb48ccc9049b22f7481472d27baeea756c",
+   "count": 58,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WORKER_SCENARIO_RESULTS"
+  },
+  "ref_worker_scenarios": {
+   "content_sha256": "e8b9af89492f7957cd765afdbf3855ea14ee76634af9caa9305ee5260ce674c4",
+   "count": 58,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "SCENARIO_ID",
+    "RUN_ID",
+    "WORKER_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WORKER_SCENARIOS"
+  },
+  "ref_worker_shift_summary": {
+   "content_sha256": "445643987693b897b4b9d38037ec2f0e63d543b1a6d4799e2011bfcf26e47e43",
+   "count": 7252,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "WORKER_ID",
+    "SHIFT_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WORKER_SHIFT_SUMMARY"
+  },
+  "ref_worker_snapshot": {
+   "content_sha256": "1d3cf3d240960a09ac0055d5f8cc27b9736efd1c3b416645ea1b60e6cbb7e5dd",
+   "count": 20678,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "AS_OF_AT",
+    "WORKER_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WORKER_SNAPSHOT"
+  },
+  "ref_worker_snapshot_plant": {
+   "content_sha256": "46e6d26dc8e62caf6089f4fa034f55daecfe74fad5a03ced36d26cbec03a9af6",
+   "count": 41356,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "AS_OF_AT",
+    "WORKER_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WORKER_SNAPSHOT_PLANT"
+  },
+  "ref_workstation_snapshot": {
+   "content_sha256": "6d7196aa2d97c92bd4b5e66d384e694777e3bef64772e1c10679a50cbfcafe7e",
+   "count": 21100,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "AS_OF_AT",
+    "WORKSTATION_ID"
+   ],
+   "kind": "ANALYTICS_REFERENCE",
+   "sheet": "WORKSTATION_SNAPSHOT"
+  },
+  "replacement_requests": {
+   "content_sha256": "b5852ee8939a76f82e6568f00c2c18bf2b085ff68e0d0c2412856ac78bcc0287",
+   "count": 23,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "REQUEST_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "REPLACEMENT_REQUESTS"
+  },
+  "return_movements": {
+   "content_sha256": "9ea9bbf1e6e9cbb35c39e963695f7b83f8d3b5c6f4d6794b218c6fd8d6d3474a",
+   "count": 81,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "RETURN_ID"
+   ],
+   "kind": "OPERATIONAL_DERIVED",
+   "sheet": "RETURN_MOVEMENTS"
+  },
+  "rework_tasks": {
+   "content_sha256": "54798a6a7e6832238bd53165f1cf34d1ba3e4ac3c5482430fa415f7d678ee72d",
+   "count": 158,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "REWORK_TASK_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "REWORK_TASKS"
+  },
+  "roster_changes": {
+   "content_sha256": "1e7f0fc75cb5999077e249945b4e56eae9bbba68db8297fcecc62b84a3a5b33c",
+   "count": 2,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "ROSTER_CHANGE_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "ROSTER_CHANGES"
+  },
+  "route_dependencies": {
+   "content_sha256": "ed3dc489b5c778ed279d8a9ff322ca53adc7aaa961d3cdb87e541cba8e44d269",
+   "count": 9,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "ROUTE_ID",
+    "ROUTE_VERSION",
+    "PREDECESSOR_OPERATION_ID",
+    "SUCCESSOR_OPERATION_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "ROUTE_DEPENDENCIES"
+  },
+  "routing_operations": {
+   "content_sha256": "5463de07a71884d2fe7496f7ffc587845875e75d7c4e1f665f272a523ca9f016",
+   "count": 27,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "ROUTE_ID",
+    "ROUTE_VERSION",
+    "PRODUCT_ID",
+    "OPERATION_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "ROUTING_OPERATIONS"
+  },
+  "run_catalog": {
+   "content_sha256": "660a208be79304a96fc44526c040e9b30d0e98b1f3b6d0e5ade26af2b2cb4516",
+   "count": 14,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "RUN_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "RUN_CATALOG"
+  },
+  "scenario_inheritance": {
+   "content_sha256": "3c651d8dc53342ef52f236503da33224649853563814589929a98acaf2905c49",
+   "count": 129,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "TABLE_NAME"
+   ],
+   "kind": "CONFIG",
+   "sheet": "SCENARIO_INHERITANCE"
+  },
+  "scoring_policy": {
+   "content_sha256": "18f148295d55f63ee8451f325a8ec32fd26eccdbda639c4a0a5032c93a99a539",
+   "count": 19,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "POLICY_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "SCORING_POLICY"
+  },
+  "scoring_rules": {
+   "content_sha256": "c6135ff9f836f79ee1e5f023fd0aca1ecae3dfe114d13d2f17150ee461656009",
+   "count": 4,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RULE_ID"
+   ],
+   "kind": "CONFIG",
+   "sheet": "SCORING_RULES"
+  },
+  "shift_calendar": {
+   "content_sha256": "635a6dba4da6925a7d43137e96dbc88461e278faca1229008c0fc04e1988aeb4",
+   "count": 48,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "SHIFT_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "SHIFT_CALENDAR"
+  },
+  "shift_roster": {
+   "content_sha256": "97d9e9732bb836cc69f5c41d1ea1b76970cae80d377685f33828a8e26034ab98",
+   "count": 6958,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "ROSTER_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "SHIFT_ROSTER"
+  },
+  "site_area_master": {
+   "content_sha256": "f8cab144f98720ae09d6966ef232b8403db10d5134d9b0ad348545d7222d3ec0",
+   "count": 6,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "AREA_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "SITE_AREA_MASTER"
+  },
+  "skill_master": {
+   "content_sha256": "6c71f0535d03c7d17af359245bbf9630819df3a882efdcec27e7857503e0575e",
+   "count": 10,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "SKILL_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "SKILL_MASTER"
+  },
+  "standard_revisions": {
+   "content_sha256": "cbf033bd39a8e727e69e80bbe1fcf91c181b13972eb03cf62c3e13252d7f7d0b",
+   "count": 1,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "REVISION_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "STANDARD_REVISIONS"
+  },
+  "support_requests": {
+   "content_sha256": "2d443f23a6210bb3d7f32deccf08a06d970df0a6f2052dc70ff14007fa39fe70",
+   "count": 2,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "SUPPORT_REQUEST_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "SUPPORT_REQUESTS"
+  },
+  "task_assignments": {
+   "content_sha256": "6f9710988debb7476dbdc9b4ce6f4361ed487a8ab13a8896e40d0485e5cea037",
+   "count": 13271,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "TASK_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "TASK_ASSIGNMENTS"
+  },
+  "task_events": {
+   "content_sha256": "a48eed0045680885fc9505cfbf10a8ed6e034f04c142735fd0210d6b629ffdc8",
+   "count": 57793,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "TASK_EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "TASK_EVENTS"
+  },
+  "time_bucket_rules": {
+   "content_sha256": "1508498bf681910f80baaab48c3d4b121709a617b5e0ae54653c40030e24ca34",
+   "count": 17,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "CONFIG",
+   "sheet": "TIME_BUCKET_RULES"
+  },
+  "transfer_events": {
+   "content_sha256": "2eefb20c1620f085b567acc198a496e9fc0e721762658ffd8d11bec5414b3a96",
+   "count": 2095,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "TRANSFER_EVENTS"
+  },
+  "transfer_rules": {
+   "content_sha256": "3c007a58c95f056ad2c72fbb7e6dca98887e1b46b05acd67719c536ee42fb42d",
+   "count": 12,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "FROM_WORK_CENTER_ID",
+    "TO_WORK_CENTER_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "TRANSFER_RULES"
+  },
+  "unit_master": {
+   "content_sha256": "caf14aa2773088958ed5d1ae5dbe878501a8fdb09a21fee7d5b221bebb4a0b97",
+   "count": 705,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "UNIT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "UNIT_MASTER"
+  },
+  "work_center_master": {
+   "content_sha256": "77657e6e6c07780fea91cb876785df6768804cb11de272922e998f5976005c77",
+   "count": 8,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "WORK_CENTER_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "WORK_CENTER_MASTER"
+  },
+  "worker_events": {
+   "content_sha256": "c419e7300a6680ff04437615c7c13a55bcca4bce2c53f905359afef5b7344729",
+   "count": 76799,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "EVENT_ID"
+   ],
+   "kind": "OPERATIONAL",
+   "sheet": "WORKER_EVENTS"
+  },
+  "worker_master": {
+   "content_sha256": "2e92ce68e8c8b6c8d349208796348bb391a3efa6ee7409d73dabae5f2842ccaf",
+   "count": 196,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "WORKER_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "WORKER_MASTER"
+  },
+  "worker_qualifications": {
+   "content_sha256": "f2a63c036c77ede9b8967ab878ceec7527611006af033f171e35f8f8a726e503",
+   "count": 367,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "WORKER_ID",
+    "SKILL_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "WORKER_QUALIFICATIONS"
+  },
+  "worker_state_model": {
+   "content_sha256": "148c1e43d4511cceb11b11ea49fc6d2d3f3cd88405227f4e9f4d4b3b9123c457",
+   "count": 19,
+   "key_basis": "SOURCE_ROW (no unique business key - reference/documentation sheet)",
+   "key_fields": [
+    "_SOURCE_ROW"
+   ],
+   "kind": "CONFIG",
+   "sheet": "WORKER_STATE_MODEL"
+  },
+  "worker_state_transitions": {
+   "content_sha256": "3c26875622d437cfeed2e27d7384186830ee0e567e97e721ccbb4adc5bde733d",
+   "count": 56,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "FROM_ACTIVITY_STATE",
+    "TO_ACTIVITY_STATE"
+   ],
+   "kind": "CONFIG",
+   "sheet": "WORKER_STATE_TRANSITIONS"
+  },
+  "worker_task_plan": {
+   "content_sha256": "49342e83638e3cf3da9023ae6eb0253dc5a0b745d7c90e0b75ce79a7a2573c23",
+   "count": 13185,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "PLAN_ID"
+   ],
+   "kind": "OPERATIONAL_DERIVED",
+   "sheet": "WORKER_TASK_PLAN"
+  },
+  "workstation_master": {
+   "content_sha256": "921eb84bfe806d53efa298bacdc24adb9ecbec1388c4d2e28789e658df230f9f",
+   "count": 26,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "WORKSTATION_ID"
+   ],
+   "kind": "MASTER",
+   "sheet": "WORKSTATION_MASTER"
+  },
+  "workstation_queue_entries": {
+   "content_sha256": "f200546a4ac3551db3ed9e335d07b5b8065bcf5f108d7c2dc44af756c5a7fe03",
+   "count": 2852,
+   "key_basis": "BUSINESS_KEY",
+   "key_fields": [
+    "RUN_ID",
+    "QUEUE_ENTRY_ID"
+   ],
+   "kind": "OPERATIONAL_DERIVED",
+   "sheet": "WORKSTATION_QUEUE_ENTRIES"
+  }
+ },
+ "dataset_id": "GINI-SYN-TANKS",
+ "dataset_version": "GINI-SYN-2026-10-17-v3.0-FINAL",
+ "ground_truth_included": false,
+ "manifest_sha256": "065e1f4527d0f375a98a50c61790c8f952c407d4e92efa8a5f6f911fd890da4b",
+ "skipped_sheets": {
+  "POINTS_RECON": "Spreadsheet formula view; reconciliation is recomputed from points_ledger by reconcile_mongo.py",
+  "README": "Workbook notes (documentation only)"
+ },
+ "source_workbooks": {
+  "Siemens_Manufacturing_Analytics_Final.xlsx": "b1933a651d0449097e0fa5b3a3b7a42b6cad9024a4f4657bb2903c651ffe01b8",
+  "Siemens_Manufacturing_Events_Final.xlsx": "a38fc87f22dba288376cd64a954177310c6125a86a125a738717a329af1ce23e",
+  "Siemens_Manufacturing_Master_Final.xlsx": "c71e216ad85e3988dc164a1d551bace26fe9ccc26b021197ccfba4282d5c6684"
+ },
+ "totals": {
+  "attended_min_by_run": {
+   "RUN-ALT-NOACTION": 89882.3,
+   "RUN-ALT-REPLACE-TRANSFER": 89879.5,
+   "RUN-ALT-WC2-DONOR": 89922.8,
+   "RUN-BASE": 2242829.5,
+   "RUN-MINI-01": 101114.1,
+   "RUN-MINI-02": 92295.1,
+   "RUN-MINI-03": 101114.1,
+   "RUN-MINI-04": 101116.3,
+   "RUN-RWK-01": 101114.1,
+   "RUN-RWK-02": 101114.1,
+   "RUN-RWK-03": 101114.1,
+   "RUN-RWK-04": 101114.1,
+   "RUN-RWK-05": 101114.1,
+   "RUN-RWK-06": 101114.1
+  },
+  "collection_counts": {
+   "action_log": 501,
+   "alert_action_events": 200,
+   "alert_escalation_rules": 22,
+   "alert_rule_config": 11,
+   "app_sessions": 6766,
+   "app_users": 196,
+   "assumptions_register": 61,
+   "attendance_corrections": 1,
+   "attendance_events": 13433,
+   "attendance_intervals": 6764,
+   "batch_events": 662,
+   "batch_unit_membership": 710,
+   "calendar_intervals": 240,
+   "checkpoints": 1,
+   "config": 22,
+   "cost_rate_master": 11,
+   "crew_capacity_rules": 36,
+   "ctq_check_master": 24,
+   "ctq_specifications": 86,
+   "dataset_version": 11,
+   "defect_investigations": 102,
+   "defect_records": 189,
+   "device_heartbeats": 18651,
+   "dispatch_rules": 5,
+   "disposition_matrix": 30,
+   "disposition_policies": 2,
+   "equipment_events": 104,
+   "equipment_master": 25,
+   "equipment_operation_map": 43,
+   "handovers": 585,
+   "hold_cases": 124,
+   "inspection_header": 2805,
+   "inspection_readings": 28971,
+   "instruction_steps": 41,
+   "investigation_events": 361,
+   "investigation_evidence": 883,
+   "labor_segments": 38798,
+   "login_events": 44761,
+   "material_events": 3661,
+   "material_lots": 191,
+   "material_master": 6,
+   "material_request_events": 329,
+   "material_requests": 127,
+   "material_requirements": 12,
+   "milestone_definitions": 29,
+   "notification_log": 89,
+   "opening_wip": 35,
+   "operation_crew": 15701,
+   "operation_instances": 6322,
+   "operation_instructions": 9,
+   "operation_milestone_events": 11754,
+   "operation_skill_requirements": 9,
+   "order_lines": 128,
+   "overtime_approvals": 2,
+   "points_ledger": 10710,
+   "product_master": 5,
+   "production_batches": 173,
+   "production_events": 30427,
+   "production_orders": 91,
+   "production_plan": 171,
+   "quality_dispositions": 2893,
+   "raw_input_events": 24973,
+   "readiness_dimensions": 3,
+   "ref_action_comparison": 7,
+   "ref_alert_evidence": 979,
+   "ref_alert_state_events": 318,
+   "ref_alerts": 76,
+   "ref_batch_snapshot": 7736,
+   "ref_calculation_definitions": 14,
+   "ref_capacity_envelope": 5,
+   "ref_change_log": 30,
+   "ref_change_log_detail": 156,
+   "ref_checkpoint_queue": 10,
+   "ref_checkpoint_worker_state": 196,
+   "ref_client_decisions": 29,
+   "ref_control_day_review": 14,
+   "ref_daily_wc_summary": 96,
+   "ref_data_dictionary": 2130,
+   "ref_data_quality_exceptions": 258,
+   "ref_dataset_inventory": 149,
+   "ref_expected_results": 111,
+   "ref_forecast_accuracy": 61,
+   "ref_forecast_runs": 143,
+   "ref_integrity_before_after": 15,
+   "ref_operator_insights": 393,
+   "ref_operator_metrics": 4312,
+   "ref_operator_stories": 8,
+   "ref_order_forecast": 1863,
+   "ref_plan_adherence": 23,
+   "ref_reference_check_summary": 174,
+   "ref_rework_loop_summary": 10,
+   "ref_row_count_comparison": 666,
+   "ref_run_readiness": 14,
+   "ref_scenario_catalog": 52,
+   "ref_seed_reconciliation_totals": 1402,
+   "ref_source_conflicts": 15,
+   "ref_source_inventory": 100,
+   "ref_source_to_target_map": 24,
+   "ref_table_map": 149,
+   "ref_ui_data_mapping": 32,
+   "ref_unit_snapshot": 28390,
+   "ref_validated_content_hashes": 133,
+   "ref_validation_before_after": 458,
+   "ref_validation_fk_detail": 1604,
+   "ref_validation_report": 458,
+   "ref_validation_summary": 26,
+   "ref_walkthrough": 12,
+   "ref_wo_award_evaluation": 72,
+   "ref_work_center_snapshot": 3376,
+   "ref_worker_scenario_results": 58,
+   "ref_worker_scenarios": 58,
+   "ref_worker_shift_summary": 7252,
+   "ref_worker_snapshot": 20678,
+   "ref_worker_snapshot_plant": 41356,
+   "ref_workstation_snapshot": 21100,
+   "replacement_requests": 23,
+   "return_movements": 81,
+   "rework_tasks": 158,
+   "roster_changes": 2,
+   "route_dependencies": 9,
+   "routing_operations": 27,
+   "run_catalog": 14,
+   "scenario_inheritance": 129,
+   "scoring_policy": 19,
+   "scoring_rules": 4,
+   "shift_calendar": 48,
+   "shift_roster": 6958,
+   "site_area_master": 6,
+   "skill_master": 10,
+   "standard_revisions": 1,
+   "support_requests": 2,
+   "task_assignments": 13271,
+   "task_events": 57793,
+   "time_bucket_rules": 17,
+   "transfer_events": 2095,
+   "transfer_rules": 12,
+   "unit_master": 705,
+   "work_center_master": 8,
+   "worker_events": 76799,
+   "worker_master": 196,
+   "worker_qualifications": 367,
+   "worker_state_model": 19,
+   "worker_state_transitions": 56,
+   "worker_task_plan": 13185,
+   "workstation_master": 26,
+   "workstation_queue_entries": 2852
+  },
+  "good_tanks_by_run_order_line": {
+   "RUN-ALT-NOACTION|WO-2026-0171-L1": 9,
+   "RUN-ALT-NOACTION|WO-2026-0172-L1": 1,
+   "RUN-ALT-NOACTION|WO-2026-0173-L1": 1,
+   "RUN-ALT-NOACTION|WO-2026-0173-L2": 5,
+   "RUN-ALT-NOACTION|WO-2026-0174-L1": 2,
+   "RUN-ALT-NOACTION|WO-2026-0174-L2": 4,
+   "RUN-ALT-REPLACE-TRANSFER|WO-2026-0171-L1": 10,
+   "RUN-ALT-REPLACE-TRANSFER|WO-2026-0172-L1": 1,
+   "RUN-ALT-REPLACE-TRANSFER|WO-2026-0173-L1": 1,
+   "RUN-ALT-REPLACE-TRANSFER|WO-2026-0173-L2": 5,
+   "RUN-ALT-REPLACE-TRANSFER|WO-2026-0174-L1": 2,
+   "RUN-ALT-REPLACE-TRANSFER|WO-2026-0174-L2": 4,
+   "RUN-ALT-WC2-DONOR|WO-2026-0171-L1": 10,
+   "RUN-ALT-WC2-DONOR|WO-2026-0172-L1": 1,
+   "RUN-ALT-WC2-DONOR|WO-2026-0173-L1": 1,
+   "RUN-ALT-WC2-DONOR|WO-2026-0173-L2": 5,
+   "RUN-ALT-WC2-DONOR|WO-2026-0174-L1": 2,
+   "RUN-ALT-WC2-DONOR|WO-2026-0174-L2": 2,
+   "RUN-BASE|WO-2026-0101-L1": 2,
+   "RUN-BASE|WO-2026-0102-L1": 5,
+   "RUN-BASE|WO-2026-0103-L1": 5,
+   "RUN-BASE|WO-2026-0104-L1": 5,
+   "RUN-BASE|WO-2026-0104-L2": 5,
+   "RUN-BASE|WO-2026-0105-L1": 5,
+   "RUN-BASE|WO-2026-0106-L1": 5,
+   "RUN-BASE|WO-2026-0107-L1": 5,
+   "RUN-BASE|WO-2026-0108-L1": 2,
+   "RUN-BASE|WO-2026-0108-L2": 1,
+   "RUN-BASE|WO-2026-0109-L1": 1,
+   "RUN-BASE|WO-2026-0109-L2": 1,
+   "RUN-BASE|WO-2026-0109-L3": 5,
+   "RUN-BASE|WO-2026-0110-L1": 1,
+   "RUN-BASE|WO-2026-0111-L1": 1,
+   "RUN-BASE|WO-2026-0111-L2": 1,
+   "RUN-BASE|WO-2026-0112-L1": 5,
+   "RUN-BASE|WO-2026-0113-L1": 5,
+   "RUN-BASE|WO-2026-0113-L2": 10,
+   "RUN-BASE|WO-2026-0114-L1": 20,
+   "RUN-BASE|WO-2026-0115-L1": 2,
+   "RUN-BASE|WO-2026-0115-L2": 2,
+   "RUN-BASE|WO-2026-0115-L3": 2,
+   "RUN-BASE|WO-2026-0116-L1": 20,
+   "RUN-BASE|WO-2026-0117-L1": 2,
+   "RUN-BASE|WO-2026-0118-L1": 10,
+   "RUN-BASE|WO-2026-0118-L2": 1,
+   "RUN-BASE|WO-2026-0119-L1": 20,
+   "RUN-BASE|WO-2026-0120-L1": 5,
+   "RUN-BASE|WO-2026-0121-L1": 5,
+   "RUN-BASE|WO-2026-0122-L1": 5,
+   "RUN-BASE|WO-2026-0123-L1": 5,
+   "RUN-BASE|WO-2026-0123-L2": 2,
+   "RUN-BASE|WO-2026-0124-L1": 5,
+   "RUN-BASE|WO-2026-0124-L2": 5,
+   "RUN-BASE|WO-2026-0125-L1": 5,
+   "RUN-BASE|WO-2026-0125-L2": 5,
+   "RUN-BASE|WO-2026-0126-L1": 10,
+   "RUN-BASE|WO-2026-0127-L1": 5,
+   "RUN-BASE|WO-2026-0128-L1": 10,
+   "RUN-BASE|WO-2026-0129-L1": 1,
+   "RUN-BASE|WO-2026-0129-L2": 2,
+   "RUN-BASE|WO-2026-0130-L1": 10,
+   "RUN-BASE|WO-2026-0130-L2": 5,
+   "RUN-BASE|WO-2026-0131-L1": 10,
+   "RUN-BASE|WO-2026-0132-L1": 2,
+   "RUN-BASE|WO-2026-0133-L1": 5,
+   "RUN-BASE|WO-2026-0134-L1": 10,
+   "RUN-BASE|WO-2026-0135-L1": 5,
+   "RUN-BASE|WO-2026-0136-L1": 5,
+   "RUN-BASE|WO-2026-0137-L1": 5,
+   "RUN-BASE|WO-2026-0138-L1": 2,
+   "RUN-BASE|WO-2026-0139-L1": 2,
+   "RUN-BASE|WO-2026-0140-L1": 10,
+   "RUN-BASE|WO-2026-0141-L1": 5,
+   "RUN-BASE|WO-2026-0142-L1": 10,
+   "RUN-BASE|WO-2026-0143-L1": 20,
+   "RUN-BASE|WO-2026-0144-L1": 10,
+   "RUN-BASE|WO-2026-0145-L1": 5,
+   "RUN-BASE|WO-2026-0146-L1": 10,
+   "RUN-BASE|WO-2026-0147-L1": 10,
+   "RUN-BASE|WO-2026-0147-L2": 2,
+   "RUN-BASE|WO-2026-0147-L3": 1,
+   "RUN-BASE|WO-2026-0148-L1": 5,
+   "RUN-BASE|WO-2026-0148-L2": 10,
+   "RUN-BASE|WO-2026-0149-L1": 1,
+   "RUN-BASE|WO-2026-0150-L1": 10,
+   "RUN-BASE|WO-2026-0151-L1": 5,
+   "RUN-BASE|WO-2026-0151-L2": 5,
+   "RUN-BASE|WO-2026-0152-L1": 10,
+   "RUN-BASE|WO-2026-0152-L2": 10,
+   "RUN-BASE|WO-2026-0153-L1": 2,
+   "RUN-BASE|WO-2026-0154-L1": 2,
+   "RUN-BASE|WO-2026-0154-L2": 2,
+   "RUN-BASE|WO-2026-0155-L1": 10,
+   "RUN-BASE|WO-2026-0156-L1": 2,
+   "RUN-BASE|WO-2026-0156-L2": 1,
+   "RUN-BASE|WO-2026-0157-L1": 2,
+   "RUN-BASE|WO-2026-0157-L2": 5,
+   "RUN-BASE|WO-2026-0158-L1": 2,
+   "RUN-BASE|WO-2026-0158-L2": 5,
+   "RUN-BASE|WO-2026-0159-L1": 1,
+   "RUN-BASE|WO-2026-0160-L1": 5,
+   "RUN-BASE|WO-2026-0161-L1": 5,
+   "RUN-BASE|WO-2026-0161-L2": 2,
+   "RUN-BASE|WO-2026-0161-L3": 1,
+   "RUN-BASE|WO-2026-0162-L1": 20,
+   "RUN-BASE|WO-2026-0163-L1": 10,
+   "RUN-BASE|WO-2026-0163-L2": 1,
+   "RUN-BASE|WO-2026-0164-L1": 2,
+   "RUN-BASE|WO-2026-0165-L1": 5,
+   "RUN-BASE|WO-2026-0165-L2": 10,
+   "RUN-BASE|WO-2026-0165-L3": 1,
+   "RUN-BASE|WO-2026-0166-L1": 5,
+   "RUN-BASE|WO-2026-0167-L1": 2,
+   "RUN-BASE|WO-2026-0168-L1": 20,
+   "RUN-BASE|WO-2026-0169-L1": 2,
+   "RUN-BASE|WO-2026-0170-L1": 2,
+   "RUN-BASE|WO-2026-0170-L2": 10,
+   "RUN-BASE|WO-2026-0170-L3": 5,
+   "RUN-BASE|WO-2026-0171-L1": 10,
+   "RUN-BASE|WO-2026-0172-L1": 1,
+   "RUN-BASE|WO-2026-0173-L1": 1,
+   "RUN-BASE|WO-2026-0173-L2": 5,
+   "RUN-BASE|WO-2026-0174-L1": 2,
+   "RUN-BASE|WO-2026-0174-L2": 4,
+   "RUN-MINI-01|WO-MINI-M1-L1": 1,
+   "RUN-MINI-02|WO-MINI-M2-L1": 1,
+   "RUN-MINI-03|WO-MINI-M3-L1": 1,
+   "RUN-MINI-04|WO-MINI-M4-L1": 1,
+   "RUN-RWK-01|WO-RWK-1-L1": 1,
+   "RUN-RWK-02|WO-RWK-2-L1": 1,
+   "RUN-RWK-03|WO-RWK-3-L1": 1,
+   "RUN-RWK-04|WO-RWK-4-L1": 1,
+   "RUN-RWK-05|WO-RWK-5-L1": 1
+  },
+  "operator_metrics_points_mismatch": [],
+  "order_line_good_qty_mismatch": [],
+  "plan_rows_by_source": {
+   "RUN-ALT-NOACTION|EXISTING_ASSIGNMENT": 391,
+   "RUN-ALT-REPLACE-TRANSFER|EXISTING_ASSIGNMENT": 420,
+   "RUN-ALT-WC2-DONOR|EXISTING_ASSIGNMENT": 409,
+   "RUN-BASE|CHECKPOINT_DISPATCH_PLAN": 23,
+   "RUN-BASE|EXISTING_ASSIGNMENT": 11730,
+   "RUN-MINI-01|EXISTING_ASSIGNMENT": 20,
+   "RUN-MINI-02|EXISTING_ASSIGNMENT": 15,
+   "RUN-MINI-03|EXISTING_ASSIGNMENT": 22,
+   "RUN-MINI-04|EXISTING_ASSIGNMENT": 21,
+   "RUN-RWK-01|EXISTING_ASSIGNMENT": 23,
+   "RUN-RWK-02|EXISTING_ASSIGNMENT": 22,
+   "RUN-RWK-03|EXISTING_ASSIGNMENT": 27,
+   "RUN-RWK-04|EXISTING_ASSIGNMENT": 26,
+   "RUN-RWK-05|EXISTING_ASSIGNMENT": 22,
+   "RUN-RWK-06|EXISTING_ASSIGNMENT": 14
+  },
+  "points_by_worker": {
+   "W0001": {
+    "QUALITY": 1.14,
+    "TIME": 82.0,
+    "TOTAL": 83.14
+   },
+   "W0002": {
+    "QUALITY": 0.01,
+    "TIME": 95.0,
+    "TOTAL": 95.01
+   },
+   "W0003": {
+    "QUALITY": -7.58,
+    "TIME": 38.0,
+    "TOTAL": 30.42
+   },
+   "W0004": {
+    "QUALITY": 0.34,
+    "TIME": -57.0,
+    "TOTAL": -56.66
+   },
+   "W0005": {
+    "QUALITY": 0.43,
+    "TIME": 138.0,
+    "TOTAL": 138.43
+   },
+   "W0006": {
+    "QUALITY": 0.42,
+    "TIME": -7.0,
+    "TOTAL": -6.58
+   },
+   "W0007": {
+    "QUALITY": 0.54,
+    "TIME": 57.0,
+    "TOTAL": 57.54
+   },
+   "W0008": {
+    "QUALITY": 0.13,
+    "TIME": -25.0,
+    "TOTAL": -24.87
+   },
+   "W0009": {
+    "QUALITY": 0.32,
+    "TIME": 63.0,
+    "TOTAL": 63.32
+   },
+   "W0010": {
+    "QUALITY": 0.12,
+    "TIME": 20.0,
+    "TOTAL": 20.12
+   },
+   "W0011": {
+    "QUALITY": 0.11,
+    "TIME": 13.0,
+    "TOTAL": 13.11
+   },
+   "W0012": {
+    "QUALITY": 0.11,
+    "TIME": 116.0,
+    "TOTAL": 116.11
+   },
+   "W0013": {
+    "QUALITY": 0.28,
+    "TIME": 141.0,
+    "TOTAL": 141.28
+   },
+   "W0014": {
+    "QUALITY": 0.46,
+    "TIME": 162.0,
+    "TOTAL": 162.46
+   },
+   "W0015": {
+    "QUALITY": 0.58,
+    "TIME": 128.0,
+    "TOTAL": 128.58
+   },
+   "W0016": {
+    "QUALITY": 0.58,
+    "TIME": 51.0,
+    "TOTAL": 51.58
+   },
+   "W0017": {
+    "QUALITY": 0.2,
+    "TIME": 137.0,
+    "TOTAL": 137.2
+   },
+   "W0018": {
+    "QUALITY": 0.02,
+    "TIME": 24.0,
+    "TOTAL": 24.02
+   },
+   "W0019": {
+    "QUALITY": 0.02,
+    "TIME": 118.0,
+    "TOTAL": 118.02
+   },
+   "W0020": {
+    "QUALITY": 0.02,
+    "TIME": 125.0,
+    "TOTAL": 125.02
+   },
+   "W0021": {
+    "QUALITY": -0.78,
+    "TIME": 122.0,
+    "TOTAL": 121.22
+   },
+   "W0022": {
+    "QUALITY": 0.72,
+    "TIME": 42.0,
+    "TOTAL": 42.72
+   },
+   "W0023": {
+    "QUALITY": 0.71,
+    "TIME": -36.0,
+    "TOTAL": -35.29
+   },
+   "W0024": {
+    "QUALITY": 0.12,
+    "TIME": -35.0,
+    "TOTAL": -34.88
+   },
+   "W0025": {
+    "QUALITY": -0.32,
+    "TIME": 71.0,
+    "TOTAL": 70.68
+   },
+   "W0026": {
+    "QUALITY": -0.32,
+    "TIME": 73.0,
+    "TOTAL": 72.68
+   },
+   "W0027": {
+    "QUALITY": -0.72,
+    "TIME": 94.0,
+    "TOTAL": 93.28
+   },
+   "W0028": {
+    "QUALITY": -3.32,
+    "TIME": 83.0,
+    "TOTAL": 79.68
+   },
+   "W0029": {
+    "QUALITY": 0.28,
+    "TIME": 71.0,
+    "TOTAL": 71.28
+   },
+   "W0030": {
+    "QUALITY": -3.72,
+    "TIME": -35.0,
+    "TOTAL": -38.72
+   },
+   "W0031": {
+    "QUALITY": -11.84,
+    "TIME": -97.0,
+    "TOTAL": -108.84
+   },
+   "W0032": {
+    "QUALITY": 0.35,
+    "TIME": 23.0,
+    "TOTAL": 23.35
+   },
+   "W0033": {
+    "QUALITY": -0.9,
+    "TIME": 51.0,
+    "TOTAL": 50.1
+   },
+   "W0034": {
+    "QUALITY": -0.79,
+    "TIME": 48.0,
+    "TOTAL": 47.21
+   },
+   "W0035": {
+    "QUALITY": -0.8,
+    "TIME": 84.0,
+    "TOTAL": 83.2
+   },
+   "W0036": {
+    "QUALITY": -0.72,
+    "TIME": 76.0,
+    "TOTAL": 75.28
+   },
+   "W0037": {
+    "QUALITY": 0.13,
+    "TIME": -3.0,
+    "TOTAL": -2.87
+   },
+   "W0038": {
+    "QUALITY": 0.23,
+    "TIME": 6.0,
+    "TOTAL": 6.23
+   },
+   "W0039": {
+    "QUALITY": 0.13,
+    "TIME": 8.0,
+    "TOTAL": 8.13
+   },
+   "W0040": {
+    "QUALITY": 0.08,
+    "TIME": 8.0,
+    "TOTAL": 8.08
+   },
+   "W0041": {
+    "QUALITY": 1.08,
+    "TIME": 41.0,
+    "TOTAL": 42.08
+   },
+   "W0042": {
+    "QUALITY": 0.61,
+    "TIME": 154.0,
+    "TOTAL": 154.61
+   },
+   "W0043": {
+    "QUALITY": 0.54,
+    "TIME": 27.0,
+    "TOTAL": 27.54
+   },
+   "W0044": {
+    "QUALITY": 1.25,
+    "TIME": -11.0,
+    "TOTAL": -9.75
+   },
+   "W0045": {
+    "QUALITY": 0.46,
+    "TIME": 103.0,
+    "TOTAL": 103.46
+   },
+   "W0046": {
+    "QUALITY": -3.52,
+    "TIME": 102.0,
+    "TOTAL": 98.48
+   },
+   "W0047": {
+    "QUALITY": 0.37,
+    "TIME": 131.0,
+    "TOTAL": 131.37
+   },
+   "W0048": {
+    "QUALITY": 0.09,
+    "TIME": 98.0,
+    "TOTAL": 98.09
+   },
+   "W0049": {
+    "QUALITY": 0.87,
+    "TIME": 94.0,
+    "TOTAL": 94.87
+   },
+   "W0050": {
+    "QUALITY": 1.12,
+    "TIME": 154.0,
+    "TOTAL": 155.12
+   },
+   "W0051": {
+    "QUALITY": 0.44,
+    "TIME": 130.0,
+    "TOTAL": 130.44
+   },
+   "W0052": {
+    "QUALITY": 0.56,
+    "TIME": 220.0,
+    "TOTAL": 220.56
+   },
+   "W0053": {
+    "QUALITY": 0.73,
+    "TIME": 251.0,
+    "TOTAL": 251.73
+   },
+   "W0054": {
+    "QUALITY": 0.48,
+    "TIME": 215.0,
+    "TOTAL": 215.48
+   },
+   "W0055": {
+    "QUALITY": 1.35,
+    "TIME": 196.0,
+    "TOTAL": 197.35
+   },
+   "W0056": {
+    "QUALITY": 1.63,
+    "TIME": 165.0,
+    "TOTAL": 166.63
+   },
+   "W0057": {
+    "QUALITY": 1.82,
+    "TIME": 104.0,
+    "TOTAL": 105.82
+   },
+   "W0058": {
+    "QUALITY": 0.99,
+    "TIME": 44.0,
+    "TOTAL": 44.99
+   },
+   "W0059": {
+    "QUALITY": 0.69,
+    "TIME": 113.0,
+    "TOTAL": 113.69
+   },
+   "W0060": {
+    "QUALITY": 0.4,
+    "TIME": 39.0,
+    "TOTAL": 39.4
+   },
+   "W0061": {
+    "QUALITY": -12.02,
+    "TIME": 125.0,
+    "TOTAL": 112.98
+   },
+   "W0062": {
+    "QUALITY": 1.1,
+    "TIME": 136.0,
+    "TOTAL": 137.1
+   },
+   "W0063": {
+    "QUALITY": 0.44,
+    "TIME": -21.0,
+    "TOTAL": -20.56
+   },
+   "W0064": {
+    "QUALITY": 1.05,
+    "TIME": 11.0,
+    "TOTAL": 12.05
+   },
+   "W0065": {
+    "QUALITY": 0.71,
+    "TIME": 96.0,
+    "TOTAL": 96.71
+   },
+   "W0066": {
+    "QUALITY": 2.1,
+    "TIME": 17.0,
+    "TOTAL": 19.1
+   },
+   "W0067": {
+    "QUALITY": 1.07,
+    "TIME": 52.0,
+    "TOTAL": 53.07
+   },
+   "W0068": {
+    "QUALITY": -0.6,
+    "TIME": 115.0,
+    "TOTAL": 114.4
+   },
+   "W0069": {
+    "QUALITY": -11.58,
+    "TIME": 40.0,
+    "TOTAL": 28.42
+   },
+   "W0070": {
+    "QUALITY": 1.14,
+    "TIME": 70.0,
+    "TOTAL": 71.14
+   },
+   "W0071": {
+    "QUALITY": 0.27,
+    "TIME": -31.0,
+    "TOTAL": -30.73
+   },
+   "W0072": {
+    "QUALITY": -0.47,
+    "TIME": 51.0,
+    "TOTAL": 50.53
+   },
+   "W0073": {
+    "QUALITY": -0.4,
+    "TIME": 72.0,
+    "TOTAL": 71.6
+   },
+   "W0074": {
+    "QUALITY": -0.11,
+    "TIME": 102.0,
+    "TOTAL": 101.89
+   },
+   "W0075": {
+    "QUALITY": -0.31,
+    "TIME": 115.0,
+    "TOTAL": 114.69
+   },
+   "W0076": {
+    "QUALITY": 1.18,
+    "TIME": 20.0,
+    "TOTAL": 21.18
+   },
+   "W0077": {
+    "QUALITY": 0.85,
+    "TIME": -4.0,
+    "TOTAL": -3.15
+   },
+   "W0078": {
+    "QUALITY": 0.83,
+    "TIME": 47.0,
+    "TOTAL": 47.83
+   },
+   "W0079": {
+    "QUALITY": -0.59,
+    "TIME": 104.0,
+    "TOTAL": 103.41
+   },
+   "W0080": {
+    "QUALITY": -2.54,
+    "TIME": 75.0,
+    "TOTAL": 72.46
+   },
+   "W0081": {
+    "QUALITY": 0.13,
+    "TIME": 190.0,
+    "TOTAL": 190.13
+   },
+   "W0082": {
+    "QUALITY": 0.52,
+    "TIME": 265.0,
+    "TOTAL": 265.52
+   },
+   "W0083": {
+    "QUALITY": 0.16,
+    "TIME": 52.0,
+    "TOTAL": 52.16
+   },
+   "W0085": {
+    "TIME": 148.0,
+    "TOTAL": 148.0
+   },
+   "W0086": {
+    "QUALITY": 0.21,
+    "TIME": 79.0,
+    "TOTAL": 79.21
+   },
+   "W0087": {
+    "QUALITY": 0.28,
+    "TIME": 308.0,
+    "TOTAL": 308.28
+   },
+   "W0088": {
+    "QUALITY": 0.2,
+    "TIME": 263.0,
+    "TOTAL": 263.2
+   },
+   "W0089": {
+    "QUALITY": 0.36,
+    "TIME": 436.0,
+    "TOTAL": 436.36
+   },
+   "W0090": {
+    "QUALITY": 0.35,
+    "TIME": 353.0,
+    "TOTAL": 353.35
+   },
+   "W0091": {
+    "QUALITY": 0.35,
+    "TIME": 358.0,
+    "TOTAL": 358.35
+   },
+   "W0092": {
+    "QUALITY": 0.03,
+    "TIME": 325.0,
+    "TOTAL": 325.03
+   },
+   "W0093": {
+    "QUALITY": 0.24,
+    "TIME": 233.0,
+    "TOTAL": 233.24
+   },
+   "W0094": {
+    "QUALITY": 0.31,
+    "TIME": 233.0,
+    "TOTAL": 233.31
+   },
+   "W0095": {
+    "QUALITY": 0.3,
+    "TIME": 80.0,
+    "TOTAL": 80.3
+   },
+   "W0096": {
+    "QUALITY": 0.11,
+    "TIME": 138.0,
+    "TOTAL": 138.11
+   },
+   "W0097": {
+    "QUALITY": 0.04,
+    "TIME": 50.0,
+    "TOTAL": 50.04
+   },
+   "W0098": {
+    "QUALITY": 0.06,
+    "TIME": 246.0,
+    "TOTAL": 246.06
+   },
+   "W0099": {
+    "QUALITY": 0.06,
+    "TIME": 249.0,
+    "TOTAL": 249.06
+   },
+   "W0100": {
+    "QUALITY": 0.18,
+    "TIME": 390.0,
+    "TOTAL": 390.18
+   },
+   "W0101": {
+    "QUALITY": -3.34,
+    "TIME": 58.0,
+    "TOTAL": 54.66
+   },
+   "W0102": {
+    "QUALITY": 0.58,
+    "TIME": 25.0,
+    "TOTAL": 25.58
+   },
+   "W0103": {
+    "QUALITY": 0.56,
+    "TIME": -114.0,
+    "TOTAL": -113.44
+   },
+   "W0104": {
+    "QUALITY": 0.62,
+    "TIME": -152.0,
+    "TOTAL": -151.38
+   },
+   "W0105": {
+    "QUALITY": 0.53,
+    "TIME": 0.0,
+    "TOTAL": 0.53
+   },
+   "W0106": {
+    "QUALITY": 0.44,
+    "TIME": -80.0,
+    "TOTAL": -79.56
+   },
+   "W0107": {
+    "QUALITY": 0.53,
+    "TIME": -108.0,
+    "TOTAL": -107.47
+   },
+   "W0108": {
+    "QUALITY": 0.57,
+    "TIME": -137.0,
+    "TOTAL": -136.43
+   },
+   "W0109": {
+    "QUALITY": 0.63,
+    "TIME": -254.0,
+    "TOTAL": -253.37
+   },
+   "W0110": {
+    "QUALITY": 0.14,
+    "TIME": -323.0,
+    "TOTAL": -322.86
+   },
+   "W0111": {
+    "QUALITY": 0.12,
+    "TIME": -148.0,
+    "TOTAL": -147.88
+   },
+   "W0112": {
+    "QUALITY": 0.73,
+    "TIME": -19.0,
+    "TOTAL": -18.27
+   },
+   "W0113": {
+    "QUALITY": 0.96,
+    "TIME": 61.0,
+    "TOTAL": 61.96
+   },
+   "W0114": {
+    "QUALITY": 0.89,
+    "TIME": 33.0,
+    "TOTAL": 33.89
+   },
+   "W0115": {
+    "QUALITY": 0.35,
+    "TIME": 16.0,
+    "TOTAL": 16.35
+   },
+   "W0116": {
+    "QUALITY": 0.08,
+    "TIME": -76.0,
+    "TOTAL": -75.92
+   },
+   "W0117": {
+    "QUALITY": 0.09,
+    "TIME": -3.0,
+    "TOTAL": -2.91
+   },
+   "W0118": {
+    "QUALITY": 0.05,
+    "TIME": 74.0,
+    "TOTAL": 74.05
+   },
+   "W0119": {
+    "QUALITY": 0.17,
+    "TIME": 208.0,
+    "TOTAL": 208.17
+   },
+   "W0120": {
+    "QUALITY": 0.17,
+    "TIME": 171.0,
+    "TOTAL": 171.17
+   },
+   "W0121": {
+    "QUALITY": 0.26,
+    "TIME": 183.0,
+    "TOTAL": 183.26
+   },
+   "W0122": {
+    "QUALITY": 0.24,
+    "TIME": 156.0,
+    "TOTAL": 156.24
+   },
+   "W0123": {
+    "QUALITY": 0.05,
+    "TIME": -44.0,
+    "TOTAL": -43.95
+   },
+   "W0124": {
+    "TIME": -54.0,
+    "TOTAL": -54.0
+   },
+   "W0125": {
+    "QUALITY": 0.28,
+    "TIME": 222.0,
+    "TOTAL": 222.28
+   },
+   "W0126": {
+    "QUALITY": 0.25,
+    "TIME": 114.0,
+    "TOTAL": 114.25
+   },
+   "W0127": {
+    "QUALITY": 0.16,
+    "TIME": 55.0,
+    "TOTAL": 55.16
+   },
+   "W0128": {
+    "QUALITY": 0.79,
+    "TIME": 14.0,
+    "TOTAL": 14.79
+   },
+   "W0129": {
+    "QUALITY": 0.19,
+    "TIME": 21.0,
+    "TOTAL": 21.19
+   },
+   "W0130": {
+    "QUALITY": 0.06,
+    "TIME": 63.0,
+    "TOTAL": 63.06
+   },
+   "W0131": {
+    "QUALITY": 0.16,
+    "TIME": -5.0,
+    "TOTAL": -4.84
+   },
+   "W0132": {
+    "QUALITY": 0.38,
+    "TIME": 118.0,
+    "TOTAL": 118.38
+   },
+   "W0133": {
+    "QUALITY": 0.62,
+    "TIME": 142.0,
+    "TOTAL": 142.62
+   },
+   "W0134": {
+    "QUALITY": 0.51,
+    "TIME": 57.0,
+    "TOTAL": 57.51
+   },
+   "W0135": {
+    "QUALITY": 1.08,
+    "TIME": 257.0,
+    "TOTAL": 258.08
+   },
+   "W0136": {
+    "QUALITY": 0.08,
+    "TIME": 242.0,
+    "TOTAL": 242.08
+   },
+   "W0137": {
+    "QUALITY": 0.22,
+    "TIME": 205.0,
+    "TOTAL": 205.22
+   },
+   "W0138": {
+    "QUALITY": 0.74,
+    "TIME": 61.0,
+    "TOTAL": 61.74
+   },
+   "W0139": {
+    "QUALITY": 0.1,
+    "TIME": -5.0,
+    "TOTAL": -4.9
+   },
+   "W0140": {
+    "QUALITY": 0.15,
+    "TIME": 27.0,
+    "TOTAL": 27.15
+   },
+   "W0141": {
+    "QUALITY": 0.22,
+    "TIME": 222.0,
+    "TOTAL": 222.22
+   },
+   "W0142": {
+    "QUALITY": 0.03,
+    "TIME": 295.0,
+    "TOTAL": 295.03
+   },
+   "W0143": {
+    "QUALITY": 0.11,
+    "TIME": -137.0,
+    "TOTAL": -136.89
+   },
+   "W0144": {
+    "QUALITY": 0.13,
+    "TIME": -144.0,
+    "TOTAL": -143.87
+   },
+   "W0145": {
+    "QUALITY": 0.27,
+    "TIME": 112.0,
+    "TOTAL": 112.27
+   },
+   "W0146": {
+    "QUALITY": 0.02,
+    "TIME": 134.0,
+    "TOTAL": 134.02
+   },
+   "W0147": {
+    "QUALITY": 0.4,
+    "TIME": 117.0,
+    "TOTAL": 117.4
+   },
+   "W0148": {
+    "QUALITY": 0.39,
+    "TIME": 112.0,
+    "TOTAL": 112.39
+   },
+   "W0149": {
+    "QUALITY": 0.5,
+    "TIME": 114.0,
+    "TOTAL": 114.5
+   },
+   "W0150": {
+    "QUALITY": 0.55,
+    "TIME": 140.0,
+    "TOTAL": 140.55
+   },
+   "W0151": {
+    "QUALITY": -0.57,
+    "TIME": -29.0,
+    "TOTAL": -29.57
+   },
+   "W0152": {
+    "QUALITY": 0.22,
+    "TIME": -12.0,
+    "TOTAL": -11.78
+   },
+   "W0153": {
+    "QUALITY": 0.5,
+    "TIME": 199.0,
+    "TOTAL": 199.5
+   },
+   "W0154": {
+    "QUALITY": 1.2,
+    "TIME": 149.0,
+    "TOTAL": 150.2
+   },
+   "W0155": {
+    "QUALITY": 1.08,
+    "TIME": 117.0,
+    "TOTAL": 118.08
+   },
+   "W0156": {
+    "QUALITY": 0.85,
+    "TIME": 4.0,
+    "TOTAL": 4.85
+   },
+   "W0157": {
+    "QUALITY": 0.62,
+    "TIME": 185.0,
+    "TOTAL": 185.62
+   },
+   "W0158": {
+    "QUALITY": 0.34,
+    "TIME": 40.0,
+    "TOTAL": 40.34
+   },
+   "W0159": {
+    "QUALITY": 0.21,
+    "TIME": -53.0,
+    "TOTAL": -52.79
+   }
+  },
+  "points_total": 12650.0,
+  "rework_loops_by_run": {
+   "RUN-ALT-NOACTION": 3,
+   "RUN-ALT-REPLACE-TRANSFER": 3,
+   "RUN-ALT-WC2-DONOR": 4,
+   "RUN-BASE": 65,
+   "RUN-RWK-01": 1,
+   "RUN-RWK-02": 1,
+   "RUN-RWK-03": 2,
+   "RUN-RWK-04": 1,
+   "RUN-RWK-05": 1
+  },
+  "run_counts": {
+   "action_log": {
+    "RUN-ALT-NOACTION": 14,
+    "RUN-ALT-REPLACE-TRANSFER": 17,
+    "RUN-ALT-WC2-DONOR": 24,
+    "RUN-BASE": 443,
+    "RUN-MINI-03": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-05": 1
+   },
+   "alert_action_events": {
+    "RUN-BASE": 200
+   },
+   "app_sessions": {
+    "RUN-ALT-NOACTION": 174,
+    "RUN-ALT-REPLACE-TRANSFER": 174,
+    "RUN-ALT-WC2-DONOR": 174,
+    "RUN-BASE": 4311,
+    "RUN-MINI-01": 195,
+    "RUN-MINI-02": 178,
+    "RUN-MINI-03": 195,
+    "RUN-MINI-04": 195,
+    "RUN-RWK-01": 195,
+    "RUN-RWK-02": 195,
+    "RUN-RWK-03": 195,
+    "RUN-RWK-04": 195,
+    "RUN-RWK-05": 195,
+    "RUN-RWK-06": 195
+   },
+   "attendance_corrections": {
+    "RUN-BASE": 1
+   },
+   "attendance_events": {
+    "RUN-ALT-NOACTION": 265,
+    "RUN-ALT-REPLACE-TRANSFER": 265,
+    "RUN-ALT-WC2-DONOR": 265,
+    "RUN-BASE": 8755,
+    "RUN-MINI-01": 390,
+    "RUN-MINI-02": 373,
+    "RUN-MINI-03": 390,
+    "RUN-MINI-04": 390,
+    "RUN-RWK-01": 390,
+    "RUN-RWK-02": 390,
+    "RUN-RWK-03": 390,
+    "RUN-RWK-04": 390,
+    "RUN-RWK-05": 390,
+    "RUN-RWK-06": 390
+   },
+   "attendance_intervals": {
+    "RUN-ALT-NOACTION": 174,
+    "RUN-ALT-REPLACE-TRANSFER": 174,
+    "RUN-ALT-WC2-DONOR": 174,
+    "RUN-BASE": 4309,
+    "RUN-MINI-01": 195,
+    "RUN-MINI-02": 178,
+    "RUN-MINI-03": 195,
+    "RUN-MINI-04": 195,
+    "RUN-RWK-01": 195,
+    "RUN-RWK-02": 195,
+    "RUN-RWK-03": 195,
+    "RUN-RWK-04": 195,
+    "RUN-RWK-05": 195,
+    "RUN-RWK-06": 195
+   },
+   "batch_events": {
+    "RUN-ALT-NOACTION": 21,
+    "RUN-ALT-REPLACE-TRANSFER": 22,
+    "RUN-ALT-WC2-DONOR": 22,
+    "RUN-BASE": 558,
+    "RUN-MINI-01": 4,
+    "RUN-MINI-02": 4,
+    "RUN-MINI-03": 4,
+    "RUN-MINI-04": 4,
+    "RUN-RWK-01": 4,
+    "RUN-RWK-02": 4,
+    "RUN-RWK-03": 4,
+    "RUN-RWK-04": 4,
+    "RUN-RWK-05": 4,
+    "RUN-RWK-06": 3
+   },
+   "batch_unit_membership": {
+    "RUN-ALT-NOACTION": 25,
+    "RUN-ALT-REPLACE-TRANSFER": 25,
+    "RUN-ALT-WC2-DONOR": 25,
+    "RUN-BASE": 624,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 2,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "checkpoints": {
+    "RUN-BASE": 1
+   },
+   "defect_investigations": {
+    "RUN-ALT-NOACTION": 5,
+    "RUN-ALT-REPLACE-TRANSFER": 4,
+    "RUN-ALT-WC2-DONOR": 5,
+    "RUN-BASE": 80,
+    "RUN-MINI-03": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 2,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "defect_records": {
+    "RUN-ALT-NOACTION": 6,
+    "RUN-ALT-REPLACE-TRANSFER": 6,
+    "RUN-ALT-WC2-DONOR": 7,
+    "RUN-BASE": 162,
+    "RUN-MINI-03": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 2,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "device_heartbeats": {
+    "RUN-ALT-NOACTION": 4519,
+    "RUN-ALT-REPLACE-TRANSFER": 4519,
+    "RUN-ALT-WC2-DONOR": 4519,
+    "RUN-BASE": 5094
+   },
+   "equipment_events": {
+    "RUN-ALT-NOACTION": 9,
+    "RUN-ALT-REPLACE-TRANSFER": 9,
+    "RUN-ALT-WC2-DONOR": 9,
+    "RUN-BASE": 75,
+    "RUN-RWK-05": 2
+   },
+   "handovers": {
+    "RUN-ALT-NOACTION": 12,
+    "RUN-ALT-REPLACE-TRANSFER": 12,
+    "RUN-ALT-WC2-DONOR": 12,
+    "RUN-BASE": 546,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1
+   },
+   "hold_cases": {
+    "RUN-ALT-NOACTION": 7,
+    "RUN-ALT-REPLACE-TRANSFER": 5,
+    "RUN-ALT-WC2-DONOR": 6,
+    "RUN-BASE": 99,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 2,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "inspection_header": {
+    "RUN-ALT-NOACTION": 94,
+    "RUN-ALT-REPLACE-TRANSFER": 96,
+    "RUN-ALT-WC2-DONOR": 93,
+    "RUN-BASE": 2475,
+    "RUN-MINI-01": 4,
+    "RUN-MINI-02": 4,
+    "RUN-MINI-03": 5,
+    "RUN-MINI-04": 4,
+    "RUN-RWK-01": 5,
+    "RUN-RWK-02": 5,
+    "RUN-RWK-03": 6,
+    "RUN-RWK-04": 6,
+    "RUN-RWK-05": 5,
+    "RUN-RWK-06": 3
+   },
+   "inspection_readings": {
+    "RUN-ALT-NOACTION": 989,
+    "RUN-ALT-REPLACE-TRANSFER": 1019,
+    "RUN-ALT-WC2-DONOR": 995,
+    "RUN-BASE": 25474,
+    "RUN-MINI-01": 41,
+    "RUN-MINI-02": 41,
+    "RUN-MINI-03": 49,
+    "RUN-MINI-04": 41,
+    "RUN-RWK-01": 45,
+    "RUN-RWK-02": 49,
+    "RUN-RWK-03": 67,
+    "RUN-RWK-04": 70,
+    "RUN-RWK-05": 54,
+    "RUN-RWK-06": 37
+   },
+   "investigation_events": {
+    "RUN-ALT-NOACTION": 17,
+    "RUN-ALT-REPLACE-TRANSFER": 15,
+    "RUN-ALT-WC2-DONOR": 17,
+    "RUN-BASE": 292,
+    "RUN-MINI-03": 2,
+    "RUN-RWK-01": 2,
+    "RUN-RWK-02": 2,
+    "RUN-RWK-03": 8,
+    "RUN-RWK-04": 2,
+    "RUN-RWK-05": 2,
+    "RUN-RWK-06": 2
+   },
+   "investigation_evidence": {
+    "RUN-ALT-NOACTION": 43,
+    "RUN-ALT-REPLACE-TRANSFER": 37,
+    "RUN-ALT-WC2-DONOR": 43,
+    "RUN-BASE": 687,
+    "RUN-MINI-03": 8,
+    "RUN-RWK-01": 6,
+    "RUN-RWK-02": 8,
+    "RUN-RWK-03": 28,
+    "RUN-RWK-04": 8,
+    "RUN-RWK-05": 8,
+    "RUN-RWK-06": 7
+   },
+   "labor_segments": {
+    "RUN-ALT-NOACTION": 1175,
+    "RUN-ALT-REPLACE-TRANSFER": 1239,
+    "RUN-ALT-WC2-DONOR": 1219,
+    "RUN-BASE": 34923,
+    "RUN-MINI-01": 24,
+    "RUN-MINI-02": 19,
+    "RUN-MINI-03": 27,
+    "RUN-MINI-04": 21,
+    "RUN-RWK-01": 27,
+    "RUN-RWK-02": 27,
+    "RUN-RWK-03": 27,
+    "RUN-RWK-04": 30,
+    "RUN-RWK-05": 22,
+    "RUN-RWK-06": 18
+   },
+   "login_events": {
+    "RUN-ALT-NOACTION": 1270,
+    "RUN-ALT-REPLACE-TRANSFER": 1326,
+    "RUN-ALT-WC2-DONOR": 1290,
+    "RUN-BASE": 36525,
+    "RUN-MINI-01": 438,
+    "RUN-MINI-02": 394,
+    "RUN-MINI-03": 444,
+    "RUN-MINI-04": 432,
+    "RUN-RWK-01": 444,
+    "RUN-RWK-02": 444,
+    "RUN-RWK-03": 444,
+    "RUN-RWK-04": 450,
+    "RUN-RWK-05": 434,
+    "RUN-RWK-06": 426
+   },
+   "material_events": {
+    "RUN-ALT-NOACTION": 118,
+    "RUN-ALT-REPLACE-TRANSFER": 123,
+    "RUN-ALT-WC2-DONOR": 119,
+    "RUN-BASE": 3186,
+    "RUN-MINI-01": 11,
+    "RUN-MINI-02": 11,
+    "RUN-MINI-03": 14,
+    "RUN-MINI-04": 13,
+    "RUN-RWK-01": 11,
+    "RUN-RWK-02": 11,
+    "RUN-RWK-03": 11,
+    "RUN-RWK-04": 12,
+    "RUN-RWK-05": 11,
+    "RUN-RWK-06": 10
+   },
+   "material_lots": {
+    "RUN-ALT-NOACTION": 2,
+    "RUN-ALT-REPLACE-TRANSFER": 2,
+    "RUN-ALT-WC2-DONOR": 2,
+    "RUN-BASE": 124,
+    "RUN-MINI-01": 6,
+    "RUN-MINI-02": 6,
+    "RUN-MINI-03": 6,
+    "RUN-MINI-04": 7,
+    "RUN-RWK-01": 6,
+    "RUN-RWK-02": 6,
+    "RUN-RWK-03": 6,
+    "RUN-RWK-04": 6,
+    "RUN-RWK-05": 6,
+    "RUN-RWK-06": 6
+   },
+   "material_request_events": {
+    "RUN-ALT-NOACTION": 7,
+    "RUN-ALT-REPLACE-TRANSFER": 7,
+    "RUN-ALT-WC2-DONOR": 7,
+    "RUN-BASE": 304,
+    "RUN-MINI-04": 4
+   },
+   "material_requests": {
+    "RUN-ALT-NOACTION": 2,
+    "RUN-ALT-REPLACE-TRANSFER": 2,
+    "RUN-ALT-WC2-DONOR": 2,
+    "RUN-BASE": 120,
+    "RUN-MINI-04": 1
+   },
+   "notification_log": {
+    "RUN-BASE": 89
+   },
+   "opening_wip": {
+    "RUN-BASE": 35
+   },
+   "operation_crew": {
+    "RUN-ALT-NOACTION": 487,
+    "RUN-ALT-REPLACE-TRANSFER": 515,
+    "RUN-ALT-WC2-DONOR": 505,
+    "RUN-BASE": 13952,
+    "RUN-MINI-01": 24,
+    "RUN-MINI-02": 19,
+    "RUN-MINI-03": 27,
+    "RUN-MINI-04": 21,
+    "RUN-RWK-01": 27,
+    "RUN-RWK-02": 27,
+    "RUN-RWK-03": 27,
+    "RUN-RWK-04": 30,
+    "RUN-RWK-05": 22,
+    "RUN-RWK-06": 18
+   },
+   "operation_instances": {
+    "RUN-ALT-NOACTION": 211,
+    "RUN-ALT-REPLACE-TRANSFER": 218,
+    "RUN-ALT-WC2-DONOR": 214,
+    "RUN-BASE": 5573,
+    "RUN-MINI-01": 9,
+    "RUN-MINI-02": 9,
+    "RUN-MINI-03": 11,
+    "RUN-MINI-04": 9,
+    "RUN-RWK-01": 11,
+    "RUN-RWK-02": 11,
+    "RUN-RWK-03": 13,
+    "RUN-RWK-04": 15,
+    "RUN-RWK-05": 11,
+    "RUN-RWK-06": 7
+   },
+   "operation_milestone_events": {
+    "RUN-ALT-NOACTION": 397,
+    "RUN-ALT-REPLACE-TRANSFER": 408,
+    "RUN-ALT-WC2-DONOR": 403,
+    "RUN-BASE": 10351,
+    "RUN-MINI-01": 17,
+    "RUN-MINI-02": 17,
+    "RUN-MINI-03": 21,
+    "RUN-MINI-04": 17,
+    "RUN-RWK-01": 20,
+    "RUN-RWK-02": 20,
+    "RUN-RWK-03": 23,
+    "RUN-RWK-04": 26,
+    "RUN-RWK-05": 20,
+    "RUN-RWK-06": 14
+   },
+   "order_lines": {
+    "RUN-ALT-NOACTION": 2,
+    "RUN-ALT-WC2-DONOR": 1,
+    "RUN-BASE": 115,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "overtime_approvals": {
+    "RUN-BASE": 2
+   },
+   "points_ledger": {
+    "RUN-BASE": 10710
+   },
+   "production_batches": {
+    "RUN-BASE": 163,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "production_events": {
+    "RUN-ALT-NOACTION": 1027,
+    "RUN-ALT-REPLACE-TRANSFER": 1057,
+    "RUN-ALT-WC2-DONOR": 1036,
+    "RUN-BASE": 26818,
+    "RUN-MINI-01": 43,
+    "RUN-MINI-02": 41,
+    "RUN-MINI-03": 50,
+    "RUN-MINI-04": 41,
+    "RUN-RWK-01": 51,
+    "RUN-RWK-02": 53,
+    "RUN-RWK-03": 55,
+    "RUN-RWK-04": 69,
+    "RUN-RWK-05": 52,
+    "RUN-RWK-06": 34
+   },
+   "production_orders": {
+    "RUN-ALT-NOACTION": 1,
+    "RUN-BASE": 80,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "production_plan": {
+    "RUN-BASE": 161,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "quality_dispositions": {
+    "RUN-ALT-NOACTION": 99,
+    "RUN-ALT-REPLACE-TRANSFER": 100,
+    "RUN-ALT-WC2-DONOR": 98,
+    "RUN-BASE": 2542,
+    "RUN-MINI-01": 4,
+    "RUN-MINI-02": 4,
+    "RUN-MINI-03": 5,
+    "RUN-MINI-04": 4,
+    "RUN-RWK-01": 6,
+    "RUN-RWK-02": 6,
+    "RUN-RWK-03": 8,
+    "RUN-RWK-04": 7,
+    "RUN-RWK-05": 6,
+    "RUN-RWK-06": 4
+   },
+   "raw_input_events": {
+    "RUN-BASE": 17241,
+    "RUN-MINI-01": 780,
+    "RUN-MINI-02": 712,
+    "RUN-MINI-03": 780,
+    "RUN-MINI-04": 780,
+    "RUN-RWK-01": 780,
+    "RUN-RWK-02": 780,
+    "RUN-RWK-03": 780,
+    "RUN-RWK-04": 780,
+    "RUN-RWK-05": 780,
+    "RUN-RWK-06": 780
+   },
+   "ref_action_comparison": {
+    "RUN-BASE": 7
+   },
+   "ref_alert_evidence": {
+    "RUN-BASE": 979
+   },
+   "ref_alert_state_events": {
+    "RUN-BASE": 318
+   },
+   "ref_alerts": {
+    "RUN-BASE": 76
+   },
+   "ref_batch_snapshot": {
+    "RUN-ALT-NOACTION": 1934,
+    "RUN-ALT-REPLACE-TRANSFER": 1934,
+    "RUN-ALT-WC2-DONOR": 1934,
+    "RUN-BASE": 1934
+   },
+   "ref_checkpoint_queue": {
+    "RUN-BASE": 10
+   },
+   "ref_checkpoint_worker_state": {
+    "RUN-BASE": 196
+   },
+   "ref_expected_results": {
+    "RUN-BASE": 42,
+    "RUN-MINI-01": 4,
+    "RUN-MINI-02": 4,
+    "RUN-MINI-03": 7,
+    "RUN-MINI-04": 4,
+    "RUN-RWK-01": 10,
+    "RUN-RWK-02": 8,
+    "RUN-RWK-03": 9,
+    "RUN-RWK-04": 11,
+    "RUN-RWK-05": 6,
+    "RUN-RWK-06": 6
+   },
+   "ref_forecast_accuracy": {
+    "RUN-BASE": 61
+   },
+   "ref_forecast_runs": {
+    "RUN-BASE": 143
+   },
+   "ref_order_forecast": {
+    "RUN-BASE": 1863
+   },
+   "ref_plan_adherence": {
+    "RUN-BASE": 23
+   },
+   "ref_rework_loop_summary": {
+    "RUN-ALT-NOACTION": 1,
+    "RUN-ALT-REPLACE-TRANSFER": 1,
+    "RUN-ALT-WC2-DONOR": 1,
+    "RUN-BASE": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "ref_row_count_comparison": {
+    "None": 58,
+    "RUN-ALT-NOACTION": 49,
+    "RUN-ALT-REPLACE-TRANSFER": 47,
+    "RUN-ALT-WC2-DONOR": 48,
+    "RUN-BASE": 75,
+    "RUN-MINI-01": 33,
+    "RUN-MINI-02": 32,
+    "RUN-MINI-03": 39,
+    "RUN-MINI-04": 37,
+    "RUN-RWK-01": 42,
+    "RUN-RWK-02": 41,
+    "RUN-RWK-03": 42,
+    "RUN-RWK-04": 41,
+    "RUN-RWK-05": 43,
+    "RUN-RWK-06": 39
+   },
+   "ref_run_readiness": {
+    "RUN-ALT-NOACTION": 1,
+    "RUN-ALT-REPLACE-TRANSFER": 1,
+    "RUN-ALT-WC2-DONOR": 1,
+    "RUN-BASE": 1,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "ref_scenario_catalog": {
+    "RUN-BASE": 42,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "ref_unit_snapshot": {
+    "RUN-ALT-NOACTION": 6982,
+    "RUN-ALT-REPLACE-TRANSFER": 7136,
+    "RUN-ALT-WC2-DONOR": 7136,
+    "RUN-BASE": 7136
+   },
+   "ref_validation_fk_detail": {
+    "RUN-ALT-NOACTION": 132,
+    "RUN-ALT-REPLACE-TRANSFER": 132,
+    "RUN-ALT-WC2-DONOR": 132,
+    "RUN-BASE": 173,
+    "RUN-MINI-01": 88,
+    "RUN-MINI-02": 86,
+    "RUN-MINI-03": 100,
+    "RUN-MINI-04": 90,
+    "RUN-RWK-01": 115,
+    "RUN-RWK-02": 113,
+    "RUN-RWK-03": 115,
+    "RUN-RWK-04": 113,
+    "RUN-RWK-05": 116,
+    "RUN-RWK-06": 99
+   },
+   "ref_work_center_snapshot": {
+    "RUN-ALT-NOACTION": 844,
+    "RUN-ALT-REPLACE-TRANSFER": 844,
+    "RUN-ALT-WC2-DONOR": 844,
+    "RUN-BASE": 844
+   },
+   "ref_worker_scenario_results": {
+    "RUN-BASE": 55,
+    "RUN-MINI-04": 3
+   },
+   "ref_worker_scenarios": {
+    "RUN-BASE": 55,
+    "RUN-MINI-04": 3
+   },
+   "ref_worker_shift_summary": {
+    "RUN-ALT-NOACTION": 196,
+    "RUN-ALT-REPLACE-TRANSFER": 196,
+    "RUN-ALT-WC2-DONOR": 196,
+    "RUN-BASE": 4704,
+    "RUN-MINI-01": 196,
+    "RUN-MINI-02": 196,
+    "RUN-MINI-03": 196,
+    "RUN-MINI-04": 196,
+    "RUN-RWK-01": 196,
+    "RUN-RWK-02": 196,
+    "RUN-RWK-03": 196,
+    "RUN-RWK-04": 196,
+    "RUN-RWK-05": 196,
+    "RUN-RWK-06": 196
+   },
+   "ref_worker_snapshot": {
+    "RUN-BASE": 20678
+   },
+   "ref_worker_snapshot_plant": {
+    "RUN-BASE": 41356
+   },
+   "ref_workstation_snapshot": {
+    "RUN-ALT-NOACTION": 5275,
+    "RUN-ALT-REPLACE-TRANSFER": 5275,
+    "RUN-ALT-WC2-DONOR": 5275,
+    "RUN-BASE": 5275
+   },
+   "replacement_requests": {
+    "RUN-ALT-NOACTION": 3,
+    "RUN-ALT-REPLACE-TRANSFER": 2,
+    "RUN-ALT-WC2-DONOR": 2,
+    "RUN-BASE": 15,
+    "RUN-MINI-03": 1
+   },
+   "return_movements": {
+    "RUN-ALT-NOACTION": 3,
+    "RUN-ALT-REPLACE-TRANSFER": 3,
+    "RUN-ALT-WC2-DONOR": 4,
+    "RUN-BASE": 65,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 2,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1
+   },
+   "rework_tasks": {
+    "RUN-ALT-NOACTION": 4,
+    "RUN-ALT-REPLACE-TRANSFER": 5,
+    "RUN-ALT-WC2-DONOR": 6,
+    "RUN-BASE": 137,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 2,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1
+   },
+   "roster_changes": {
+    "RUN-MINI-04": 2
+   },
+   "run_catalog": {
+    "RUN-ALT-NOACTION": 1,
+    "RUN-ALT-REPLACE-TRANSFER": 1,
+    "RUN-ALT-WC2-DONOR": 1,
+    "RUN-BASE": 1,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 1,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "scenario_inheritance": {
+    "RUN-ALT-NOACTION": 43,
+    "RUN-ALT-REPLACE-TRANSFER": 43,
+    "RUN-ALT-WC2-DONOR": 43
+   },
+   "shift_roster": {
+    "RUN-ALT-NOACTION": 98,
+    "RUN-ALT-REPLACE-TRANSFER": 98,
+    "RUN-ALT-WC2-DONOR": 98,
+    "RUN-BASE": 4704,
+    "RUN-MINI-01": 196,
+    "RUN-MINI-02": 196,
+    "RUN-MINI-03": 196,
+    "RUN-MINI-04": 196,
+    "RUN-RWK-01": 196,
+    "RUN-RWK-02": 196,
+    "RUN-RWK-03": 196,
+    "RUN-RWK-04": 196,
+    "RUN-RWK-05": 196,
+    "RUN-RWK-06": 196
+   },
+   "standard_revisions": {
+    "RUN-BASE": 1
+   },
+   "support_requests": {
+    "RUN-BASE": 2
+   },
+   "task_assignments": {
+    "RUN-ALT-NOACTION": 428,
+    "RUN-ALT-REPLACE-TRANSFER": 457,
+    "RUN-ALT-WC2-DONOR": 444,
+    "RUN-BASE": 11730,
+    "RUN-MINI-01": 20,
+    "RUN-MINI-02": 15,
+    "RUN-MINI-03": 22,
+    "RUN-MINI-04": 21,
+    "RUN-RWK-01": 23,
+    "RUN-RWK-02": 22,
+    "RUN-RWK-03": 27,
+    "RUN-RWK-04": 26,
+    "RUN-RWK-05": 22,
+    "RUN-RWK-06": 14
+   },
+   "task_events": {
+    "RUN-ALT-NOACTION": 1792,
+    "RUN-ALT-REPLACE-TRANSFER": 1905,
+    "RUN-ALT-WC2-DONOR": 1845,
+    "RUN-BASE": 51343,
+    "RUN-MINI-01": 88,
+    "RUN-MINI-02": 68,
+    "RUN-MINI-03": 98,
+    "RUN-MINI-04": 84,
+    "RUN-RWK-01": 100,
+    "RUN-RWK-02": 98,
+    "RUN-RWK-03": 108,
+    "RUN-RWK-04": 112,
+    "RUN-RWK-05": 88,
+    "RUN-RWK-06": 64
+   },
+   "transfer_events": {
+    "RUN-ALT-NOACTION": 39,
+    "RUN-ALT-REPLACE-TRANSFER": 60,
+    "RUN-ALT-WC2-DONOR": 89,
+    "RUN-BASE": 1907
+   },
+   "unit_master": {
+    "RUN-ALT-NOACTION": 25,
+    "RUN-ALT-REPLACE-TRANSFER": 25,
+    "RUN-ALT-WC2-DONOR": 25,
+    "RUN-BASE": 619,
+    "RUN-MINI-01": 1,
+    "RUN-MINI-02": 1,
+    "RUN-MINI-03": 2,
+    "RUN-MINI-04": 1,
+    "RUN-RWK-01": 1,
+    "RUN-RWK-02": 1,
+    "RUN-RWK-03": 1,
+    "RUN-RWK-04": 1,
+    "RUN-RWK-05": 1,
+    "RUN-RWK-06": 1
+   },
+   "worker_events": {
+    "RUN-ALT-NOACTION": 2143,
+    "RUN-ALT-REPLACE-TRANSFER": 2139,
+    "RUN-ALT-WC2-DONOR": 2167,
+    "RUN-BASE": 61946,
+    "RUN-MINI-01": 829,
+    "RUN-MINI-02": 771,
+    "RUN-MINI-03": 839,
+    "RUN-MINI-04": 882,
+    "RUN-RWK-01": 837,
+    "RUN-RWK-02": 839,
+    "RUN-RWK-03": 846,
+    "RUN-RWK-04": 854,
+    "RUN-RWK-05": 889,
+    "RUN-RWK-06": 818
+   },
+   "worker_task_plan": {
+    "RUN-ALT-NOACTION": 391,
+    "RUN-ALT-REPLACE-TRANSFER": 420,
+    "RUN-ALT-WC2-DONOR": 409,
+    "RUN-BASE": 11753,
+    "RUN-MINI-01": 20,
+    "RUN-MINI-02": 15,
+    "RUN-MINI-03": 22,
+    "RUN-MINI-04": 21,
+    "RUN-RWK-01": 23,
+    "RUN-RWK-02": 22,
+    "RUN-RWK-03": 27,
+    "RUN-RWK-04": 26,
+    "RUN-RWK-05": 22,
+    "RUN-RWK-06": 14
+   },
+   "workstation_queue_entries": {
+    "RUN-ALT-NOACTION": 99,
+    "RUN-ALT-REPLACE-TRANSFER": 102,
+    "RUN-ALT-WC2-DONOR": 102,
+    "RUN-BASE": 2504,
+    "RUN-MINI-01": 4,
+    "RUN-MINI-02": 4,
+    "RUN-MINI-03": 5,
+    "RUN-MINI-04": 4,
+    "RUN-RWK-01": 4,
+    "RUN-RWK-02": 5,
+    "RUN-RWK-03": 4,
+    "RUN-RWK-04": 7,
+    "RUN-RWK-05": 5,
+    "RUN-RWK-06": 3
+   }
+  },
+  "task_status_counts": {
+   "RUN-ALT-NOACTION|COMPLETED": 342,
+   "RUN-ALT-NOACTION|ENDED_BEFORE_OPERATION_FINISH": 51,
+   "RUN-ALT-NOACTION|PAUSED": 35,
+   "RUN-ALT-REPLACE-TRANSFER|COMPLETED": 347,
+   "RUN-ALT-REPLACE-TRANSFER|ENDED_BEFORE_OPERATION_FINISH": 66,
+   "RUN-ALT-REPLACE-TRANSFER|PAUSED": 44,
+   "RUN-ALT-WC2-DONOR|COMPLETED": 342,
+   "RUN-ALT-WC2-DONOR|ENDED_BEFORE_OPERATION_FINISH": 66,
+   "RUN-ALT-WC2-DONOR|PAUSED": 36,
+   "RUN-BASE|CANCELLED_BEFORE_START": 1,
+   "RUN-BASE|COMPLETED": 9421,
+   "RUN-BASE|ENDED_BEFORE_OPERATION_FINISH": 2266,
+   "RUN-BASE|PAUSED": 41,
+   "RUN-BASE|REASSIGNED": 1,
+   "RUN-MINI-01|COMPLETED": 17,
+   "RUN-MINI-01|ENDED_BEFORE_OPERATION_FINISH": 3,
+   "RUN-MINI-02|COMPLETED": 15,
+   "RUN-MINI-03|COMPLETED": 22,
+   "RUN-MINI-04|COMPLETED": 17,
+   "RUN-MINI-04|ENDED_BEFORE_OPERATION_FINISH": 4,
+   "RUN-RWK-01|COMPLETED": 20,
+   "RUN-RWK-01|ENDED_BEFORE_OPERATION_FINISH": 3,
+   "RUN-RWK-02|COMPLETED": 22,
+   "RUN-RWK-03|COMPLETED": 27,
+   "RUN-RWK-04|COMPLETED": 26,
+   "RUN-RWK-05|COMPLETED": 22,
+   "RUN-RWK-06|COMPLETED": 14
+  }
+ }
+}

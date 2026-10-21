@@ -1,0 +1,16 @@
+import React from 'react';
+const label = x => { const s=String(x || 'Not recorded'); return s.includes('_') ? s.replaceAll('_', ' ').toLowerCase().replace(/^./, c=>c.toUpperCase()) : s; };
+const number = x => x !== null && x !== undefined && x !== '' && Number.isFinite(Number(x)) ? Number(x) : null;
+const fmt = x => new Intl.NumberFormat('en', { maximumFractionDigits: 2 }).format(x);
+export function Bars({title, note, rows = [], unit = '', signed = false}) {
+ const values = rows.map(r => ({...r, n:number(r.value)}));
+ const scale = Math.max(1, ...values.filter(r=>r.n!==null).map(r=>Math.abs(r.n)));
+ return <section className="viz" aria-label={title}><div className="viz-heading"><h3>{title}</h3><span>{unit}</span></div>{note && <p className="viz-note">{note}</p>}
+ {values.length ? <ul className="viz-bars">{values.map((r,i)=><li key={r.label+i}><div className="viz-bar-label"><span>{label(r.label)}</span><strong>{r.n===null?'Not recorded':`${signed&&r.n>0?'+':''}${fmt(r.n)}${unit?' '+unit:''}`}</strong></div><div className={'viz-track '+(signed?'signed':'')} aria-hidden="true"><i style={{width:`${r.n===null?0:Math.abs(r.n)/scale*(signed?50:100)}%`,left:signed?(r.n<0?`${50-Math.abs(r.n)/scale*50}%`:'50%'):0,background:r.n<0?'var(--bad)':r.color||'var(--brand)'}} /></div></li>)}</ul>:<p className="viz-note">No recorded data yet.</p>}</section>;
+}
+export function ProgressMeter({label:heading, value, total, note}) {
+ const v=number(value),t=number(total), valid=v!==null&&t!==null&&t>0;
+ return <section className="viz-meter"><div className="viz-bar-label"><strong>{heading}</strong><span>{valid?`${fmt(v)} / ${fmt(t)}`:'Not recorded'}</span></div><div className="viz-track" role="progressbar" aria-label={heading} {...(valid?{'aria-valuenow':Math.min(100,Math.max(0,v/t*100)),'aria-valuemin':0,'aria-valuemax':100,'aria-valuetext':`${fmt(v)} of ${fmt(t)}`}:{'aria-valuetext':'Not recorded'})}><i style={{width:`${valid?Math.min(100,Math.max(0,v/t*100)):0}%`}} /></div><p className="viz-note">{note || (valid?`${Math.round(v/t*100)}% recorded`:'No denominator is available.')}</p></section>;
+}
+export function Steps({title, steps=[]}) {return <section className="viz"><h3>{title}</h3><ol className="viz-steps">{steps.map((s,i)=><li key={s.id||i} className={s.done?'done':s.current?'current':''}><span className="viz-step-icon">{s.done?'✓':i+1}</span><div><strong>{s.label}</strong><small>{s.detail || (s.done?'Completed':s.current?'Current':'Not completed')}</small></div></li>)}</ol>{!steps.length&&<p className="viz-note">No steps recorded.</p>}</section>;}
+export function ActivityStrip({events=[],time}) {return <section className="viz"><h3>Recent activity journey</h3><p className="viz-note">Latest recorded events, in time order. Cards are not proportional to duration.</p><ol className="viz-steps">{[...events].filter(e=>e.at).sort((a,b)=>new Date(a.at)-new Date(b.at)).slice(-8).map((e,i)=><li key={i}><span className="viz-step-icon">{i+1}</span><div><strong>{label(e.type)}</strong><small>{time(e.at)} · {e.workstationId||e.workCenterId||'Location not recorded'}</small>{e.reason&&<small>{label(e.reason)}</small>}</div></li>)}</ol>{!events.length&&<p className="viz-note">No events recorded.</p>}</section>;}

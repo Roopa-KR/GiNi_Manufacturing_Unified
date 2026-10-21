@@ -1,0 +1,4906 @@
+{
+ "mode": "verify",
+ "started_at": "2026-10-19 05:12:58",
+ "steps": {
+  "1_2_inputs": {
+   "data_dir": "C:\\Users\\Abubakkar Siddiq\\Downloads\\GiNi_Manufacturing_App_Fixed\\GiNi_Manufacturing_App_Fixed\\backend\\data\\final",
+   "files": {
+    "Siemens_Manufacturing_Master_Final.xlsx": {
+     "sha256": "c71e216ad85e3988dc164a1d551bace26fe9ccc26b021197ccfba4282d5c6684",
+     "bytes": 482214,
+     "expected_sha256": "c71e216ad85e3988dc164a1d551bace26fe9ccc26b021197ccfba4282d5c6684",
+     "verified": true
+    },
+    "Siemens_Manufacturing_Events_Final.xlsx": {
+     "sha256": "a38fc87f22dba288376cd64a954177310c6125a86a125a738717a329af1ce23e",
+     "bytes": 32087757,
+     "expected_sha256": "a38fc87f22dba288376cd64a954177310c6125a86a125a738717a329af1ce23e",
+     "verified": true
+    },
+    "Siemens_Manufacturing_Analytics_Final.xlsx": {
+     "sha256": "b1933a651d0449097e0fa5b3a3b7a42b6cad9024a4f4657bb2903c651ffe01b8",
+     "bytes": 13839372,
+     "expected_sha256": "b1933a651d0449097e0fa5b3a3b7a42b6cad9024a4f4657bb2903c651ffe01b8",
+     "verified": true
+    }
+   },
+   "problems": [],
+   "result": "PASS"
+  },
+  "3_validation": {
+   "result": "PASS",
+   "summary": {
+    "checks": 508,
+    "failed": 0,
+    "not_applicable": 29,
+    "foreign_keys": 173,
+    "references_checked": 3474855,
+    "references_missing": 0,
+    "fk_counts_equal_package": 173
+   },
+   "checks": [
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "worker_master",
+     "result": "PASS",
+     "count": 196
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "worker_qualifications",
+     "result": "PASS",
+     "count": 367
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "skill_master",
+     "result": "PASS",
+     "count": 10
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "routing_operations",
+     "result": "PASS",
+     "count": 27
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "work_center_master",
+     "result": "PASS",
+     "count": 8
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "workstation_master",
+     "result": "PASS",
+     "count": 26
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "equipment_master",
+     "result": "PASS",
+     "count": 25
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "product_master",
+     "result": "PASS",
+     "count": 5
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "ctq_check_master",
+     "result": "PASS",
+     "count": 24
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "ctq_specifications",
+     "result": "PASS",
+     "count": 86
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "shift_calendar",
+     "result": "PASS",
+     "count": 48
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "shift_roster",
+     "result": "PASS",
+     "count": 6958
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "run_catalog",
+     "result": "PASS",
+     "count": 14
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "checkpoints",
+     "result": "PASS",
+     "count": 1
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "production_orders",
+     "result": "PASS",
+     "count": 91
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "order_lines",
+     "result": "PASS",
+     "count": 128
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "production_batches",
+     "result": "PASS",
+     "count": 173
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "batch_unit_membership",
+     "result": "PASS",
+     "count": 710
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "unit_master",
+     "result": "PASS",
+     "count": 705
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "operation_instances",
+     "result": "PASS",
+     "count": 6322
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "task_assignments",
+     "result": "PASS",
+     "count": 13271
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "task_events",
+     "result": "PASS",
+     "count": 57793
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "labor_segments",
+     "result": "PASS",
+     "count": 38798
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "operation_crew",
+     "result": "PASS",
+     "count": 15701
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "attendance_events",
+     "result": "PASS",
+     "count": 13433
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "inspection_header",
+     "result": "PASS",
+     "count": 2805
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "inspection_readings",
+     "result": "PASS",
+     "count": 28971
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "defect_records",
+     "result": "PASS",
+     "count": 189
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "quality_dispositions",
+     "result": "PASS",
+     "count": 2893
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "points_ledger",
+     "result": "PASS",
+     "count": 10710
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "material_events",
+     "result": "PASS",
+     "count": 3661
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "production_events",
+     "result": "PASS",
+     "count": 30427
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "worker_task_plan",
+     "result": "PASS",
+     "count": 13185
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "workstation_queue_entries",
+     "result": "PASS",
+     "count": 2852
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "operation_milestone_events",
+     "result": "PASS",
+     "count": 11754
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "return_movements",
+     "result": "PASS",
+     "count": 81
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "hold_cases",
+     "result": "PASS",
+     "count": 124
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "operation_instructions",
+     "result": "PASS",
+     "count": 9
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "instruction_steps",
+     "result": "PASS",
+     "count": 41
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "milestone_definitions",
+     "result": "PASS",
+     "count": 29
+    },
+    {
+     "check": "REQUIRED_COLLECTION",
+     "collection": "disposition_matrix",
+     "result": "PASS",
+     "count": 30
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "dataset_version",
+     "key_fields": [
+      "KEY"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "config",
+     "key_fields": [
+      "PARAMETER"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "site_area_master",
+     "key_fields": [
+      "AREA_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "work_center_master",
+     "key_fields": [
+      "WORK_CENTER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "workstation_master",
+     "key_fields": [
+      "WORKSTATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "product_master",
+     "key_fields": [
+      "PRODUCT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "routing_operations",
+     "key_fields": [
+      "ROUTE_ID",
+      "ROUTE_VERSION",
+      "PRODUCT_ID",
+      "OPERATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "route_dependencies",
+     "key_fields": [
+      "ROUTE_ID",
+      "ROUTE_VERSION",
+      "PREDECESSOR_OPERATION_ID",
+      "SUCCESSOR_OPERATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "equipment_master",
+     "key_fields": [
+      "EQUIPMENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "equipment_operation_map",
+     "key_fields": [
+      "EQUIPMENT_ID",
+      "OPERATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "shift_calendar",
+     "key_fields": [
+      "SHIFT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "calendar_intervals",
+     "key_fields": [
+      "INTERVAL_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "crew_capacity_rules",
+     "key_fields": [
+      "OPERATION_ID",
+      "PRODUCT_ID",
+      "QUALIFIED_CREW_COUNT"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "worker_master",
+     "key_fields": [
+      "WORKER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "app_users",
+     "key_fields": [
+      "USER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "skill_master",
+     "key_fields": [
+      "SKILL_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "worker_qualifications",
+     "key_fields": [
+      "WORKER_ID",
+      "SKILL_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "operation_skill_requirements",
+     "key_fields": [
+      "OPERATION_ID",
+      "ROLE",
+      "SKILL_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "transfer_rules",
+     "key_fields": [
+      "FROM_WORK_CENTER_ID",
+      "TO_WORK_CENTER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "shift_roster",
+     "key_fields": [
+      "RUN_ID",
+      "ROSTER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "roster_changes",
+     "key_fields": [
+      "RUN_ID",
+      "ROSTER_CHANGE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "production_plan",
+     "key_fields": [
+      "RUN_ID",
+      "PLAN_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ctq_check_master",
+     "key_fields": [
+      "CHECK_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ctq_specifications",
+     "key_fields": [
+      "SPEC_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "material_master",
+     "key_fields": [
+      "MATERIAL_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "material_requirements",
+     "key_fields": [
+      "PRODUCT_ID",
+      "MATERIAL_ID",
+      "CONSUMED_AT_OPERATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "cost_rate_master",
+     "key_fields": [
+      "COST_RATE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "scoring_rules",
+     "key_fields": [
+      "RULE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "scoring_policy",
+     "key_fields": [
+      "POLICY_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "alert_rule_config",
+     "key_fields": [
+      "RULE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "alert_escalation_rules",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "worker_state_model",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "worker_state_transitions",
+     "key_fields": [
+      "FROM_ACTIVITY_STATE",
+      "TO_ACTIVITY_STATE"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "time_bucket_rules",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "run_catalog",
+     "key_fields": [
+      "RUN_ID",
+      "RUN_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "scenario_inheritance",
+     "key_fields": [
+      "RUN_ID",
+      "TABLE_NAME"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "assumptions_register",
+     "key_fields": [
+      "ASSUMPTION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "readiness_dimensions",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "checkpoints",
+     "key_fields": [
+      "RUN_ID",
+      "CHECKPOINT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "operation_instructions",
+     "key_fields": [
+      "INSTRUCTION_VERSION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "instruction_steps",
+     "key_fields": [
+      "STEP_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "milestone_definitions",
+     "key_fields": [
+      "MILESTONE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "dispatch_rules",
+     "key_fields": [
+      "DISPATCH_RULE_ID",
+      "RANK_ORDER"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "disposition_policies",
+     "key_fields": [
+      "POLICY_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "disposition_matrix",
+     "key_fields": [
+      "POLICY_ID",
+      "DETECTION_POINT",
+      "DEFECT_CODE"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "production_orders",
+     "key_fields": [
+      "RUN_ID",
+      "ORDER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "order_lines",
+     "key_fields": [
+      "RUN_ID",
+      "ORDER_LINE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "production_batches",
+     "key_fields": [
+      "RUN_ID",
+      "BATCH_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "batch_unit_membership",
+     "key_fields": [
+      "RUN_ID",
+      "MEMBERSHIP_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "batch_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "unit_master",
+     "key_fields": [
+      "RUN_ID",
+      "UNIT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "operation_instances",
+     "key_fields": [
+      "RUN_ID",
+      "OPERATION_INSTANCE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "task_assignments",
+     "key_fields": [
+      "RUN_ID",
+      "TASK_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "operation_crew",
+     "key_fields": [
+      "RUN_ID",
+      "CREW_INTERVAL_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "labor_segments",
+     "key_fields": [
+      "RUN_ID",
+      "SEGMENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "opening_wip",
+     "key_fields": [
+      "RUN_ID",
+      "UNIT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "attendance_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "attendance_corrections",
+     "key_fields": [
+      "RUN_ID",
+      "CORRECTION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "attendance_intervals",
+     "key_fields": [
+      "RUN_ID",
+      "INTERVAL_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "raw_input_events",
+     "key_fields": [
+      "RUN_ID",
+      "RAW_EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "overtime_approvals",
+     "key_fields": [
+      "RUN_ID",
+      "OVERTIME_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "login_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "app_sessions",
+     "key_fields": [
+      "RUN_ID",
+      "SESSION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "worker_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "task_events",
+     "key_fields": [
+      "RUN_ID",
+      "TASK_EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "support_requests",
+     "key_fields": [
+      "RUN_ID",
+      "SUPPORT_REQUEST_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "production_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "equipment_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "transfer_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "handovers",
+     "key_fields": [
+      "RUN_ID",
+      "HANDOVER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "device_heartbeats",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "material_lots",
+     "key_fields": [
+      "RUN_ID",
+      "MATERIAL_LOT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "material_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "material_requests",
+     "key_fields": [
+      "RUN_ID",
+      "REQUEST_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "material_request_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "inspection_header",
+     "key_fields": [
+      "RUN_ID",
+      "INSPECTION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "inspection_readings",
+     "key_fields": [
+      "RUN_ID",
+      "READING_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "quality_dispositions",
+     "key_fields": [
+      "RUN_ID",
+      "DISPOSITION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "defect_records",
+     "key_fields": [
+      "RUN_ID",
+      "DEFECT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "defect_investigations",
+     "key_fields": [
+      "RUN_ID",
+      "INVESTIGATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "investigation_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "investigation_evidence",
+     "key_fields": [
+      "RUN_ID",
+      "EVIDENCE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "rework_tasks",
+     "key_fields": [
+      "RUN_ID",
+      "REWORK_TASK_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "replacement_requests",
+     "key_fields": [
+      "RUN_ID",
+      "REQUEST_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "action_log",
+     "key_fields": [
+      "RUN_ID",
+      "ACTION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "standard_revisions",
+     "key_fields": [
+      "RUN_ID",
+      "REVISION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "points_ledger",
+     "key_fields": [
+      "RUN_ID",
+      "POINTS_TRANSACTION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "worker_task_plan",
+     "key_fields": [
+      "RUN_ID",
+      "PLAN_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "workstation_queue_entries",
+     "key_fields": [
+      "RUN_ID",
+      "QUEUE_ENTRY_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "operation_milestone_events",
+     "key_fields": [
+      "RUN_ID",
+      "MILESTONE_EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "return_movements",
+     "key_fields": [
+      "RUN_ID",
+      "RETURN_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "hold_cases",
+     "key_fields": [
+      "RUN_ID",
+      "HOLD_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "alert_action_events",
+     "key_fields": [
+      "RUN_ID",
+      "EVENT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "notification_log",
+     "key_fields": [
+      "RUN_ID",
+      "NOTIFICATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_worker_snapshot",
+     "key_fields": [
+      "RUN_ID",
+      "AS_OF_AT",
+      "WORKER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_worker_snapshot_plant",
+     "key_fields": [
+      "RUN_ID",
+      "AS_OF_AT",
+      "WORKER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_work_center_snapshot",
+     "key_fields": [
+      "RUN_ID",
+      "AS_OF_AT",
+      "WORK_CENTER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_workstation_snapshot",
+     "key_fields": [
+      "RUN_ID",
+      "AS_OF_AT",
+      "WORKSTATION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_unit_snapshot",
+     "key_fields": [
+      "RUN_ID",
+      "AS_OF_AT",
+      "UNIT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_batch_snapshot",
+     "key_fields": [
+      "RUN_ID",
+      "AS_OF_AT",
+      "BATCH_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_worker_shift_summary",
+     "key_fields": [
+      "RUN_ID",
+      "WORKER_ID",
+      "SHIFT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_order_forecast",
+     "key_fields": [
+      "FORECAST_RUN_ID",
+      "ORDER_LINE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_forecast_runs",
+     "key_fields": [
+      "RUN_ID",
+      "FORECAST_RUN_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_forecast_accuracy",
+     "key_fields": [
+      "FORECAST_RUN_ID",
+      "ORDER_LINE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_action_comparison",
+     "key_fields": [
+      "OPTION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_operator_metrics",
+     "key_fields": [
+      "WORKER_ID",
+      "PERIOD",
+      "SHIFT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_operator_insights",
+     "key_fields": [
+      "INSIGHT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_daily_wc_summary",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_wo_award_evaluation",
+     "key_fields": [
+      "ORDER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_alerts",
+     "key_fields": [
+      "RUN_ID",
+      "ALERT_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_alert_evidence",
+     "key_fields": [
+      "ALERT_ID",
+      "EVIDENCE_AT",
+      "EVIDENCE_TABLE",
+      "REF_ID",
+      "ROLE"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_alert_state_events",
+     "key_fields": [
+      "ALERT_ID",
+      "EVENT_TIME",
+      "TO_STATE"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_control_day_review",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_scenario_catalog",
+     "key_fields": [
+      "SCENARIO_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_worker_scenarios",
+     "key_fields": [
+      "SCENARIO_ID",
+      "RUN_ID",
+      "WORKER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_expected_results",
+     "key_fields": [
+      "SCENARIO_ID",
+      "RUN_ID",
+      "METRIC"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_walkthrough",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_operator_stories",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_calculation_definitions",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_data_quality_exceptions",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_capacity_envelope",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_ui_data_mapping",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_source_inventory",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_source_to_target_map",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_source_conflicts",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_client_decisions",
+     "key_fields": [
+      "QUESTION_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_checkpoint_worker_state",
+     "key_fields": [
+      "CHECKPOINT_ID",
+      "WORKER_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_checkpoint_queue",
+     "key_fields": [
+      "CHECKPOINT_ID",
+      "WORK_CENTER_ID",
+      "DISPATCH_RANK"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_plan_adherence",
+     "key_fields": [
+      "PLAN_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_rework_loop_summary",
+     "key_fields": [
+      "RUN_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_change_log",
+     "key_fields": [
+      "CHANGE_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_change_log_detail",
+     "key_fields": [
+      "CHANGE_ID",
+      "TABLE_NAME",
+      "RECORD_KEY",
+      "CHANGE_TYPE"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_validation_report",
+     "key_fields": [
+      "TEST_ID"
+     ],
+     "duplicates": 0,
+     "null_keys": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_validation_fk_detail",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_reference_check_summary",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_integrity_before_after",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_validation_before_after",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_run_readiness",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_validation_summary",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_validated_content_hashes",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_worker_scenario_results",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_row_count_comparison",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_seed_reconciliation_totals",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_data_dictionary",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_dataset_inventory",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "BUSINESS_KEY",
+     "collection": "ref_table_map",
+     "key_fields": [
+      "_SOURCE_ROW"
+     ],
+     "duplicates": 0,
+     "result": "NOT_APPLICABLE",
+     "note": "reference/documentation sheet without a natural key: keyed by source row (uniqueness still checked)"
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ORDER_LINES.ORDER_ID -> PRODUCTION_ORDERS.ORDER_ID",
+     "references_checked": 470,
+     "expected_references_per_package": 470,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_BATCHES.ORDER_LINE_ID -> ORDER_LINES.ORDER_LINE_ID",
+     "references_checked": 662,
+     "expected_references_per_package": 662,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_BATCHES.ORDER_ID -> PRODUCTION_ORDERS.ORDER_ID",
+     "references_checked": 662,
+     "expected_references_per_package": 662,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_BATCHES.PARENT_BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 8,
+     "expected_references_per_package": 8,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_BATCHES.PRODUCT_ID -> PRODUCT_MASTER.PRODUCT_ID",
+     "references_checked": 662,
+     "expected_references_per_package": 662,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_PLAN.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 171,
+     "expected_references_per_package": 171,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_PLAN.ORDER_LINE_ID -> ORDER_LINES.ORDER_LINE_ID",
+     "references_checked": 171,
+     "expected_references_per_package": 171,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "BATCH_UNIT_MEMBERSHIP.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 2507,
+     "expected_references_per_package": 2507,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "BATCH_UNIT_MEMBERSHIP.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 2507,
+     "expected_references_per_package": 2507,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "BATCH_EVENTS.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 2270,
+     "expected_references_per_package": 2270,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_MASTER.ORDER_ID -> PRODUCTION_ORDERS.ORDER_ID",
+     "references_checked": 2487,
+     "expected_references_per_package": 2487,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_MASTER.ORDER_LINE_ID -> ORDER_LINES.ORDER_LINE_ID",
+     "references_checked": 2487,
+     "expected_references_per_package": 2487,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_MASTER.INITIAL_BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 2487,
+     "expected_references_per_package": 2487,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_MASTER.PRODUCT_ID -> PRODUCT_MASTER.PRODUCT_ID",
+     "references_checked": 2487,
+     "expected_references_per_package": 2487,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_MASTER.REPLACEMENT_FOR_UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 61,
+     "expected_references_per_package": 61,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_MASTER.MATERIAL_LOT_ID -> MATERIAL_LOTS.MATERIAL_LOT_ID",
+     "references_checked": 2487,
+     "expected_references_per_package": 2487,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_INSTANCES.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 22379,
+     "expected_references_per_package": 22379,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_INSTANCES.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 22379,
+     "expected_references_per_package": 22379,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_INSTANCES.WORKSTATION_ID -> WORKSTATION_MASTER.WORKSTATION_ID",
+     "references_checked": 22379,
+     "expected_references_per_package": 22379,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_INSTANCES.OPERATION_ID -> ROUTING_OPERATIONS.OPERATION_ID",
+     "references_checked": 22379,
+     "expected_references_per_package": 22379,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "TASK_ASSIGNMENTS.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 47077,
+     "expected_references_per_package": 47077,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "TASK_ASSIGNMENTS.ASSIGNED_WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 47081,
+     "expected_references_per_package": 47081,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "TASK_ASSIGNMENTS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 47081,
+     "expected_references_per_package": 47081,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "TASK_ASSIGNMENTS.REASSIGNED_TO_TASK_ID -> TASK_ASSIGNMENTS.TASK_ID",
+     "references_checked": 1,
+     "expected_references_per_package": 1,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "TASK_EVENTS.TASK_ID -> TASK_ASSIGNMENTS.TASK_ID",
+     "references_checked": 206074,
+     "expected_references_per_package": 206074,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_CREW.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 55998,
+     "expected_references_per_package": 55998,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_CREW.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 55998,
+     "expected_references_per_package": 55998,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_CREW.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 55998,
+     "expected_references_per_package": 55998,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "LABOR_SEGMENTS.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 139812,
+     "expected_references_per_package": 139812,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "LABOR_SEGMENTS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 139812,
+     "expected_references_per_package": 139812,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ATTENDANCE_EVENTS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 38888,
+     "expected_references_per_package": 38888,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ATTENDANCE_EVENTS.SHIFT_ID -> SHIFT_CALENDAR.SHIFT_ID",
+     "references_checked": 38888,
+     "expected_references_per_package": 38888,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ATTENDANCE_EVENTS.CORRECTION_ID -> ATTENDANCE_CORRECTIONS.CORRECTION_ID",
+     "references_checked": 1,
+     "expected_references_per_package": 1,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ATTENDANCE_CORRECTIONS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 1,
+     "expected_references_per_package": 1,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ATTENDANCE_INTERVALS.START_EVENT_ID -> ATTENDANCE_EVENTS.EVENT_ID",
+     "references_checked": 19166,
+     "expected_references_per_package": 19166,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ATTENDANCE_INTERVALS.END_EVENT_ID -> ATTENDANCE_EVENTS.EVENT_ID",
+     "references_checked": 19159,
+     "expected_references_per_package": 19159,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RAW_INPUT_EVENTS.CURATED_EVENT_ID -> ATTENDANCE_EVENTS|LOGIN_EVENTS.EVENT_ID",
+     "references_checked": 24971,
+     "expected_references_per_package": 24971,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OVERTIME_APPROVALS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 5,
+     "expected_references_per_package": 5,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "APP_SESSIONS.LOGIN_EVENT_ID -> LOGIN_EVENTS.EVENT_ID",
+     "references_checked": 19171,
+     "expected_references_per_package": 19171,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "APP_SESSIONS.LOGOUT_EVENT_ID -> LOGIN_EVENTS.EVENT_ID",
+     "references_checked": 19170,
+     "expected_references_per_package": 19170,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "LOGIN_EVENTS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 150337,
+     "expected_references_per_package": 150337,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_EVENTS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 256184,
+     "expected_references_per_package": 256184,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_EVENTS.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 75876,
+     "expected_references_per_package": 75876,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_EVENTS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 76474,
+     "expected_references_per_package": 76474,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "SUPPORT_REQUESTS.REQUESTED_BY -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 2,
+     "expected_references_per_package": 2,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_EVENTS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 107659,
+     "expected_references_per_package": 107659,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_EVENTS.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 64318,
+     "expected_references_per_package": 64318,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_EVENTS.ORDER_LINE_ID -> ORDER_LINES.ORDER_LINE_ID",
+     "references_checked": 107659,
+     "expected_references_per_package": 107659,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_EVENTS.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 107659,
+     "expected_references_per_package": 107659,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_EVENTS.INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 19931,
+     "expected_references_per_package": 19931,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PRODUCTION_EVENTS.DEFECT_ID -> DEFECT_RECORDS.DEFECT_ID",
+     "references_checked": 166,
+     "expected_references_per_package": 166,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "EQUIPMENT_EVENTS.EQUIPMENT_ID -> EQUIPMENT_MASTER.EQUIPMENT_ID",
+     "references_checked": 302,
+     "expected_references_per_package": 302,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "TRANSFER_EVENTS.ACTION_ID -> ACTION_LOG.ACTION_ID",
+     "references_checked": 7624,
+     "expected_references_per_package": 7624,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "TRANSFER_EVENTS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 7624,
+     "expected_references_per_package": 7624,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "HANDOVERS.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 2184,
+     "expected_references_per_package": 2184,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "HANDOVERS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 2184,
+     "expected_references_per_package": 2184,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "MATERIAL_EVENTS.MATERIAL_LOT_ID -> MATERIAL_LOTS.MATERIAL_LOT_ID",
+     "references_checked": 12856,
+     "expected_references_per_package": 12856,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "MATERIAL_EVENTS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 12238,
+     "expected_references_per_package": 12238,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "MATERIAL_EVENTS.MATERIAL_ID -> MATERIAL_MASTER.MATERIAL_ID",
+     "references_checked": 12856,
+     "expected_references_per_package": 12856,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "MATERIAL_REQUEST_EVENTS.REQUEST_ID -> MATERIAL_REQUESTS.REQUEST_ID",
+     "references_checked": 1220,
+     "expected_references_per_package": 1220,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_HEADER.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 9939,
+     "expected_references_per_package": 9939,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_HEADER.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 9939,
+     "expected_references_per_package": 9939,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_HEADER.INSPECTOR_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 9939,
+     "expected_references_per_package": 9939,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_READINGS.INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 102288,
+     "expected_references_per_package": 102288,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_READINGS.CHECK_ID -> CTQ_CHECK_MASTER.CHECK_ID",
+     "references_checked": 102288,
+     "expected_references_per_package": 102288,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_READINGS.SPEC_ID -> CTQ_SPECIFICATIONS.SPEC_ID",
+     "references_checked": 102288,
+     "expected_references_per_package": 102288,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_READINGS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 102288,
+     "expected_references_per_package": 102288,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "QUALITY_DISPOSITIONS.INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 9939,
+     "expected_references_per_package": 9939,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "QUALITY_DISPOSITIONS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 10210,
+     "expected_references_per_package": 10210,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "DEFECT_RECORDS.INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 198,
+     "expected_references_per_package": 198,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "DEFECT_RECORDS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 651,
+     "expected_references_per_package": 651,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "DEFECT_RECORDS.ORIGIN_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 651,
+     "expected_references_per_package": 651,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "DEFECT_INVESTIGATIONS.DEFECT_ID -> DEFECT_RECORDS.DEFECT_ID",
+     "references_checked": 324,
+     "expected_references_per_package": 324,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "DEFECT_INVESTIGATIONS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 324,
+     "expected_references_per_package": 324,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INVESTIGATION_EVENTS.INVESTIGATION_ID -> DEFECT_INVESTIGATIONS.INVESTIGATION_ID",
+     "references_checked": 1180,
+     "expected_references_per_package": 1180,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INVESTIGATION_EVIDENCE.INVESTIGATION_ID -> DEFECT_INVESTIGATIONS.INVESTIGATION_ID",
+     "references_checked": 2791,
+     "expected_references_per_package": 2791,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REWORK_TASKS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 548,
+     "expected_references_per_package": 548,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REWORK_TASKS.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 548,
+     "expected_references_per_package": 548,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REPLACEMENT_REQUESTS.SCRAPPED_UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 62,
+     "expected_references_per_package": 62,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REPLACEMENT_REQUESTS.NEW_UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 61,
+     "expected_references_per_package": 61,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REPLACEMENT_REQUESTS.ORDER_LINE_ID -> ORDER_LINES.ORDER_LINE_ID",
+     "references_checked": 62,
+     "expected_references_per_package": 62,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REPLACEMENT_REQUESTS.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 62,
+     "expected_references_per_package": 62,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ACTION_LOG.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 1706,
+     "expected_references_per_package": 1706,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ACTION_LOG.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 67,
+     "expected_references_per_package": 67,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "POINTS_LEDGER.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 10689,
+     "expected_references_per_package": 10689,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "POINTS_LEDGER.ORDER_ID -> PRODUCTION_ORDERS.ORDER_ID",
+     "references_checked": 10710,
+     "expected_references_per_package": 10710,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "POINTS_LEDGER.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 10101,
+     "expected_references_per_package": 10101,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "POINTS_LEDGER.DEFECT_ID -> DEFECT_RECORDS.DEFECT_ID",
+     "references_checked": 65,
+     "expected_references_per_package": 65,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "POINTS_LEDGER.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 10101,
+     "expected_references_per_package": 10101,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "POINTS_LEDGER.REVERSAL_OF_ID -> POINTS_LEDGER.POINTS_TRANSACTION_ID",
+     "references_checked": 191,
+     "expected_references_per_package": 191,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "SHIFT_ROSTER.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 20776,
+     "expected_references_per_package": 20776,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "SHIFT_ROSTER.SHIFT_ID -> SHIFT_CALENDAR.SHIFT_ID",
+     "references_checked": 20776,
+     "expected_references_per_package": 20776,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPENING_WIP.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 35,
+     "expected_references_per_package": 35,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPENING_WIP.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 22,
+     "expected_references_per_package": 22,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "GT_NONCONFORMANCES.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "result": "NOT_APPLICABLE",
+     "note": "hidden ground-truth table, excluded from the seed by design (export_seed_bundle.py --include-ground-truth for tests)"
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SNAPSHOT.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 20678,
+     "expected_references_per_package": 20678,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SNAPSHOT.CURRENT_UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 9953,
+     "expected_references_per_package": 9953,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SNAPSHOT.CURRENT_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 9953,
+     "expected_references_per_package": 9953,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SNAPSHOT_PLANT.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 41356,
+     "expected_references_per_package": 41356,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SNAPSHOT_PLANT.CURRENT_UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 10003,
+     "expected_references_per_package": 10003,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SNAPSHOT_PLANT.CURRENT_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 10003,
+     "expected_references_per_package": 10003,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SHIFT_SUMMARY.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 7252,
+     "expected_references_per_package": 7252,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_SHIFT_SUMMARY.SHIFT_ID -> SHIFT_CALENDAR.SHIFT_ID",
+     "references_checked": 7252,
+     "expected_references_per_package": 7252,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_SNAPSHOT.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 28390,
+     "expected_references_per_package": 28390,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_SNAPSHOT.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 28390,
+     "expected_references_per_package": 28390,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_SNAPSHOT.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 15693,
+     "expected_references_per_package": 15693,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "BATCH_SNAPSHOT.BATCH_ID -> PRODUCTION_BATCHES.BATCH_ID",
+     "references_checked": 7736,
+     "expected_references_per_package": 7736,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKSTATION_SNAPSHOT.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 13794,
+     "expected_references_per_package": 13794,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKSTATION_SNAPSHOT.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 13610,
+     "expected_references_per_package": 13610,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORK_CENTER_SNAPSHOT.FORECAST_RUN_ID -> FORECAST_RUNS.FORECAST_RUN_ID",
+     "references_checked": 844,
+     "expected_references_per_package": 844,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "UNIT_SNAPSHOT.FORECAST_RUN_ID -> FORECAST_RUNS.FORECAST_RUN_ID",
+     "references_checked": 7136,
+     "expected_references_per_package": 7136,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "BATCH_SNAPSHOT.FORECAST_RUN_ID -> FORECAST_RUNS.FORECAST_RUN_ID",
+     "references_checked": 1934,
+     "expected_references_per_package": 1934,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ORDER_FORECAST.FORECAST_RUN_ID -> FORECAST_RUNS.FORECAST_RUN_ID",
+     "references_checked": 1863,
+     "expected_references_per_package": 1863,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ORDER_FORECAST.ORDER_LINE_ID -> ORDER_LINES.ORDER_LINE_ID",
+     "references_checked": 1863,
+     "expected_references_per_package": 1863,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ACTION_COMPARISON.PROPOSED_FORECAST_RUN_ID -> FORECAST_RUNS.FORECAST_RUN_ID",
+     "references_checked": 5,
+     "expected_references_per_package": 5,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATOR_METRICS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 4312,
+     "expected_references_per_package": 4312,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ALERT_EVIDENCE.ALERT_ID -> ALERTS.ALERT_ID",
+     "references_checked": 979,
+     "expected_references_per_package": 979,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ALERT_STATE_EVENTS.ALERT_ID -> ALERTS.ALERT_ID",
+     "references_checked": 318,
+     "expected_references_per_package": 318,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ALERT_ACTION_EVENTS.ALERT_ID -> ALERTS.ALERT_ID",
+     "references_checked": 200,
+     "expected_references_per_package": 200,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "NOTIFICATION_LOG.ALERT_ID -> ALERTS.ALERT_ID",
+     "references_checked": 89,
+     "expected_references_per_package": 89,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_QUALIFICATIONS.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 367,
+     "expected_references_per_package": 367,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_QUALIFICATIONS.SKILL_ID -> SKILL_MASTER.SKILL_ID",
+     "references_checked": 367,
+     "expected_references_per_package": 367,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CTQ_SPECIFICATIONS.CHECK_ID -> CTQ_CHECK_MASTER.CHECK_ID",
+     "references_checked": 86,
+     "expected_references_per_package": 86,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.TASK_ID -> TASK_ASSIGNMENTS.TASK_ID",
+     "references_checked": 47081,
+     "expected_references_per_package": 47081,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 47098,
+     "expected_references_per_package": 47098,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 47104,
+     "expected_references_per_package": 47104,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 47077,
+     "expected_references_per_package": 47077,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.WORKSTATION_ID -> WORKSTATION_MASTER.WORKSTATION_ID",
+     "references_checked": 47100,
+     "expected_references_per_package": 47100,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.SHIFT_ID -> SHIFT_CALENDAR.SHIFT_ID",
+     "references_checked": 47098,
+     "expected_references_per_package": 47098,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.INSTRUCTION_VERSION_ID -> OPERATION_INSTRUCTIONS.INSTRUCTION_VERSION_ID",
+     "references_checked": 47100,
+     "expected_references_per_package": 47100,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.DEPENDS_ON_EVENT_ID -> PRODUCTION_EVENTS.EVENT_ID",
+     "references_checked": 45692,
+     "expected_references_per_package": 45692,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKER_TASK_PLAN.CHECKPOINT_ID -> CHECKPOINTS.CHECKPOINT_ID",
+     "references_checked": 23,
+     "expected_references_per_package": 23,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKSTATION_QUEUE_ENTRIES.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 10055,
+     "expected_references_per_package": 10055,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKSTATION_QUEUE_ENTRIES.ENTRY_EVENT_ID -> PRODUCTION_EVENTS.EVENT_ID",
+     "references_checked": 10055,
+     "expected_references_per_package": 10055,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKSTATION_QUEUE_ENTRIES.EXIT_EVENT_ID -> PRODUCTION_EVENTS.EVENT_ID",
+     "references_checked": 10030,
+     "expected_references_per_package": 10030,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "WORKSTATION_QUEUE_ENTRIES.DISPATCHED_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 10030,
+     "expected_references_per_package": 10030,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_MILESTONE_EVENTS.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 41560,
+     "expected_references_per_package": 41560,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_MILESTONE_EVENTS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 41560,
+     "expected_references_per_package": 41560,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_MILESTONE_EVENTS.MILESTONE_ID -> MILESTONE_DEFINITIONS.MILESTONE_ID",
+     "references_checked": 41560,
+     "expected_references_per_package": 41560,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.REWORK_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.CORRECTED_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.DISPOSITION_ID -> QUALITY_DISPOSITIONS.DISPOSITION_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.DETECTION_INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 99,
+     "expected_references_per_package": 99,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.REINSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.AUTHORIZED_DESTINATION_WORKSTATION_ID -> WORKSTATION_MASTER.WORKSTATION_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RETURN_MOVEMENTS.AUTHORIZED_BY -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "HOLD_CASES.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 400,
+     "expected_references_per_package": 400,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "HOLD_CASES.HOLD_EVENT_ID -> PRODUCTION_EVENTS.EVENT_ID",
+     "references_checked": 400,
+     "expected_references_per_package": 400,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "HOLD_CASES.INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 234,
+     "expected_references_per_package": 234,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "HOLD_CASES.DECISION_DISPOSITION_ID -> QUALITY_DISPOSITIONS.DISPOSITION_ID",
+     "references_checked": 400,
+     "expected_references_per_package": 400,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "HOLD_CASES.RETURN_ID -> RETURN_MOVEMENTS.RETURN_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REWORK_TASKS.DISPOSITION_ID -> QUALITY_DISPOSITIONS.DISPOSITION_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REWORK_TASKS.RETURN_ID -> RETURN_MOVEMENTS.RETURN_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REWORK_TASKS.REINSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "REWORK_TASKS.REWORK_OF_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_INSTANCES.REWORK_OF_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 261,
+     "expected_references_per_package": 261,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_INSTANCES.PRIOR_ATTEMPT_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 458,
+     "expected_references_per_package": 458,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "OPERATION_INSTANCES.INSTRUCTION_VERSION_ID -> OPERATION_INSTRUCTIONS.INSTRUCTION_VERSION_ID",
+     "references_checked": 10033,
+     "expected_references_per_package": 10033,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_HEADER.REINSPECTION_OF_INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 391,
+     "expected_references_per_package": 391,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSPECTION_HEADER.INSPECTED_OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 9939,
+     "expected_references_per_package": 9939,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSTRUCTION_STEPS.INSTRUCTION_VERSION_ID -> OPERATION_INSTRUCTIONS.INSTRUCTION_VERSION_ID",
+     "references_checked": 41,
+     "expected_references_per_package": 41,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "INSTRUCTION_STEPS.CLOSES_MILESTONE_ID -> MILESTONE_DEFINITIONS.MILESTONE_ID",
+     "references_checked": 31,
+     "expected_references_per_package": 31,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CHECKPOINT_WORKER_STATE.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 196,
+     "expected_references_per_package": 196,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CHECKPOINT_WORKER_STATE.CURRENT_TASK_ID -> TASK_ASSIGNMENTS.TASK_ID",
+     "references_checked": 158,
+     "expected_references_per_package": 158,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CHECKPOINT_WORKER_STATE.OPERATION_INSTANCE_ID -> OPERATION_INSTANCES.OPERATION_INSTANCE_ID",
+     "references_checked": 158,
+     "expected_references_per_package": 158,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CHECKPOINT_WORKER_STATE.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 159,
+     "expected_references_per_package": 159,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CHECKPOINT_WORKER_STATE.DRAFT_INSPECTION_ID -> INSPECTION_HEADER.INSPECTION_ID",
+     "references_checked": 1,
+     "expected_references_per_package": 1,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CHECKPOINT_QUEUE.UNIT_ID -> UNIT_MASTER.UNIT_ID",
+     "references_checked": 10,
+     "expected_references_per_package": 10,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "CHECKPOINT_QUEUE.QUEUE_ENTRY_ID -> WORKSTATION_QUEUE_ENTRIES.QUEUE_ENTRY_ID",
+     "references_checked": 10,
+     "expected_references_per_package": 10,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "PLAN_ADHERENCE.PLAN_ID -> WORKER_TASK_PLAN.PLAN_ID",
+     "references_checked": 23,
+     "expected_references_per_package": 23,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "RUN_CATALOG.DISPOSITION_POLICY_ID -> DISPOSITION_POLICIES.POLICY_ID",
+     "references_checked": 14,
+     "expected_references_per_package": 14,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "DISPOSITION_MATRIX.POLICY_ID -> DISPOSITION_POLICIES.POLICY_ID",
+     "references_checked": 30,
+     "expected_references_per_package": 30,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "FOREIGN_KEY",
+     "relationship": "ROSTER_CHANGES.WORKER_ID -> WORKER_MASTER.WORKER_ID",
+     "references_checked": 2,
+     "expected_references_per_package": 2,
+     "references_match_package": true,
+     "missing": 0,
+     "result": "PASS",
+     "examples": []
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "dataset_version",
+     "count": 11,
+     "package_count": 11,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "config",
+     "count": 22,
+     "package_count": 22,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "site_area_master",
+     "count": 6,
+     "package_count": 6,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "work_center_master",
+     "count": 8,
+     "package_count": 8,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "workstation_master",
+     "count": 26,
+     "package_count": 26,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "product_master",
+     "count": 5,
+     "package_count": 5,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "routing_operations",
+     "count": 27,
+     "package_count": 27,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "route_dependencies",
+     "count": 9,
+     "package_count": 9,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "equipment_master",
+     "count": 25,
+     "package_count": 25,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "equipment_operation_map",
+     "count": 43,
+     "package_count": 43,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "shift_calendar",
+     "count": 48,
+     "package_count": 48,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "calendar_intervals",
+     "count": 240,
+     "package_count": 240,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "crew_capacity_rules",
+     "count": 36,
+     "package_count": 36,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "worker_master",
+     "count": 196,
+     "package_count": 196,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "app_users",
+     "count": 196,
+     "package_count": 196,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "skill_master",
+     "count": 10,
+     "package_count": 10,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "worker_qualifications",
+     "count": 367,
+     "package_count": 367,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "operation_skill_requirements",
+     "count": 9,
+     "package_count": 9,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "transfer_rules",
+     "count": 12,
+     "package_count": 12,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "shift_roster",
+     "count": 6958,
+     "package_count": 6958,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "roster_changes",
+     "count": 2,
+     "package_count": 2,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "production_plan",
+     "count": 171,
+     "package_count": 171,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ctq_check_master",
+     "count": 24,
+     "package_count": 24,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ctq_specifications",
+     "count": 86,
+     "package_count": 86,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "material_master",
+     "count": 6,
+     "package_count": 6,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "material_requirements",
+     "count": 12,
+     "package_count": 12,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "cost_rate_master",
+     "count": 11,
+     "package_count": 11,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "scoring_rules",
+     "count": 4,
+     "package_count": 4,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "scoring_policy",
+     "count": 19,
+     "package_count": 19,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "alert_rule_config",
+     "count": 11,
+     "package_count": 11,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "alert_escalation_rules",
+     "count": 22,
+     "package_count": 22,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "worker_state_model",
+     "count": 19,
+     "package_count": 19,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "worker_state_transitions",
+     "count": 56,
+     "package_count": 56,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "time_bucket_rules",
+     "count": 17,
+     "package_count": 17,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "run_catalog",
+     "count": 14,
+     "package_count": 14,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "scenario_inheritance",
+     "count": 129,
+     "package_count": 129,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "assumptions_register",
+     "count": 61,
+     "package_count": 61,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "readiness_dimensions",
+     "count": 3,
+     "package_count": 3,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "checkpoints",
+     "count": 1,
+     "package_count": 1,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "operation_instructions",
+     "count": 9,
+     "package_count": 9,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "instruction_steps",
+     "count": 41,
+     "package_count": 41,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "milestone_definitions",
+     "count": 29,
+     "package_count": 29,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "dispatch_rules",
+     "count": 5,
+     "package_count": 5,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "disposition_policies",
+     "count": 2,
+     "package_count": 2,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "disposition_matrix",
+     "count": 30,
+     "package_count": 30,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "production_orders",
+     "count": 91,
+     "package_count": 91,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "order_lines",
+     "count": 128,
+     "package_count": 128,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "production_batches",
+     "count": 173,
+     "package_count": 173,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "batch_unit_membership",
+     "count": 710,
+     "package_count": 710,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "batch_events",
+     "count": 662,
+     "package_count": 662,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "unit_master",
+     "count": 705,
+     "package_count": 705,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "operation_instances",
+     "count": 6322,
+     "package_count": 6322,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "task_assignments",
+     "count": 13271,
+     "package_count": 13271,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "operation_crew",
+     "count": 15701,
+     "package_count": 15701,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "labor_segments",
+     "count": 38798,
+     "package_count": 38798,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "opening_wip",
+     "count": 35,
+     "package_count": 35,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "attendance_events",
+     "count": 13433,
+     "package_count": 13433,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "attendance_corrections",
+     "count": 1,
+     "package_count": 1,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "attendance_intervals",
+     "count": 6764,
+     "package_count": 6764,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "raw_input_events",
+     "count": 24973,
+     "package_count": 24973,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "overtime_approvals",
+     "count": 2,
+     "package_count": 2,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "login_events",
+     "count": 44761,
+     "package_count": 44761,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "app_sessions",
+     "count": 6766,
+     "package_count": 6766,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "worker_events",
+     "count": 76799,
+     "package_count": 76799,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "task_events",
+     "count": 57793,
+     "package_count": 57793,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "support_requests",
+     "count": 2,
+     "package_count": 2,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "production_events",
+     "count": 30427,
+     "package_count": 30427,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "equipment_events",
+     "count": 104,
+     "package_count": 104,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "transfer_events",
+     "count": 2095,
+     "package_count": 2095,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "handovers",
+     "count": 585,
+     "package_count": 585,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "device_heartbeats",
+     "count": 18651,
+     "package_count": 18651,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "material_lots",
+     "count": 191,
+     "package_count": 191,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "material_events",
+     "count": 3661,
+     "package_count": 3661,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "material_requests",
+     "count": 127,
+     "package_count": 127,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "material_request_events",
+     "count": 329,
+     "package_count": 329,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "inspection_header",
+     "count": 2805,
+     "package_count": 2805,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "inspection_readings",
+     "count": 28971,
+     "package_count": 28971,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "quality_dispositions",
+     "count": 2893,
+     "package_count": 2893,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "defect_records",
+     "count": 189,
+     "package_count": 189,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "defect_investigations",
+     "count": 102,
+     "package_count": 102,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "investigation_events",
+     "count": 361,
+     "package_count": 361,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "investigation_evidence",
+     "count": 883,
+     "package_count": 883,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "rework_tasks",
+     "count": 158,
+     "package_count": 158,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "replacement_requests",
+     "count": 23,
+     "package_count": 23,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "action_log",
+     "count": 501,
+     "package_count": 501,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "standard_revisions",
+     "count": 1,
+     "package_count": 1,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "points_ledger",
+     "count": 10710,
+     "package_count": 10710,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "worker_task_plan",
+     "count": 13185,
+     "package_count": 13185,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "workstation_queue_entries",
+     "count": 2852,
+     "package_count": 2852,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "operation_milestone_events",
+     "count": 11754,
+     "package_count": 11754,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "return_movements",
+     "count": 81,
+     "package_count": 81,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "hold_cases",
+     "count": 124,
+     "package_count": 124,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "alert_action_events",
+     "count": 200,
+     "package_count": 200,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "notification_log",
+     "count": 89,
+     "package_count": 89,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_worker_snapshot",
+     "count": 20678,
+     "package_count": 20678,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_worker_snapshot_plant",
+     "count": 41356,
+     "package_count": 41356,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_work_center_snapshot",
+     "count": 3376,
+     "package_count": 3376,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_workstation_snapshot",
+     "count": 21100,
+     "package_count": 21100,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_unit_snapshot",
+     "count": 28390,
+     "package_count": 28390,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_batch_snapshot",
+     "count": 7736,
+     "package_count": 7736,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_worker_shift_summary",
+     "count": 7252,
+     "package_count": 7252,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_order_forecast",
+     "count": 1863,
+     "package_count": 1863,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_forecast_runs",
+     "count": 143,
+     "package_count": 143,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_forecast_accuracy",
+     "count": 61,
+     "package_count": 61,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_action_comparison",
+     "count": 7,
+     "package_count": 7,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_operator_metrics",
+     "count": 4312,
+     "package_count": 4312,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_operator_insights",
+     "count": 393,
+     "package_count": 393,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_daily_wc_summary",
+     "count": 96,
+     "package_count": 96,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_wo_award_evaluation",
+     "count": 72,
+     "package_count": 72,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_alerts",
+     "count": 76,
+     "package_count": 76,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_alert_evidence",
+     "count": 979,
+     "package_count": 979,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_alert_state_events",
+     "count": 318,
+     "package_count": 318,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_control_day_review",
+     "count": 14,
+     "package_count": 14,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_scenario_catalog",
+     "count": 52,
+     "package_count": 52,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_worker_scenarios",
+     "count": 58,
+     "package_count": 58,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_expected_results",
+     "count": 111,
+     "package_count": 111,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_walkthrough",
+     "count": 12,
+     "package_count": 12,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_operator_stories",
+     "count": 8,
+     "package_count": 8,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_calculation_definitions",
+     "count": 14,
+     "package_count": 14,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_data_quality_exceptions",
+     "count": 258,
+     "package_count": 258,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_capacity_envelope",
+     "count": 5,
+     "package_count": 5,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_ui_data_mapping",
+     "count": 32,
+     "package_count": 32,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_source_inventory",
+     "count": 100,
+     "package_count": 100,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_source_to_target_map",
+     "count": 24,
+     "package_count": 24,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_source_conflicts",
+     "count": 15,
+     "package_count": 15,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_client_decisions",
+     "count": 29,
+     "package_count": 29,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_checkpoint_worker_state",
+     "count": 196,
+     "package_count": 196,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_checkpoint_queue",
+     "count": 10,
+     "package_count": 10,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_plan_adherence",
+     "count": 23,
+     "package_count": 23,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_rework_loop_summary",
+     "count": 10,
+     "package_count": 10,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_change_log",
+     "count": 30,
+     "package_count": 30,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_change_log_detail",
+     "count": 156,
+     "package_count": 156,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_validation_report",
+     "count": 458,
+     "package_count": 458,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_validation_fk_detail",
+     "count": 1604,
+     "package_count": 1604,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_reference_check_summary",
+     "count": 174,
+     "package_count": 174,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_integrity_before_after",
+     "count": 15,
+     "package_count": 15,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_validation_before_after",
+     "count": 458,
+     "package_count": 458,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_run_readiness",
+     "count": 14,
+     "package_count": 14,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_validation_summary",
+     "count": 26,
+     "package_count": 26,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_validated_content_hashes",
+     "count": 133,
+     "package_count": 133,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_worker_scenario_results",
+     "count": 58,
+     "package_count": 58,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_row_count_comparison",
+     "count": 666,
+     "package_count": 666,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_seed_reconciliation_totals",
+     "count": 1402,
+     "package_count": 1402,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_data_dictionary",
+     "count": 2130,
+     "package_count": 2130,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_dataset_inventory",
+     "count": 149,
+     "package_count": 149,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_MANIFEST",
+     "collection": "ref_table_map",
+     "count": 149,
+     "package_count": 149,
+     "content_hash_equal": true,
+     "result": "PASS"
+    },
+    {
+     "check": "PACKAGE_TOTALS",
+     "result": "PASS"
+    }
+   ]
+  },
+  "4_bundle": {
+   "path": "C:\\Users\\Abubakkar Siddiq\\Downloads\\GiNi_Manufacturing_App_Fixed\\GiNi_Manufacturing_App_Fixed\\backend\\data\\seed_bundle",
+   "manifest_sha256": "065e1f4527d0f375a98a50c61790c8f952c407d4e92efa8a5f6f911fd890da4b"
+  }
+ },
+ "dataset": {
+  "dataset_id": "GINI-SYN-TANKS",
+  "dataset_version": "GINI-SYN-2026-10-17-v3.0-FINAL",
+  "collections": 146,
+  "documents": 595781,
+  "manifest_sha256": "065e1f4527d0f375a98a50c61790c8f952c407d4e92efa8a5f6f911fd890da4b",
+  "source_workbooks": {
+   "Siemens_Manufacturing_Master_Final.xlsx": "c71e216ad85e3988dc164a1d551bace26fe9ccc26b021197ccfba4282d5c6684",
+   "Siemens_Manufacturing_Events_Final.xlsx": "a38fc87f22dba288376cd64a954177310c6125a86a125a738717a329af1ce23e",
+   "Siemens_Manufacturing_Analytics_Final.xlsx": "b1933a651d0449097e0fa5b3a3b7a42b6cad9024a4f4657bb2903c651ffe01b8"
+  }
+ },
+ "finished_at": "2026-10-19 05:15:53",
+ "seconds": 175.6,
+ "result": "PASS"
+}

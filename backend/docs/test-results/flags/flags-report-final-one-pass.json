@@ -1,0 +1,146 @@
+[
+  {
+    "ruleId": "F6",
+    "entity": "MR-8CAC8F-00001",
+    "sessionId": "S-8CAC8F",
+    "alertId": "AL-F6-MR-8CAC8F-00001",
+    "episodeId": "AL-F6-MR-8CAC8F-00001-E202610151607",
+    "firingAt": "2026-10-15T16:07:10.070Z",
+    "resolvedAt": "2026-10-15T16:08:55.200Z",
+    "uiScreenshot": "F6-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<30864307b4b8ece4d71826d57884b9cff2a13df2@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<ad34364b7e9e127632564c4ea1330b56fdea94d5@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 20
+  },
+  {
+    "ruleId": "F5",
+    "entity": "WC1",
+    "sessionId": "S-A29172",
+    "alertId": "AL-F5-WC1",
+    "episodeId": "AL-F5-WC1-E202610151555",
+    "firingAt": "2026-10-15T15:55:00.000Z",
+    "resolvedAt": "2026-10-15T15:55:00.000Z",
+    "uiScreenshot": "F5-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<7869e217c56d3666b2706c1f909fc32af82fb311@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<e33848ae6243cac57e584ff018042c2850796b90@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 9
+  },
+  {
+    "ruleId": "F2",
+    "entity": "AREAS",
+    "sessionId": "S-84418E",
+    "alertId": "AL-F2-AREAS",
+    "episodeId": "AL-F2-AREAS-E202610151555",
+    "firingAt": "2026-10-15T15:55:00.000Z",
+    "resolvedAt": "2026-10-15T16:25:08.880Z",
+    "uiScreenshot": "F2-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<c061991aed30506664fcf7519537a7a2e87ce76c@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<ac192fe7bc4bea66eb27c1415d1e3a1473ccb074@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 39
+  },
+  {
+    "ruleId": "F3",
+    "entity": "PLANT",
+    "sessionId": "S-A08318",
+    "alertId": "AL-F3-PLANT",
+    "episodeId": "AL-F3-PLANT-E202610151811",
+    "firingAt": "2026-10-15T18:11:55.080Z",
+    "resolvedAt": "2026-10-15T18:11:55.080Z",
+    "uiScreenshot": "F3-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "PENDING",
+        "messageId": null
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<0fc2af1b106470b1e2cab81f6462939846122ece@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 15
+  },
+  {
+    "ruleId": "F1",
+    "entity": "OPI-B-0005375",
+    "sessionId": "S-604FF4",
+    "alertId": "AL-F1-OPI-B-0005375",
+    "episodeId": "AL-F1-OPI-B-0005375-E202610151658",
+    "firingAt": "2026-10-15T17:01:47.447Z",
+    "resolvedAt": "2026-10-15T17:04:44.100Z",
+    "uiScreenshot": "F1-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<f78052182bba4a18268af9bd1b2f23c40bde1e57@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<47d346f1c8f4536e5cf4d2eed78c056863fe0f38@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 85
+  },
+  {
+    "ruleId": "F4",
+    "entity": "WS-WC2-06",
+    "sessionId": "S-604FF4",
+    "alertId": "AL-F4-WS-WC2-06",
+    "episodeId": "AL-F4-WS-WC2-06-E202610151655",
+    "firingAt": "2026-10-15T16:58:47.434Z",
+    "resolvedAt": "2026-10-15T17:04:45.540Z",
+    "uiScreenshot": "F4-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<534694c7f84e0550f7bb945bd1ad481f0c88bc04@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<3172eb3f3eba5c77a4151cb7901d66775b1e2b8c@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 8
+  }
+]

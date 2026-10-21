@@ -1,0 +1,122 @@
+[
+  {
+    "ruleId": "F6",
+    "entity": "MR-259466-00001",
+    "sessionId": "S-259466",
+    "alertId": "AL-F6-MR-259466-00001",
+    "episodeId": "AL-F6-MR-259466-00001-E202610151607",
+    "firingAt": "2026-10-15T16:07:19.209Z",
+    "resolvedAt": "2026-10-15T16:09:13.500Z",
+    "uiScreenshot": "F6-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<783c904cda03178640d340af80668cc05cf89348@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<ffa08693557b9490bca887ddcace9086a50edbb2@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 20
+  },
+  {
+    "ruleId": "F5",
+    "entity": "WC1",
+    "sessionId": "S-7B3EE5",
+    "alertId": "AL-F5-WC1",
+    "episodeId": "AL-F5-WC1-E202610151555",
+    "firingAt": "2026-10-15T15:55:00.000Z",
+    "resolvedAt": "2026-10-15T15:55:00.000Z",
+    "uiScreenshot": "F5-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<04c1a0df35cd6e394a30cff1e73a2714602719e3@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<eeeeed4a1514bdca02ad8a66f0f2ad25c6a1cd64@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 9
+  },
+  {
+    "ruleId": "F3",
+    "entity": "PLANT",
+    "sessionId": "S-6F393E",
+    "alertId": "AL-F3-PLANT",
+    "episodeId": "AL-F3-PLANT-E202610151812",
+    "firingAt": "2026-10-15T18:12:07.560Z",
+    "resolvedAt": "2026-10-15T18:12:07.560Z",
+    "uiScreenshot": "F3-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "PENDING",
+        "messageId": null
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<d77827b2f57d861b2f98e6a0abfd16d541f0d589@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 17
+  },
+  {
+    "ruleId": "F1",
+    "entity": "OPI-B-0005375",
+    "sessionId": "S-371217",
+    "alertId": "AL-F1-OPI-B-0005375",
+    "episodeId": "AL-F1-OPI-B-0005375-E202610151657",
+    "firingAt": "2026-10-15T17:00:52.800Z",
+    "resolvedAt": "2026-10-15T17:02:44.460Z",
+    "uiScreenshot": "F1-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<deecef67bf360419af758df5a1c6738777730fc1@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<0e52f2dad84cc23680fe07ca842d847723eb7bf1@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 83
+  },
+  {
+    "ruleId": "F4",
+    "entity": "WS-WC2-06",
+    "sessionId": "S-371217",
+    "alertId": "AL-F4-WS-WC2-06",
+    "episodeId": "AL-F4-WS-WC2-06-E202610151654",
+    "firingAt": "2026-10-15T16:57:53.300Z",
+    "resolvedAt": "2026-10-15T17:02:46.860Z",
+    "uiScreenshot": "F4-firing.png",
+    "uiShown": true,
+    "notifications": [
+      {
+        "transition": "RESOLVED",
+        "status": "CAPTURED",
+        "messageId": "<a3a8d88adacada2272a8fdeafed431ccdc004d6e@gini-demo.local>"
+      },
+      {
+        "transition": "FIRING",
+        "status": "CAPTURED",
+        "messageId": "<b80e17158b732529e8f6837944f6edfe613a6887@gini-demo.local>"
+      }
+    ],
+    "wallSeconds": 11
+  }
+]

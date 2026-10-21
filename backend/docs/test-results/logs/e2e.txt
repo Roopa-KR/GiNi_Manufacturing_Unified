@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: operator: keypad login shows the running task; pause, reload and resume never restart work
+ok 1 - operator: keypad login shows the running task; pause, reload and resume never restart work
+  ---
+  duration_ms: 8219.300864
+  type: 'test'
+  ...
+# Subtest: inspector: photo evidence uploads, is verified and is kept with the submitted inspection
+ok 2 - inspector: photo evidence uploads, is verified and is kept with the submitted inspection
+  ---
+  duration_ms: 5317.01149
+  type: 'test'
+  ...
+# Subtest: admin: creates a worker in the UI; the new person signs in to the operator app with zero prior activity
+ok 3 - admin: creates a worker in the UI; the new person signs in to the operator app with zero prior activity
+  ---
+  duration_ms: 9537.204046
+  type: 'test'
+  ...
+# Subtest: admin: a scenario-console breakdown appears as an M11 alert in the supervisor UI
+ok 4 - admin: a scenario-console breakdown appears as an M11 alert in the supervisor UI
+  ---
+  duration_ms: 12022.049331
+  type: 'test'
+  ...
+# Subtest: tank passport: tank links open the right passport in both apps and survive a reload; operators get the role-limited view
+ok 5 - tank passport: tank links open the right passport in both apps and survive a reload; operators get the role-limited view
+  ---
+  duration_ms: 9275.51012
+  type: 'test'
+  ...
+# Subtest: browser closed: the simulation keeps running without any browser; a new browser sees the continued state, no restart
+ok 6 - browser closed: the simulation keeps running without any browser; a new browser sees the continued state, no restart
+  ---
+  duration_ms: 31492.71173
+  type: 'test'
+  ...
+# Subtest: deadline crossing at x1: evaluated at cutoff + 1 s without an event and visible in the supervisor UI within 15 s
+ok 7 - deadline crossing at x1: evaluated at cutoff + 1 s without an event and visible in the supervisor UI within 15 s
+  ---
+  duration_ms: 89592.682563
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 165974.725092

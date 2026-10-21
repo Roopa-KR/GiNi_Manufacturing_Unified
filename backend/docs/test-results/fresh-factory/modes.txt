@@ -1,0 +1,14 @@
+▶ operating modes: manual clock is real time, simulated mode only drives designated simulated workers
+  ✔ manual team test: the clock cannot be played, sped up or rewound (42.991027ms)
+  ✔ manual team test: an agent command for a real person is refused (5.68839ms)
+  ✔ simulated test: clock control allowed, real people still never driven by agents (476.308307ms)
+  ✔ simulated test: returning to manual is refused while the simulated clock is ahead of real time (5013.627568ms)
+✔ operating modes: manual clock is real time, simulated mode only drives designated simulated workers (5747.872938ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5970.621891

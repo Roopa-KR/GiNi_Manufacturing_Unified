@@ -1,0 +1,160 @@
+(node:133) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+TAP version 13
+# (node:140) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: fresh factory - first complete scenario and separate checks
+    # Subtest: 00 the database starts empty (only the bootstrap admin and S-FACTORY)
+    ok 1 - 00 the database starts empty (only the bootstrap admin and S-FACTORY)
+      ---
+      duration_ms: 22.12485
+      type: 'test'
+      ...
+    # Subtest: 01-02 bootstrap admin logs into the admin app; environment banner data
+    ok 2 - 01-02 bootstrap admin logs into the admin app; environment banner data
+      ---
+      duration_ms: 162.049765
+      type: 'test'
+      ...
+    # Subtest: 03 configure the test factory and timezone
+    ok 3 - 03 configure the test factory and timezone
+      ---
+      duration_ms: 177.299498
+      type: 'test'
+      ...
+    # Subtest: 04 work centres and stations
+    ok 4 - 04 work centres and stations
+      ---
+      duration_ms: 183.086255
+      type: 'test'
+      ...
+    # Subtest: 05 product, route, checklists and standards (draft until the checklists exist, then released)
+    ok 5 - 05 product, route, checklists and standards (draft until the checklists exist, then released)
+      ---
+      duration_ms: 129.717338
+      type: 'test'
+      ...
+    # Subtest: 06 equipment and explicit material stock (no unlimited inventory)
+    ok 6 - 06 equipment and explicit material stock (no unlimited inventory)
+      ---
+      duration_ms: 58.486033
+      type: 'test'
+      ...
+    # Subtest: 07-08 three workers with skills (incl. an inspector); their logins work and start from zero
+    ok 7 - 07-08 three workers with skills (incl. an inspector); their logins work and start from zero
+      ---
+      duration_ms: 667.651262
+      type: 'test'
+      ...
+    # Subtest: 09 order for two good tanks (validation, duplicate refused)
+    ok 8 - 09 order for two good tanks (validation, duplicate refused)
+      ---
+      duration_ms: 61.513458
+      type: 'test'
+      ...
+    # Subtest: 10-11 release two batches of one tank; two unique tanks generated exactly once
+    ok 9 - 10-11 release two batches of one tank; two unique tanks generated exactly once
+      ---
+      duration_ms: 64.196603
+      type: 'test'
+      ...
+    # Subtest: 12 assign work: readiness explains blockers; unqualified people refused
+    ok 10 - 12 assign work: readiness explains blockers; unqualified people refused
+      ---
+      duration_ms: 77.800067
+      type: 'test'
+      ...
+    # Subtest: 13-14 workers clock in, start, record milestones (minimum crew enforced)
+    ok 11 - 13-14 workers clock in, start, record milestones (minimum crew enforced)
+      ---
+      duration_ms: 172.361461
+      type: 'test'
+      ...
+    # Subtest: 15-16 finish, inspect, release: tank 1 passes its whole route (incl. unattended cure)
+    ok 12 - 15-16 finish, inspect, release: tank 1 passes its whole route (incl. unattended cure)
+      ---
+      duration_ms: 120432.08006
+      type: 'test'
+      ...
+    # Subtest: 17-19 tank 2 fails, rework is authorised, reworked as a new attempt, reinspected and released
+    ok 13 - 17-19 tank 2 fails, rework is authorised, reworked as a new attempt, reinspected and released
+      ---
+      duration_ms: 120705.352089
+      type: 'test'
+      ...
+    # Subtest: 20 the order completes only with two accepted route-complete tanks
+    ok 14 - 20 the order completes only with two accepted route-complete tanks
+      ---
+      duration_ms: 38.975983
+      type: 'test'
+      ...
+    # Subtest: 21 worker metrics and points agree with the stored events and ledger
+    ok 15 - 21 worker metrics and points agree with the stored events and ledger
+      ---
+      duration_ms: 3092.126422
+      type: 'test'
+      ...
+    # Subtest: 22 refresh and restart services: state remains
+    ok 16 - 22 refresh and restart services: state remains
+      ---
+      duration_ms: 3.170313
+      type: 'test'
+      ...
+    # Subtest: X1 scrap and replacement without increasing demand; missing material blocks the start
+    ok 17 - X1 scrap and replacement without increasing demand; missing material blocks the start
+      ---
+      duration_ms: 321.394413
+      type: 'test'
+      ...
+    # Subtest: X2 manual mode with browsers closed: no agent completes a person's task; agent commands for people are refused
+    ok 18 - X2 manual mode with browsers closed: no agent completes a person's task; agent commands for people are refused
+      ---
+      duration_ms: 115255.992306
+      type: 'test'
+      ...
+    # Subtest: X3 no historical baseline: baseline rules INSUFFICIENT_DATA, empty data is not abnormal
+    ok 19 - X3 no historical baseline: baseline rules INSUFFICIENT_DATA, empty data is not abnormal
+      ---
+      duration_ms: 15.588827
+      type: 'test'
+      ...
+    # Subtest: X4 cutoff crossing without new events (engine boundary evaluation)
+    ok 20 - X4 cutoff crossing without new events (engine boundary evaluation)
+      ---
+      duration_ms: 72118.760505
+      type: 'test'
+      ...
+    # Subtest: X5 new worker login with zero history; future start; deactivation keeps history
+    ok 21 - X5 new worker login with zero history; future start; deactivation keeps history
+      ---
+      duration_ms: 172.32256
+      type: 'test'
+      ...
+    # Subtest: X6 duplicate start/submit requests have one effect
+    ok 22 - X6 duplicate start/submit requests have one effect
+      ---
+      duration_ms: 100.992069
+      type: 'test'
+      ...
+    # Subtest: X7 reset protection: disabled by default, refused without the flag
+    ok 23 - X7 reset protection: disabled by default, refused without the flag
+      ---
+      duration_ms: 42.918203
+      type: 'test'
+      ...
+    1..23
+ok 1 - fresh factory - first complete scenario and separate checks
+  ---
+  duration_ms: 434107.125672
+  type: 'test'
+  ...
+# FRESH_RESTART_CMD not set - restart not exercised
+1..1
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 434267.711608

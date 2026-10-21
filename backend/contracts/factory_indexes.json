@@ -1,0 +1,222 @@
+{
+ "$comment": "Extra indexes of the fresh factory (scripts/factory-init.js). Created only in a FRESH_FACTORY database; the synthetic demo database is not touched.",
+ "indexes": [
+  {
+   "c": "sim_units",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "TANK_SERIAL_NO",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_session_tank_serial",
+   "partial": {
+    "TANK_SERIAL_NO": {
+     "$type": "string"
+    }
+   }
+  },
+  {
+   "c": "production_orders",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "CUSTOMER_ORDER_REF",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_session_order_ref",
+   "partial": {
+    "CUSTOMER_ORDER_REF": {
+     "$type": "string"
+    }
+   }
+  },
+  {
+   "c": "production_orders",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "ORDER_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_session_order_id",
+   "partial": {
+    "SESSION_ID": {
+     "$type": "string"
+    }
+   }
+  },
+  {
+   "c": "factory_settings",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_factory_settings"
+  },
+  {
+   "c": "work_center_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "WORK_CENTER_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_wc"
+  },
+  {
+   "c": "workstation_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "WORKSTATION_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_ws"
+  },
+  {
+   "c": "skill_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "SKILL_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_skill"
+  },
+  {
+   "c": "equipment_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "EQUIPMENT_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_eq"
+  },
+  {
+   "c": "material_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "MATERIAL_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_mat"
+  },
+  {
+   "c": "product_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "PRODUCT_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_product"
+  },
+  {
+   "c": "shift_templates",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "SHIFT_CODE",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_shift"
+  },
+  {
+   "c": "shift_calendar",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "SHIFT_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_shift_id"
+  },
+  {
+   "c": "ctq_check_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "CHECK_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_ds_check"
+  },
+  {
+   "c": "factory_reset_log",
+   "k": [
+    [
+     "RESET_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "uniq_reset_id"
+  }
+ ]
+}

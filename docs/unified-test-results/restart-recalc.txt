@@ -1,0 +1,25 @@
+2026-10-19T23:36:23Z environment FRESH_FACTORY, database "gini_unified_acceptance", dataset GINI-FRESH-FACTORY
+{
+  "published": true,
+  "projection_version": 15,
+  "watermark": 241,
+  "ms": 198,
+  "alerts": {
+    "transitions": 1,
+    "notifications": 1,
+    "suppressed": 0
+  },
+  "points": {
+    "tv1": 7,
+    "wo": 2,
+    "dd4": 0,
+    "evaluated": 9,
+    "full": true,
+    "TV1_AWARDED": 4,
+    "TV1_PENDING": 2,
+    "TV1_NOT_ELIGIBLE": 1,
+    "WO_AWARDED": 1,
+    "WO_PENDING": 1
+  },
+  "lines": 5
+}

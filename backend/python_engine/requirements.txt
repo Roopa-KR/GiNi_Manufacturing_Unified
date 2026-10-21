@@ -1,0 +1,3 @@
+# GiNi engine worker - pinned; runtime Python 3.13 (Dockerfile python:3.13-slim, .python-version)
+pymongo==4.10.1
+dnspython==2.7.0

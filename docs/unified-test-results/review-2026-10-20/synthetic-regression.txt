@@ -1,0 +1,77 @@
+Synthetic demo regression with the final review code (docdb-wire TEST SUBSTITUTE, seeded v3 test database)
+== node integration
+# tests 67
+# pass 67
+# fail 0
+# skipped 0
+== flags
+# tests 5
+# pass 5
+# fail 0
+# skipped 0
+== e2e
+# tests 7
+# pass 6
+# fail 1
+# skipped 0
+END
+e2e test 5 (tank passport) timed out once waiting 30 s after a page reload under load; it passed alone and in a full e2e rerun (7/7):
+===== node-integration
+ok 1 - AT2: signing in again and reloading never restarts work, attendance or time; GET requests never mutate
+ok 2 - AT3: two browser sessions share one simulation; replay sessions are read-only
+ok 3 - AT20: concurrent conflicting commands - exactly one wins; duplicate retries replay one result
+ok 4 - AT19/AT23: play, speed change and pause keep one continuous timeline - no lost, duplicated or overlapping events or labour
+ok 5 - AT17: replay hides records not yet KNOWN_AT and shows them once known, without rewriting history
+ok 6 - AT13: a material shortage changes the forecast and names material as the cause
+ok 7 - AT22: plant attendance reconciles across views; an attendance correction is recorded and visible
+ok 8 - AT9: repeated recalculation never duplicates points; ledger totals equal the shown totals
+ok 9 - rule settings are versioned and effective-dated: a future version waits, then takes over; the previous stays in history
+ok 10 - worker administration rolls back completely when its audit record cannot be written
+ok 11 - admin HTTP: Idempotency-Key replays the first result; the same key with another body is refused; history survives deactivation
+ok 12 - onboarding: join the current shift vs start with the next shift
+ok 13 - equipment breakdown -> M11 FIRING with one captured notification -> repair -> RESOLVED
+ok 14 - scrap is permanent; the replacement has a new ID and satisfies existing demand
+ok 15 - sessions are isolated: activity in one branch is invisible in another
+ok 16 - a human-controlled worker is never acted on by background agents while the clock runs
+ok 17 - recovery: options with donor checks, propose -> approve -> execute -> verify; stale proposals are refused
+ok 18 - incomplete inspection, repeated reinspection failure escalates, failed readings retained
+ok 19 - downstream defect: unknown case held until a named reason; earlier-station return to an approved alternate station
+ok 20 - a worker productive on one operation cannot join a second one at the same time
+ok 21 - retrying ORDER_CREATE with the same Idempotency-Key creates one order; GETs never mutate
+ok 22 - reset and archive touch exactly one session; the change log survives a reset
+ok 23 - plant-wide invariant: nobody is productive at two stations at once (all sessions in the database)
+ok 24 - responsibility validation, DD4 deduction, corrected shares and equipment cause post linked reversals only
+ok 25 - batch: four accepted + one scrap shows 4 good (not 5); the accepted replacement satisfies the fifth (Final data, replay)
+ok 26 - batch split keeps one active membership per tank, mixed states, and membership history in the passport
+ok 27 - validated product and order input: incomplete product refused, complete product + order run through the same engines, isolated per branch
+ok 28 - tank passport: role-limited for operators, full for supervisors, Not recorded instead of invented values, no future records
+ok 29 - deadline-aware scheduling: the engine records the next boundaries, exact to the second (the crossing itself is tested in e2e)
+ok 30 - recovery: an explicit no-action option and relief-worker call-ins are offered, executed through commands and scoped to the session
+ok 31 - rework standards: validated, versioned, approved by a named person, audited, idempotent
+ok 32 - points policy: the shipped default is the client formula; a change is a confirmed, versioned, audited decision
+ok 33 - operational story: finish -> fail -> same-station rework -> reinspect -> release
+ok 34 - idempotency, permissions and impersonation
+ok 35 - admin creates a worker who starts with zero activity and can sign in
+# tests 67
+# pass 67
+# fail 0
+===== flags
+ok 1 - F6 Replenishment Delay: outstanding request past need-by + 10 min fires; delivery resolves
+ok 2 - F5 Congestion: WC1 queue >= 85% of capacity fires; dispatching a queued tank resolves
+ok 3 - F2 Regional Workload Imbalance: FAB overloaded while FIN is light fires; transferring qualified FIN people resolves
+ok 4 - F3 Material Velocity: abnormal material issues per productive hour fire; reversing the mistaken issues resolves
+ok 5 - F1 Stalled Active Assignment and F4 Location Velocity: no progress evidence fires F1, a long dwell fires F4; progress and completion resolve them
+# tests 5
+# pass 5
+# fail 0
+===== e2e-rerun
+ok 1 - operator: keypad login shows the running task; pause, reload and resume never restart work
+ok 2 - inspector: photo evidence uploads, is verified and is kept with the submitted inspection
+ok 3 - admin: creates a worker in the UI; the new person signs in to the operator app with zero prior activity
+ok 4 - admin: a scenario-console breakdown appears as an M11 alert in the supervisor UI
+ok 5 - tank passport: tank links open the right passport in both apps and survive a reload; operators get the role-limited view
+ok 6 - browser closed: the simulation keeps running without any browser; a new browser sees the continued state, no restart
+ok 7 - deadline crossing at x1: evaluated at cutoff + 1 s without an event and visible in the supervisor UI within 15 s
+# tests 7
+# pass 7
+# fail 0

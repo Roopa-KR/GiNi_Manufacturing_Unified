@@ -1,0 +1,45 @@
+(node:172) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+TAP version 13
+# (node:179) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: unified factory regression: identity, administration, inspector allocation and evidence
+    # Subtest: five demanded tanks generate five different immutable physical units in two batches
+    ok 1 - five demanded tanks generate five different immutable physical units in two batches
+      ---
+      duration_ms: 66.40999
+      type: 'test'
+      ...
+    # Subtest: unused worker deletion removes account and projections; retries are idempotent
+    ok 2 - unused worker deletion removes account and projections; retries are idempotent
+      ---
+      duration_ms: 111.132665
+      type: 'test'
+      ...
+    # Subtest: used worker deletion is blocked and invalid home station rejected
+    ok 3 - used worker deletion is blocked and invalid home station rejected
+      ---
+      duration_ms: 19.517241
+      type: 'test'
+      ...
+    # Subtest: inspector allocation persists, is visible, and unauthorized inspector cannot start
+    ok 4 - inspector allocation persists, is visible, and unauthorized inspector cannot start
+      ---
+      duration_ms: 360.61601
+      type: 'test'
+      ...
+    1..4
+ok 1 - unified factory regression: identity, administration, inspector allocation and evidence
+  ---
+  duration_ms: 641.616724
+  type: 'test'
+  ...
+1..1
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 770.465402

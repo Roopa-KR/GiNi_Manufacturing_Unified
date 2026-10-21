@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30,
+      "includeFiles": "{src/**,contracts/**,config/**}"
+    }
+  },
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index.js" }]
+}

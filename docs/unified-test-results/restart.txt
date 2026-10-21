@@ -1,0 +1,1 @@
+PASS: real MongoDB 7.0.16 restarted, then API and Python restarted. Existing unit identities and states matched before/after restart. Recalculation published projection version 15 at watermark 241. Browser smoke BLOCKED before launch by sandbox socket permission; browser outcomes were not verified.

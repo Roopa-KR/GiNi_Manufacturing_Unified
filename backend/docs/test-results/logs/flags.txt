@@ -1,0 +1,42 @@
+TAP version 13
+# Subtest: F6 Replenishment Delay: outstanding request past need-by + 10 min fires; delivery resolves
+ok 1 - F6 Replenishment Delay: outstanding request past need-by + 10 min fires; delivery resolves
+  ---
+  duration_ms: 27779.691583
+  type: 'test'
+  ...
+# Subtest: F5 Congestion: WC1 queue >= 85% of capacity fires; dispatching a queued tank resolves
+ok 2 - F5 Congestion: WC1 queue >= 85% of capacity fires; dispatching a queued tank resolves
+  ---
+  duration_ms: 27497.960188
+  type: 'test'
+  ...
+# F2 round 1: 11 transfers started; refusals {"WC1:403:FORBIDDEN":33,"WC2:403:FORBIDDEN":26}
+# F2 after transferring 11: OK - Load/capacity ratio AREA-FAB 1.33, AREA-FIN 0.53; 0 people in the lighter area are qualified for the heavier one
+# Subtest: F2 Regional Workload Imbalance: FAB overloaded while FIN is light fires; transferring qualified FIN people resolves
+ok 3 - F2 Regional Workload Imbalance: FAB overloaded while FIN is light fires; transferring qualified FIN people resolves
+  ---
+  duration_ms: 61531.065857
+  type: 'test'
+  ...
+# Subtest: F3 Material Velocity: abnormal material issues per productive hour fire; reversing the mistaken issues resolves
+ok 4 - F3 Material Velocity: abnormal material issues per productive hour fire; reversing the mistaken issues resolves
+  ---
+  duration_ms: 166720.2194
+  type: 'test'
+  ...
+# Subtest: F1 Stalled Active Assignment and F4 Location Velocity: no progress evidence fires F1, a long dwell fires F4; progress and completion resolve them
+ok 5 - F1 Stalled Active Assignment and F4 Location Velocity: no progress evidence fires F1, a long dwell fires F4; progress and completion resolve them
+  ---
+  duration_ms: 98698.168725
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 382714.957814

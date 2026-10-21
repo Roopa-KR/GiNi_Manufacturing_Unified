@@ -1,0 +1,1300 @@
+{
+ "$comment": "Indexes for application collections and history query paths. Applied by `npm run db:indexes` (Node) and on engine start (Python). Unique keys are scoped by session/dataset; MongoDB references are not foreign keys, so parent existence is enforced in the command services.",
+ "version": "1.0.0",
+ "indexes": [
+  {
+   "c": "sim_sessions",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_events",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "EVENT_SEQ",
+     1
+    ]
+   ],
+   "unique": true,
+   "partial": {
+    "EVENT_SEQ": {
+     "$exists": true
+    }
+   }
+  },
+  {
+   "c": "sim_events",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "ENTITY_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_units",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ],
+    "unique": true,
+    "name": "SESSION_ID_1_UNIT_ID_1"
+  },
+  {
+   "c": "sim_units",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "STATE",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_operations",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "OPERATION_INSTANCE_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_tasks",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "TASK_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_tasks",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_tasks",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "OPERATION_INSTANCE_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_workers",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_equipment",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "EQUIPMENT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_materials",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "MATERIAL_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_inspections",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "INSPECTION_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_readings",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "READING_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_holds",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "HOLD_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_returns",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "RETURN_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_dispositions",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "DISPOSITION_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_defects",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "DEFECT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_investigations",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "INVESTIGATION_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_evidence",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "EVIDENCE_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_milestones",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "MILESTONE_EVENT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_milestones",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "OPERATION_INSTANCE_ID",
+     1
+    ],
+    [
+     "MILESTONE_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_participation",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ],
+    [
+     "OPEN",
+     1
+    ]
+   ],
+   "unique": true,
+   "partial": {
+    "OPEN": true
+   },
+   "name": "one_open_segment_per_worker"
+  },
+  {
+   "c": "sim_participation",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "SEGMENT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_points_ledger",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "POINTS_TRANSACTION_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_points_ledger",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "AWARD_KEY",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ]
+   ],
+   "unique": true,
+   "name": "award_once_per_worker"
+  },
+  {
+   "c": "sim_alerts",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "ALERT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_projections",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "KIND",
+     1
+    ],
+    [
+     "ENTITY_ID",
+     1
+    ],
+    [
+     "PROJECTION_VERSION",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_forecasts",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "FORECAST_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_actions",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "ACTION_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_replacements",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "REQUEST_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_transfers",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "TRANSFER_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_attendance",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "EVENT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_support_requests",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "SUPPORT_REQUEST_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_material_requests",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "REQUEST_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_plan_releases",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "BATCH_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "idempotency_keys",
+   "k": [
+    [
+     "KEY",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "auth_sessions",
+   "k": [
+    [
+     "SID_HASH",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "accounts",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "login_id",
+     1
+    ]
+   ],
+    "unique": true,
+    "name": "uniq_dataset_id_login_id"
+  },
+  {
+   "c": "login_attempts",
+   "k": [
+    [
+     "LOGIN_ID",
+     1
+    ],
+    [
+     "AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "jobs",
+   "k": [
+    [
+     "DEDUP_KEY",
+     1
+    ],
+    [
+     "DEDUP_OPEN",
+     1
+    ]
+   ],
+   "unique": true,
+   "partial": {
+    "DEDUP_OPEN": true
+   },
+   "name": "one_open_job_per_key"
+  },
+  {
+   "c": "jobs",
+   "k": [
+    [
+     "STATUS",
+     1
+    ],
+    [
+     "AVAILABLE_AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "jobs",
+   "k": [
+    [
+     "JOB_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "notifications",
+   "k": [
+    [
+     "DEDUP_KEY",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "notifications",
+   "k": [
+    [
+     "STATUS",
+     1
+    ],
+    [
+     "NEXT_ATTEMPT_AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "rule_settings",
+   "k": [
+    [
+     "VERSION_NO",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "app_shift_roster",
+   "k": [
+    [
+     "ROSTER_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "production_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "production_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "worker_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "worker_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "attendance_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "task_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "TASK_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "task_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "task_assignments",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "ASSIGNED_AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "operation_instances",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "OPERATION_INSTANCE_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "operation_instances",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "labor_segments",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "OPERATION_INSTANCE_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "labor_segments",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "SEGMENT_START",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "operation_crew",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "inspection_header",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "inspection_readings",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "quality_dispositions",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "defect_records",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "points_ledger",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ],
+    [
+     "KNOWN_AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "unit_master",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "order_lines",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "ORDER_LINE_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "worker_task_plan",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "operation_milestone_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "OPERATION_INSTANCE_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "shift_roster",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ],
+    [
+     "PLANNED_START_AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "material_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "equipment_events",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "EQUIPMENT_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "workstation_queue_entries",
+   "k": [
+    [
+     "RUN_ID",
+     1
+    ],
+    [
+     "ENTERED_AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "worker_master",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "WORKER_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "continuation_shift_calendar",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "SHIFT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "continuation_calendar_intervals",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "INTERVAL_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "continuation_shift_roster",
+   "k": [
+    [
+     "dataset_id",
+     1
+    ],
+    [
+     "ROSTER_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "continuation_shift_roster",
+   "k": [
+    [
+     "WORKER_ID",
+     1
+    ],
+    [
+     "PLANNED_START_AT",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_change_log",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "EVENT_TIME",
+     -1
+    ]
+   ]
+  },
+  {
+   "c": "sim_change_log",
+   "k": [
+    [
+     "CHANGE_SET_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_change_log",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "CHANGES.ENTITY_KEY.UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_points_evaluations",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "SUBJECT_KEY",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_points_evaluations",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "STATUS",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_points_ledger",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "SUBJECT_KEY",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_batch_membership",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "OPEN_KEY",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "sim_batch_membership",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "UNIT_ID",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "sim_batches",
+   "k": [
+    [
+     "SESSION_ID",
+     1
+    ],
+    [
+     "BATCH_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "admin_requests",
+   "k": [
+    [
+     "IDEMPOTENCY_KEY",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "audit_log",
+   "k": [
+    [
+     "AUDIT_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "audit_log",
+   "k": [
+    [
+     "AT",
+     -1
+    ]
+   ]
+  },
+  {
+   "c": "audit_log",
+   "k": [
+    [
+     "TARGET",
+     1
+    ],
+    [
+     "AT",
+     -1
+    ]
+   ]
+  },
+  {
+   "c": "rework_standards",
+   "k": [
+    [
+     "STANDARD_ID",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "rework_standards",
+   "k": [
+    [
+     "KEY",
+     1
+    ],
+    [
+     "VERSION",
+     1
+    ]
+   ],
+   "unique": true
+  },
+  {
+   "c": "rework_standards",
+   "k": [
+    [
+     "OPERATION_ID",
+     1
+    ],
+    [
+     "STATUS",
+     1
+    ]
+   ]
+  },
+  {
+   "c": "points_policy_versions",
+   "k": [
+    [
+     "VERSION_NO",
+     1
+    ]
+   ],
+   "unique": true
+  }
+ ]
+}

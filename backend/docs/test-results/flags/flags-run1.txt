@@ -1,0 +1,51 @@
+TAP version 13
+# Subtest: F6 Replenishment Delay: outstanding request past need-by + 10 min fires; delivery resolves
+ok 1 - F6 Replenishment Delay: outstanding request past need-by + 10 min fires; delivery resolves
+  ---
+  duration_ms: 28958.3107
+  type: 'test'
+  ...
+# Subtest: F5 Congestion: WC1 queue >= 85% of capacity fires; dispatching a queued tank resolves
+ok 2 - F5 Congestion: WC1 queue >= 85% of capacity fires; dispatching a queued tank resolves
+  ---
+  duration_ms: 27823.792837
+  type: 'test'
+  ...
+# F2 after transferring 4: BREACH - Load/capacity ratio AREA-FAB 1.61, AREA-FIN 0.41; 7 people in the lighter area are qualified for the heavier one
+# Subtest: F2 Regional Workload Imbalance: FAB overloaded while FIN is light fires; transferring qualified FIN people resolves
+not ok 3 - F2 Regional Workload Imbalance: FAB overloaded while FIN is light fires; transferring qualified FIN people resolves
+  ---
+  duration_ms: 352081.545873
+  type: 'test'
+  location: '/home/claude/gini_app/backend/tests/flags/flags.test.js:165:1'
+  failureType: 'testCodeFailure'
+  error: 'timed out waiting for F2 RESOLVED'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    waitFor (/home/claude/gini_app/backend/tests/integration/helpers.js:52:9)
+    async lifecycle (/home/claude/gini_app/backend/tests/flags/flags.test.js:106:20)
+    async TestContext.<anonymous> (/home/claude/gini_app/backend/tests/flags/flags.test.js:178:3)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: F3 Material Velocity: abnormal material issues per productive hour fire; reversing the mistaken issues resolves
+ok 4 - F3 Material Velocity: abnormal material issues per productive hour fire; reversing the mistaken issues resolves
+  ---
+  duration_ms: 179142.052847
+  type: 'test'
+  ...
+# Subtest: F1 Stalled Active Assignment and F4 Location Velocity: no progress evidence fires F1, a long dwell fires F4; progress and completion resolve them
+ok 5 - F1 Stalled Active Assignment and F4 Location Velocity: no progress evidence fires F1, a long dwell fires F4; progress and completion resolve them
+  ---
+  duration_ms: 100309.346329
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 4
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 688885.329824

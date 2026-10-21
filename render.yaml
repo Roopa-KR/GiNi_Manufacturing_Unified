@@ -1,0 +1,39 @@
+# Render Blueprint: the always-on Python engine worker (no HTTP listener). The API and both apps run on Vercel; the database on Atlas.
+# Render background workers are a paid instance type - check current plans/limits at deploy time (https://render.com/docs/background-workers).
+# Secrets are declared with sync: false, so Render asks for them in the dashboard; no secret value is stored in this file.
+services:
+  - type: worker
+    name: gini-engine
+    runtime: docker
+    rootDir: backend
+    dockerContext: .
+    dockerfilePath: ./python_engine/Dockerfile
+    plan: starter
+    autoDeploy: false
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false                 # Atlas SRV string of the SAME cluster/database the API uses
+      - key: MONGODB_DB_NAME
+        sync: false                 # same database as the API; fresh factory uses its own empty database
+      - key: GINI_ENVIRONMENT
+        value: FRESH_FACTORY
+      - key: DATASET_ID
+        value: GINI-FRESH-FACTORY
+      - key: NODE_API_INTERNAL_URL
+        sync: false                 # https://<your-api-project>.vercel.app
+      - key: INTERNAL_SERVICE_TOKEN
+        sync: false                 # identical to the API project's INTERNAL_SERVICE_TOKEN
+      - key: ENGINE_TICK_SECONDS
+        value: "5"
+      - key: ENGINE_JOB_LEASE_SECONDS
+        value: "60"
+      - key: ENGINE_MAX_RETRIES
+        value: "5"
+      - key: SIMULATION_SEED
+        value: "42"
+      - key: DEFAULT_PLANT_TIMEZONE
+        value: America/Bogota
+      - key: SAFETY_BUFFER_MINUTES
+        value: "10"

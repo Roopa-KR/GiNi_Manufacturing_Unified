@@ -1,0 +1,15 @@
+▶ fresh factory: tank-label scanning is saved, shown and (when switched on) required
+  ✔ start is blocked until the right tank is scanned; a wrong tank is saved but unlocks nothing (246.158813ms)
+  ✔ inspection start needs the inspector's scan of that tank (171.279138ms)
+  ✔ a location scan records the station without moving the tank on its route (31.049951ms)
+  ✔ scans are stored, evented and shown in the tank passport (admin and operator) (51.276483ms)
+  ✔ switched off: work starts without a scan (scanning stays optional) (634.686108ms)
+✔ fresh factory: tank-label scanning is saved, shown and (when switched on) required (3175.567051ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3394.535758

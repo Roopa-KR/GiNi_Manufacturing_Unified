@@ -1,0 +1,24 @@
+{
+  "$comment": "Non-secret simulation defaults (provisional). Plant timezone must match the imported SITE_TIMEZONE.",
+  "version": "1.0.0",
+  "dataset_id": "GINI-SYN-TANKS",
+  "default_checkpoint_id": "CK-20261015-1055",
+  "default_source_run_id": "RUN-BASE",
+  "plant_timezone": "America/Bogota",
+  "speeds": [0, 1, 2, 5, 10, 30, 60, 120],
+  "default_speed": 1,
+  "interactive_policy_id": "DEFAULT_REPAIRABLE_RETURN_V1",
+  "replay_refresh_seconds": 30,
+  "active_poll_seconds": 5,
+  "human_control_lease_seconds": 120,
+  "agent": {
+    "inspection_start_delay_min": 2,
+    "disposition_decision_delay_min": 12,
+    "default_rework_labor_min": 60,
+    "rework_min_crew": 1,
+    "clock_in_spread_min": 12,
+    "inspection_fail_probability_source": "first-attempt fail rate per gate in RUN-BASE known at fork (fallback 0.04)",
+    "continuation_rules": ["PRODUCTION_PLAN releases planned before the fork", "MATERIAL_REQUESTS promised before the fork", "SHIFT_ROSTER of later shifts known at the fork"]
+  },
+  "evidence": {"folder": "gini-demo/evidence", "allowed_formats": ["jpg", "jpeg", "png", "webp", "heic"], "max_image_mb": 8, "max_megapixels": 40}
+}

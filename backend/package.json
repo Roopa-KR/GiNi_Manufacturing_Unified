@@ -1,0 +1,37 @@
+{
+  "name": "gini-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GiNi manufacturing demonstration - Express API (synthetic data; not a Siemens system)",
+  "main": "src/app.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check:config": "node scripts/check-config.js",
+    "db:indexes": "node scripts/ensure-indexes.js",
+    "session:create-default": "node scripts/create-default-session.js",
+    "test": "node --test \"tests/unit/*.test.js\"",
+    "test:integration": "node --test --test-concurrency=1 \"tests/integration/*.test.js\"",
+    "test:e2e": "node --test --test-concurrency=1 \"tests/e2e/*.test.js\"",
+    "openapi": "node scripts/print-openapi.js",
+    "session:purge-archived": "node scripts/purge-archived-sessions.js",
+    "measure:latency": "node scripts/measure-latency.js",
+    "test:flags": "node --test --test-concurrency=1 \"tests/flags/*.test.js\"",
+    "measure:latency:browser": "node scripts/measure-browser-latency.js --iterations 5 --out docs/test-results/latency-browser.json",
+    "factory:init": "node scripts/factory-init.js",
+    "test:fresh": "node --test --test-concurrency=1 tests/fresh/scenario.test.js",
+    "test:unified": "node --test --test-concurrency=1 tests/fresh/scenario.test.js && node --test --test-concurrency=1 tests/fresh/unified.test.js && node --test --test-concurrency=1 tests/fresh/additions.test.js && node --test --test-concurrency=1 tests/fresh/scan.test.js"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "mongodb": "6.12.0",
+    "nodemailer": "6.9.16"
+  },
+  "devDependencies": {
+    "playwright": "1.49.1"
+  }
+}

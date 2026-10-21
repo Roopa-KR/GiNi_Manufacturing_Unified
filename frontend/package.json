@@ -1,0 +1,28 @@
+{
+  "name": "gini-operator",
+  "private": true,
+  "version": "1.0.0",
+  "description": "GiNi operator application (Vite + React JSX). Synthetic demonstration - not connected to any factory.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --strictPort",
+    "prebuild": "node scripts/check-deploy.mjs",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "build:local": "node scripts/build-local.mjs",
+    "serve:local": "node scripts/serve-local.mjs",
+    "configure:vercel": "node scripts/configure-vercel.mjs",
+    "check:deploy": "CHECK_DEPLOY=1 node scripts/check-deploy.mjs"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.4.1",
+    "vite": "6.3.5"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

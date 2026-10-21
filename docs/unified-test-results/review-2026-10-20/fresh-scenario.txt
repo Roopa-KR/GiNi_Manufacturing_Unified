@@ -1,0 +1,33 @@
+▶ fresh factory - first complete scenario and separate checks
+  ✔ 00 the database starts empty (only the bootstrap admin and S-FACTORY) (22.59308ms)
+  ✔ 01-02 bootstrap admin logs into the admin app; environment banner data (203.934649ms)
+  ✔ 03 configure the test factory and timezone (267.544245ms)
+  ✔ 04 work centres and stations (237.129212ms)
+  ✔ 05 product, route, checklists and standards (draft until the checklists exist, then released) (158.792494ms)
+  ✔ 06 equipment and explicit material stock (no unlimited inventory) (120.941639ms)
+  ✔ 07-08 three workers with skills (incl. an inspector); their logins work and start from zero (800.669858ms)
+  ✔ 09 order for two good tanks (validation, duplicate refused) (70.064323ms)
+  ✔ 10-11 release two batches of one tank; two unique tanks generated exactly once (94.371256ms)
+  ✔ 12 assign work: readiness explains blockers; unqualified people refused (81.544507ms)
+  ✔ 13-14 workers clock in, start, record milestones (minimum crew enforced) (246.691465ms)
+  ✔ 15-16 finish, inspect, release: tank 1 passes its whole route (incl. unattended cure) (114557.647328ms)
+  ✔ 17-19 tank 2 fails, rework is authorised, reworked as a new attempt, reinspected and released (120925.229485ms)
+  ✔ 20 the order completes only with two accepted route-complete tanks (58.288531ms)
+  ✔ 21 worker metrics and points agree with the stored events and ledger (3144.457499ms)
+  ✔ 22 refresh and restart services: state remains (1819.821058ms)
+  ✔ X1 scrap and replacement without increasing demand; missing material blocks the start (596.338985ms)
+  ✔ X2 manual mode with browsers closed: no agent completes a person's task; agent commands for people are refused (115428.962973ms)
+  ✔ X3 no historical baseline: baseline rules INSUFFICIENT_DATA, empty data is not abnormal (29.38704ms)
+  ✔ X4 cutoff crossing without new events (engine boundary evaluation) (76169.583935ms)
+  ✔ X5 new worker login with zero history; future start; deactivation keeps history (241.021158ms)
+  ✔ X6 duplicate start/submit requests have one effect (177.153846ms)
+  ✔ X7 reset protection: disabled by default, refused without the flag (70.452346ms)
+✔ fresh factory - first complete scenario and separate checks (435551.661127ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 435725.500061

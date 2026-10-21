@@ -1,0 +1,14 @@
+▶ unified factory regression: identity, administration, inspector allocation and evidence
+  ✔ five demanded tanks generate five different immutable physical units in two batches (112.786621ms)
+  ✔ unused worker deletion removes account and projections; retries are idempotent (166.083298ms)
+  ✔ used worker deletion is blocked and invalid home station rejected (30.100897ms)
+  ✔ inspector allocation persists, is visible, and unauthorized inspector cannot start (523.890814ms)
+✔ unified factory regression: identity, administration, inspector allocation and evidence (961.337936ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1147.545458

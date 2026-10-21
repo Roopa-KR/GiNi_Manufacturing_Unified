@@ -1,0 +1,1573 @@
+{
+ "$comment": "Foreign-key relationships of the GiNi v3 Final dataset, transcribed from GiNi_Synthetic_v3_Final/REFERENCE_CHECKS.md (174 relationships). backend/seed/import_workflow.py re-checks every one independently on the exported seed bundle.",
+ "source": "GiNi_Synthetic_v3_Final/REFERENCE_CHECKS.md",
+ "dataset_version": "GINI-SYN-2026-10-17-v3.0-FINAL",
+ "relationships": [
+  {
+   "child": "ORDER_LINES",
+   "child_column": "ORDER_ID",
+   "parent": "PRODUCTION_ORDERS",
+   "parent_column": "ORDER_ID",
+   "cross_workbook": false,
+   "expected_references": 470,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_BATCHES",
+   "child_column": "ORDER_LINE_ID",
+   "parent": "ORDER_LINES",
+   "parent_column": "ORDER_LINE_ID",
+   "cross_workbook": false,
+   "expected_references": 662,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_BATCHES",
+   "child_column": "ORDER_ID",
+   "parent": "PRODUCTION_ORDERS",
+   "parent_column": "ORDER_ID",
+   "cross_workbook": false,
+   "expected_references": 662,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_BATCHES",
+   "child_column": "PARENT_BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": false,
+   "expected_references": 8,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_BATCHES",
+   "child_column": "PRODUCT_ID",
+   "parent": "PRODUCT_MASTER",
+   "parent_column": "PRODUCT_ID",
+   "cross_workbook": true,
+   "expected_references": 662,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_PLAN",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": true,
+   "expected_references": 171,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_PLAN",
+   "child_column": "ORDER_LINE_ID",
+   "parent": "ORDER_LINES",
+   "parent_column": "ORDER_LINE_ID",
+   "cross_workbook": true,
+   "expected_references": 171,
+   "expected_missing": 0
+  },
+  {
+   "child": "BATCH_UNIT_MEMBERSHIP",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": false,
+   "expected_references": 2507,
+   "expected_missing": 0
+  },
+  {
+   "child": "BATCH_UNIT_MEMBERSHIP",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 2507,
+   "expected_missing": 0
+  },
+  {
+   "child": "BATCH_EVENTS",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": false,
+   "expected_references": 2270,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_MASTER",
+   "child_column": "ORDER_ID",
+   "parent": "PRODUCTION_ORDERS",
+   "parent_column": "ORDER_ID",
+   "cross_workbook": false,
+   "expected_references": 2487,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_MASTER",
+   "child_column": "ORDER_LINE_ID",
+   "parent": "ORDER_LINES",
+   "parent_column": "ORDER_LINE_ID",
+   "cross_workbook": false,
+   "expected_references": 2487,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_MASTER",
+   "child_column": "INITIAL_BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": false,
+   "expected_references": 2487,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_MASTER",
+   "child_column": "PRODUCT_ID",
+   "parent": "PRODUCT_MASTER",
+   "parent_column": "PRODUCT_ID",
+   "cross_workbook": true,
+   "expected_references": 2487,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_MASTER",
+   "child_column": "REPLACEMENT_FOR_UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 61,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_MASTER",
+   "child_column": "MATERIAL_LOT_ID",
+   "parent": "MATERIAL_LOTS",
+   "parent_column": "MATERIAL_LOT_ID",
+   "cross_workbook": false,
+   "expected_references": 2487,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_INSTANCES",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 22379,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_INSTANCES",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": false,
+   "expected_references": 22379,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_INSTANCES",
+   "child_column": "WORKSTATION_ID",
+   "parent": "WORKSTATION_MASTER",
+   "parent_column": "WORKSTATION_ID",
+   "cross_workbook": true,
+   "expected_references": 22379,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_INSTANCES",
+   "child_column": "OPERATION_ID",
+   "parent": "ROUTING_OPERATIONS",
+   "parent_column": "OPERATION_ID",
+   "cross_workbook": true,
+   "expected_references": 22379,
+   "expected_missing": 0
+  },
+  {
+   "child": "TASK_ASSIGNMENTS",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 47077,
+   "expected_missing": 0
+  },
+  {
+   "child": "TASK_ASSIGNMENTS",
+   "child_column": "ASSIGNED_WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 47081,
+   "expected_missing": 0
+  },
+  {
+   "child": "TASK_ASSIGNMENTS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 47081,
+   "expected_missing": 0
+  },
+  {
+   "child": "TASK_ASSIGNMENTS",
+   "child_column": "REASSIGNED_TO_TASK_ID",
+   "parent": "TASK_ASSIGNMENTS",
+   "parent_column": "TASK_ID",
+   "cross_workbook": false,
+   "expected_references": 1,
+   "expected_missing": 0
+  },
+  {
+   "child": "TASK_EVENTS",
+   "child_column": "TASK_ID",
+   "parent": "TASK_ASSIGNMENTS",
+   "parent_column": "TASK_ID",
+   "cross_workbook": false,
+   "expected_references": 206074,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_CREW",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 55998,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_CREW",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 55998,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_CREW",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 55998,
+   "expected_missing": 0
+  },
+  {
+   "child": "LABOR_SEGMENTS",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 139812,
+   "expected_missing": 0
+  },
+  {
+   "child": "LABOR_SEGMENTS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 139812,
+   "expected_missing": 0
+  },
+  {
+   "child": "ATTENDANCE_EVENTS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 38888,
+   "expected_missing": 0
+  },
+  {
+   "child": "ATTENDANCE_EVENTS",
+   "child_column": "SHIFT_ID",
+   "parent": "SHIFT_CALENDAR",
+   "parent_column": "SHIFT_ID",
+   "cross_workbook": true,
+   "expected_references": 38888,
+   "expected_missing": 0
+  },
+  {
+   "child": "ATTENDANCE_EVENTS",
+   "child_column": "CORRECTION_ID",
+   "parent": "ATTENDANCE_CORRECTIONS",
+   "parent_column": "CORRECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 1,
+   "expected_missing": 0
+  },
+  {
+   "child": "ATTENDANCE_CORRECTIONS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 1,
+   "expected_missing": 0
+  },
+  {
+   "child": "ATTENDANCE_INTERVALS",
+   "child_column": "START_EVENT_ID",
+   "parent": "ATTENDANCE_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 19166,
+   "expected_missing": 0
+  },
+  {
+   "child": "ATTENDANCE_INTERVALS",
+   "child_column": "END_EVENT_ID",
+   "parent": "ATTENDANCE_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 19159,
+   "expected_missing": 0
+  },
+  {
+   "child": "RAW_INPUT_EVENTS",
+   "child_column": "CURATED_EVENT_ID",
+   "parent": "ATTENDANCE_EVENTS|LOGIN_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 24971,
+   "expected_missing": 0
+  },
+  {
+   "child": "OVERTIME_APPROVALS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 5,
+   "expected_missing": 0
+  },
+  {
+   "child": "APP_SESSIONS",
+   "child_column": "LOGIN_EVENT_ID",
+   "parent": "LOGIN_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 19171,
+   "expected_missing": 0
+  },
+  {
+   "child": "APP_SESSIONS",
+   "child_column": "LOGOUT_EVENT_ID",
+   "parent": "LOGIN_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 19170,
+   "expected_missing": 0
+  },
+  {
+   "child": "LOGIN_EVENTS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 150337,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_EVENTS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 256184,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_EVENTS",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 75876,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_EVENTS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 76474,
+   "expected_missing": 0
+  },
+  {
+   "child": "SUPPORT_REQUESTS",
+   "child_column": "REQUESTED_BY",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 2,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_EVENTS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 107659,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_EVENTS",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 64318,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_EVENTS",
+   "child_column": "ORDER_LINE_ID",
+   "parent": "ORDER_LINES",
+   "parent_column": "ORDER_LINE_ID",
+   "cross_workbook": false,
+   "expected_references": 107659,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_EVENTS",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": false,
+   "expected_references": 107659,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_EVENTS",
+   "child_column": "INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 19931,
+   "expected_missing": 0
+  },
+  {
+   "child": "PRODUCTION_EVENTS",
+   "child_column": "DEFECT_ID",
+   "parent": "DEFECT_RECORDS",
+   "parent_column": "DEFECT_ID",
+   "cross_workbook": false,
+   "expected_references": 166,
+   "expected_missing": 0
+  },
+  {
+   "child": "EQUIPMENT_EVENTS",
+   "child_column": "EQUIPMENT_ID",
+   "parent": "EQUIPMENT_MASTER",
+   "parent_column": "EQUIPMENT_ID",
+   "cross_workbook": true,
+   "expected_references": 302,
+   "expected_missing": 0
+  },
+  {
+   "child": "TRANSFER_EVENTS",
+   "child_column": "ACTION_ID",
+   "parent": "ACTION_LOG",
+   "parent_column": "ACTION_ID",
+   "cross_workbook": false,
+   "expected_references": 7624,
+   "expected_missing": 0
+  },
+  {
+   "child": "TRANSFER_EVENTS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 7624,
+   "expected_missing": 0
+  },
+  {
+   "child": "HANDOVERS",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 2184,
+   "expected_missing": 0
+  },
+  {
+   "child": "HANDOVERS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 2184,
+   "expected_missing": 0
+  },
+  {
+   "child": "MATERIAL_EVENTS",
+   "child_column": "MATERIAL_LOT_ID",
+   "parent": "MATERIAL_LOTS",
+   "parent_column": "MATERIAL_LOT_ID",
+   "cross_workbook": false,
+   "expected_references": 12856,
+   "expected_missing": 0
+  },
+  {
+   "child": "MATERIAL_EVENTS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 12238,
+   "expected_missing": 0
+  },
+  {
+   "child": "MATERIAL_EVENTS",
+   "child_column": "MATERIAL_ID",
+   "parent": "MATERIAL_MASTER",
+   "parent_column": "MATERIAL_ID",
+   "cross_workbook": true,
+   "expected_references": 12856,
+   "expected_missing": 0
+  },
+  {
+   "child": "MATERIAL_REQUEST_EVENTS",
+   "child_column": "REQUEST_ID",
+   "parent": "MATERIAL_REQUESTS",
+   "parent_column": "REQUEST_ID",
+   "cross_workbook": false,
+   "expected_references": 1220,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_HEADER",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 9939,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_HEADER",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 9939,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_HEADER",
+   "child_column": "INSPECTOR_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 9939,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_READINGS",
+   "child_column": "INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 102288,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_READINGS",
+   "child_column": "CHECK_ID",
+   "parent": "CTQ_CHECK_MASTER",
+   "parent_column": "CHECK_ID",
+   "cross_workbook": true,
+   "expected_references": 102288,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_READINGS",
+   "child_column": "SPEC_ID",
+   "parent": "CTQ_SPECIFICATIONS",
+   "parent_column": "SPEC_ID",
+   "cross_workbook": true,
+   "expected_references": 102288,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_READINGS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 102288,
+   "expected_missing": 0
+  },
+  {
+   "child": "QUALITY_DISPOSITIONS",
+   "child_column": "INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 9939,
+   "expected_missing": 0
+  },
+  {
+   "child": "QUALITY_DISPOSITIONS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 10210,
+   "expected_missing": 0
+  },
+  {
+   "child": "DEFECT_RECORDS",
+   "child_column": "INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 198,
+   "expected_missing": 0
+  },
+  {
+   "child": "DEFECT_RECORDS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 651,
+   "expected_missing": 0
+  },
+  {
+   "child": "DEFECT_RECORDS",
+   "child_column": "ORIGIN_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 651,
+   "expected_missing": 0
+  },
+  {
+   "child": "DEFECT_INVESTIGATIONS",
+   "child_column": "DEFECT_ID",
+   "parent": "DEFECT_RECORDS",
+   "parent_column": "DEFECT_ID",
+   "cross_workbook": false,
+   "expected_references": 324,
+   "expected_missing": 0
+  },
+  {
+   "child": "DEFECT_INVESTIGATIONS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 324,
+   "expected_missing": 0
+  },
+  {
+   "child": "INVESTIGATION_EVENTS",
+   "child_column": "INVESTIGATION_ID",
+   "parent": "DEFECT_INVESTIGATIONS",
+   "parent_column": "INVESTIGATION_ID",
+   "cross_workbook": false,
+   "expected_references": 1180,
+   "expected_missing": 0
+  },
+  {
+   "child": "INVESTIGATION_EVIDENCE",
+   "child_column": "INVESTIGATION_ID",
+   "parent": "DEFECT_INVESTIGATIONS",
+   "parent_column": "INVESTIGATION_ID",
+   "cross_workbook": false,
+   "expected_references": 2791,
+   "expected_missing": 0
+  },
+  {
+   "child": "REWORK_TASKS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 548,
+   "expected_missing": 0
+  },
+  {
+   "child": "REWORK_TASKS",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 548,
+   "expected_missing": 0
+  },
+  {
+   "child": "REPLACEMENT_REQUESTS",
+   "child_column": "SCRAPPED_UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 62,
+   "expected_missing": 0
+  },
+  {
+   "child": "REPLACEMENT_REQUESTS",
+   "child_column": "NEW_UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 61,
+   "expected_missing": 0
+  },
+  {
+   "child": "REPLACEMENT_REQUESTS",
+   "child_column": "ORDER_LINE_ID",
+   "parent": "ORDER_LINES",
+   "parent_column": "ORDER_LINE_ID",
+   "cross_workbook": false,
+   "expected_references": 62,
+   "expected_missing": 0
+  },
+  {
+   "child": "REPLACEMENT_REQUESTS",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": false,
+   "expected_references": 62,
+   "expected_missing": 0
+  },
+  {
+   "child": "ACTION_LOG",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 1706,
+   "expected_missing": 0
+  },
+  {
+   "child": "ACTION_LOG",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 67,
+   "expected_missing": 0
+  },
+  {
+   "child": "POINTS_LEDGER",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 10689,
+   "expected_missing": 0
+  },
+  {
+   "child": "POINTS_LEDGER",
+   "child_column": "ORDER_ID",
+   "parent": "PRODUCTION_ORDERS",
+   "parent_column": "ORDER_ID",
+   "cross_workbook": false,
+   "expected_references": 10710,
+   "expected_missing": 0
+  },
+  {
+   "child": "POINTS_LEDGER",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 10101,
+   "expected_missing": 0
+  },
+  {
+   "child": "POINTS_LEDGER",
+   "child_column": "DEFECT_ID",
+   "parent": "DEFECT_RECORDS",
+   "parent_column": "DEFECT_ID",
+   "cross_workbook": false,
+   "expected_references": 65,
+   "expected_missing": 0
+  },
+  {
+   "child": "POINTS_LEDGER",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 10101,
+   "expected_missing": 0
+  },
+  {
+   "child": "POINTS_LEDGER",
+   "child_column": "REVERSAL_OF_ID",
+   "parent": "POINTS_LEDGER",
+   "parent_column": "POINTS_TRANSACTION_ID",
+   "cross_workbook": false,
+   "expected_references": 191,
+   "expected_missing": 0
+  },
+  {
+   "child": "SHIFT_ROSTER",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": false,
+   "expected_references": 20776,
+   "expected_missing": 0
+  },
+  {
+   "child": "SHIFT_ROSTER",
+   "child_column": "SHIFT_ID",
+   "parent": "SHIFT_CALENDAR",
+   "parent_column": "SHIFT_ID",
+   "cross_workbook": false,
+   "expected_references": 20776,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPENING_WIP",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 35,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPENING_WIP",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 22,
+   "expected_missing": 0
+  },
+  {
+   "child": "GT_NONCONFORMANCES",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": true,
+   "expected_references": 611,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SNAPSHOT",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 20678,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SNAPSHOT",
+   "child_column": "CURRENT_UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": true,
+   "expected_references": 9953,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SNAPSHOT",
+   "child_column": "CURRENT_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": true,
+   "expected_references": 9953,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SNAPSHOT_PLANT",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 41356,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SNAPSHOT_PLANT",
+   "child_column": "CURRENT_UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": true,
+   "expected_references": 10003,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SNAPSHOT_PLANT",
+   "child_column": "CURRENT_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": true,
+   "expected_references": 10003,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SHIFT_SUMMARY",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 7252,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_SHIFT_SUMMARY",
+   "child_column": "SHIFT_ID",
+   "parent": "SHIFT_CALENDAR",
+   "parent_column": "SHIFT_ID",
+   "cross_workbook": true,
+   "expected_references": 7252,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_SNAPSHOT",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": true,
+   "expected_references": 28390,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_SNAPSHOT",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": true,
+   "expected_references": 28390,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_SNAPSHOT",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": true,
+   "expected_references": 15693,
+   "expected_missing": 0
+  },
+  {
+   "child": "BATCH_SNAPSHOT",
+   "child_column": "BATCH_ID",
+   "parent": "PRODUCTION_BATCHES",
+   "parent_column": "BATCH_ID",
+   "cross_workbook": true,
+   "expected_references": 7736,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKSTATION_SNAPSHOT",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": true,
+   "expected_references": 13794,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKSTATION_SNAPSHOT",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": true,
+   "expected_references": 13610,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORK_CENTER_SNAPSHOT",
+   "child_column": "FORECAST_RUN_ID",
+   "parent": "FORECAST_RUNS",
+   "parent_column": "FORECAST_RUN_ID",
+   "cross_workbook": false,
+   "expected_references": 844,
+   "expected_missing": 0
+  },
+  {
+   "child": "UNIT_SNAPSHOT",
+   "child_column": "FORECAST_RUN_ID",
+   "parent": "FORECAST_RUNS",
+   "parent_column": "FORECAST_RUN_ID",
+   "cross_workbook": false,
+   "expected_references": 7136,
+   "expected_missing": 0
+  },
+  {
+   "child": "BATCH_SNAPSHOT",
+   "child_column": "FORECAST_RUN_ID",
+   "parent": "FORECAST_RUNS",
+   "parent_column": "FORECAST_RUN_ID",
+   "cross_workbook": false,
+   "expected_references": 1934,
+   "expected_missing": 0
+  },
+  {
+   "child": "ORDER_FORECAST",
+   "child_column": "FORECAST_RUN_ID",
+   "parent": "FORECAST_RUNS",
+   "parent_column": "FORECAST_RUN_ID",
+   "cross_workbook": false,
+   "expected_references": 1863,
+   "expected_missing": 0
+  },
+  {
+   "child": "ORDER_FORECAST",
+   "child_column": "ORDER_LINE_ID",
+   "parent": "ORDER_LINES",
+   "parent_column": "ORDER_LINE_ID",
+   "cross_workbook": true,
+   "expected_references": 1863,
+   "expected_missing": 0
+  },
+  {
+   "child": "ACTION_COMPARISON",
+   "child_column": "PROPOSED_FORECAST_RUN_ID",
+   "parent": "FORECAST_RUNS",
+   "parent_column": "FORECAST_RUN_ID",
+   "cross_workbook": false,
+   "expected_references": 5,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATOR_METRICS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 4312,
+   "expected_missing": 0
+  },
+  {
+   "child": "ALERT_EVIDENCE",
+   "child_column": "ALERT_ID",
+   "parent": "ALERTS",
+   "parent_column": "ALERT_ID",
+   "cross_workbook": false,
+   "expected_references": 979,
+   "expected_missing": 0
+  },
+  {
+   "child": "ALERT_STATE_EVENTS",
+   "child_column": "ALERT_ID",
+   "parent": "ALERTS",
+   "parent_column": "ALERT_ID",
+   "cross_workbook": false,
+   "expected_references": 318,
+   "expected_missing": 0
+  },
+  {
+   "child": "ALERT_ACTION_EVENTS",
+   "child_column": "ALERT_ID",
+   "parent": "ALERTS",
+   "parent_column": "ALERT_ID",
+   "cross_workbook": true,
+   "expected_references": 200,
+   "expected_missing": 0
+  },
+  {
+   "child": "NOTIFICATION_LOG",
+   "child_column": "ALERT_ID",
+   "parent": "ALERTS",
+   "parent_column": "ALERT_ID",
+   "cross_workbook": true,
+   "expected_references": 89,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_QUALIFICATIONS",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": false,
+   "expected_references": 367,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_QUALIFICATIONS",
+   "child_column": "SKILL_ID",
+   "parent": "SKILL_MASTER",
+   "parent_column": "SKILL_ID",
+   "cross_workbook": false,
+   "expected_references": 367,
+   "expected_missing": 0
+  },
+  {
+   "child": "CTQ_SPECIFICATIONS",
+   "child_column": "CHECK_ID",
+   "parent": "CTQ_CHECK_MASTER",
+   "parent_column": "CHECK_ID",
+   "cross_workbook": false,
+   "expected_references": 86,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "TASK_ID",
+   "parent": "TASK_ASSIGNMENTS",
+   "parent_column": "TASK_ID",
+   "cross_workbook": false,
+   "expected_references": 47081,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 47098,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 47104,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 47077,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "WORKSTATION_ID",
+   "parent": "WORKSTATION_MASTER",
+   "parent_column": "WORKSTATION_ID",
+   "cross_workbook": true,
+   "expected_references": 47100,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "SHIFT_ID",
+   "parent": "SHIFT_CALENDAR",
+   "parent_column": "SHIFT_ID",
+   "cross_workbook": true,
+   "expected_references": 47098,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "INSTRUCTION_VERSION_ID",
+   "parent": "OPERATION_INSTRUCTIONS",
+   "parent_column": "INSTRUCTION_VERSION_ID",
+   "cross_workbook": true,
+   "expected_references": 47100,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "DEPENDS_ON_EVENT_ID",
+   "parent": "PRODUCTION_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 45692,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKER_TASK_PLAN",
+   "child_column": "CHECKPOINT_ID",
+   "parent": "CHECKPOINTS",
+   "parent_column": "CHECKPOINT_ID",
+   "cross_workbook": true,
+   "expected_references": 23,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKSTATION_QUEUE_ENTRIES",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 10055,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKSTATION_QUEUE_ENTRIES",
+   "child_column": "ENTRY_EVENT_ID",
+   "parent": "PRODUCTION_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 10055,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKSTATION_QUEUE_ENTRIES",
+   "child_column": "EXIT_EVENT_ID",
+   "parent": "PRODUCTION_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 10030,
+   "expected_missing": 0
+  },
+  {
+   "child": "WORKSTATION_QUEUE_ENTRIES",
+   "child_column": "DISPATCHED_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 10030,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_MILESTONE_EVENTS",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 41560,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_MILESTONE_EVENTS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 41560,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_MILESTONE_EVENTS",
+   "child_column": "MILESTONE_ID",
+   "parent": "MILESTONE_DEFINITIONS",
+   "parent_column": "MILESTONE_ID",
+   "cross_workbook": true,
+   "expected_references": 41560,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "REWORK_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "CORRECTED_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "DISPOSITION_ID",
+   "parent": "QUALITY_DISPOSITIONS",
+   "parent_column": "DISPOSITION_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "DETECTION_INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 99,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "REINSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "AUTHORIZED_DESTINATION_WORKSTATION_ID",
+   "parent": "WORKSTATION_MASTER",
+   "parent_column": "WORKSTATION_ID",
+   "cross_workbook": true,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "RETURN_MOVEMENTS",
+   "child_column": "AUTHORIZED_BY",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "HOLD_CASES",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": false,
+   "expected_references": 400,
+   "expected_missing": 0
+  },
+  {
+   "child": "HOLD_CASES",
+   "child_column": "HOLD_EVENT_ID",
+   "parent": "PRODUCTION_EVENTS",
+   "parent_column": "EVENT_ID",
+   "cross_workbook": false,
+   "expected_references": 400,
+   "expected_missing": 0
+  },
+  {
+   "child": "HOLD_CASES",
+   "child_column": "INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 234,
+   "expected_missing": 0
+  },
+  {
+   "child": "HOLD_CASES",
+   "child_column": "DECISION_DISPOSITION_ID",
+   "parent": "QUALITY_DISPOSITIONS",
+   "parent_column": "DISPOSITION_ID",
+   "cross_workbook": false,
+   "expected_references": 400,
+   "expected_missing": 0
+  },
+  {
+   "child": "HOLD_CASES",
+   "child_column": "RETURN_ID",
+   "parent": "RETURN_MOVEMENTS",
+   "parent_column": "RETURN_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "REWORK_TASKS",
+   "child_column": "DISPOSITION_ID",
+   "parent": "QUALITY_DISPOSITIONS",
+   "parent_column": "DISPOSITION_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "REWORK_TASKS",
+   "child_column": "RETURN_ID",
+   "parent": "RETURN_MOVEMENTS",
+   "parent_column": "RETURN_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "REWORK_TASKS",
+   "child_column": "REINSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "REWORK_TASKS",
+   "child_column": "REWORK_OF_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_INSTANCES",
+   "child_column": "REWORK_OF_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 261,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_INSTANCES",
+   "child_column": "PRIOR_ATTEMPT_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 458,
+   "expected_missing": 0
+  },
+  {
+   "child": "OPERATION_INSTANCES",
+   "child_column": "INSTRUCTION_VERSION_ID",
+   "parent": "OPERATION_INSTRUCTIONS",
+   "parent_column": "INSTRUCTION_VERSION_ID",
+   "cross_workbook": true,
+   "expected_references": 10033,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_HEADER",
+   "child_column": "REINSPECTION_OF_INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": false,
+   "expected_references": 391,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSPECTION_HEADER",
+   "child_column": "INSPECTED_OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": false,
+   "expected_references": 9939,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSTRUCTION_STEPS",
+   "child_column": "INSTRUCTION_VERSION_ID",
+   "parent": "OPERATION_INSTRUCTIONS",
+   "parent_column": "INSTRUCTION_VERSION_ID",
+   "cross_workbook": false,
+   "expected_references": 41,
+   "expected_missing": 0
+  },
+  {
+   "child": "INSTRUCTION_STEPS",
+   "child_column": "CLOSES_MILESTONE_ID",
+   "parent": "MILESTONE_DEFINITIONS",
+   "parent_column": "MILESTONE_ID",
+   "cross_workbook": false,
+   "expected_references": 31,
+   "expected_missing": 0
+  },
+  {
+   "child": "CHECKPOINT_WORKER_STATE",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": true,
+   "expected_references": 196,
+   "expected_missing": 0
+  },
+  {
+   "child": "CHECKPOINT_WORKER_STATE",
+   "child_column": "CURRENT_TASK_ID",
+   "parent": "TASK_ASSIGNMENTS",
+   "parent_column": "TASK_ID",
+   "cross_workbook": true,
+   "expected_references": 158,
+   "expected_missing": 0
+  },
+  {
+   "child": "CHECKPOINT_WORKER_STATE",
+   "child_column": "OPERATION_INSTANCE_ID",
+   "parent": "OPERATION_INSTANCES",
+   "parent_column": "OPERATION_INSTANCE_ID",
+   "cross_workbook": true,
+   "expected_references": 158,
+   "expected_missing": 0
+  },
+  {
+   "child": "CHECKPOINT_WORKER_STATE",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": true,
+   "expected_references": 159,
+   "expected_missing": 0
+  },
+  {
+   "child": "CHECKPOINT_WORKER_STATE",
+   "child_column": "DRAFT_INSPECTION_ID",
+   "parent": "INSPECTION_HEADER",
+   "parent_column": "INSPECTION_ID",
+   "cross_workbook": true,
+   "expected_references": 1,
+   "expected_missing": 0
+  },
+  {
+   "child": "CHECKPOINT_QUEUE",
+   "child_column": "UNIT_ID",
+   "parent": "UNIT_MASTER",
+   "parent_column": "UNIT_ID",
+   "cross_workbook": true,
+   "expected_references": 10,
+   "expected_missing": 0
+  },
+  {
+   "child": "CHECKPOINT_QUEUE",
+   "child_column": "QUEUE_ENTRY_ID",
+   "parent": "WORKSTATION_QUEUE_ENTRIES",
+   "parent_column": "QUEUE_ENTRY_ID",
+   "cross_workbook": true,
+   "expected_references": 10,
+   "expected_missing": 0
+  },
+  {
+   "child": "PLAN_ADHERENCE",
+   "child_column": "PLAN_ID",
+   "parent": "WORKER_TASK_PLAN",
+   "parent_column": "PLAN_ID",
+   "cross_workbook": true,
+   "expected_references": 23,
+   "expected_missing": 0
+  },
+  {
+   "child": "RUN_CATALOG",
+   "child_column": "DISPOSITION_POLICY_ID",
+   "parent": "DISPOSITION_POLICIES",
+   "parent_column": "POLICY_ID",
+   "cross_workbook": false,
+   "expected_references": 14,
+   "expected_missing": 0
+  },
+  {
+   "child": "DISPOSITION_MATRIX",
+   "child_column": "POLICY_ID",
+   "parent": "DISPOSITION_POLICIES",
+   "parent_column": "POLICY_ID",
+   "cross_workbook": false,
+   "expected_references": 30,
+   "expected_missing": 0
+  },
+  {
+   "child": "ROSTER_CHANGES",
+   "child_column": "WORKER_ID",
+   "parent": "WORKER_MASTER",
+   "parent_column": "WORKER_ID",
+   "cross_workbook": false,
+   "expected_references": 2,
+   "expected_missing": 0
+  }
+ ]
+}

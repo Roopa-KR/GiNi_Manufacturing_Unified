@@ -1,0 +1,48 @@
+{
+  "$comment": "Role -> permission matrix enforced by the Express API (and mirrored by seed/setup_accounts.py). Roles are mapped from WORKER_MASTER.WORKER_ROLE by an explicit table - never by substring matching. Unknown roles get no role and cannot log in.",
+  "version": "1.0.0",
+  "permissions": {
+    "operate_own_tasks": "Accept/start/pause/finish own tasks, record milestones, clock in/out, breaks",
+    "submit_self_check": "Submit an operator self-check where a gate allows it (never an independent release)",
+    "report_incoming_defect": "Report a defect found on a received tank against the prior operation",
+    "view_own_progress": "Own progress, labour categories and points ledger",
+    "perform_quality_inspection": "Perform an independent gate inspection and record readings/evidence",
+    "release_gate": "Release a tank that passed an independent gate inspection",
+    "quality_approval": "Decide dispositions (rework/scrap/pending review), approve alternate rework stations, confirm investigation causes",
+    "operational_supervision": "Assign/dispatch tasks, confirm absences, view all workers, acknowledge alerts",
+    "approve_transfers": "Approve worker transfers and recovery actions",
+    "rule_editing": "Edit variance/cutoff/points rule settings (versioned)",
+    "manage_workers": "Create, edit, deactivate workers and accounts; qualifications; rosters",
+    "scenario_control": "Create demo sessions, control the simulation clock, use the scenario console, reset to checkpoint",
+    "view_all_workers": "Plant-wide workforce views and worker timelines",
+    "equipment_status": "Record breakdowns/repairs",
+    "material_movements": "Record deliveries, shortages and stock movements",
+    "view_evidence": "View inspection photos/evidence",
+    "view_audit": "View audit log and import validation",
+    "factory_configuration": "Fresh factory: configure factory settings, work centres, stations, skills, shifts, equipment, materials, products, routes and checklists",
+    "factory_reset": "Fresh factory: preview and run the guarded operational-data reset (only when ALLOW_FACTORY_RESET=true and never in production)"
+  },
+  "roles": {
+    "OPERATOR": ["operate_own_tasks", "submit_self_check", "report_incoming_defect", "view_own_progress"],
+    "INSPECTOR": ["operate_own_tasks", "perform_quality_inspection", "release_gate", "report_incoming_defect", "view_own_progress", "view_evidence"],
+    "QUALITY_SUPERVISOR": ["perform_quality_inspection", "release_gate", "quality_approval", "view_own_progress", "view_evidence", "view_all_workers"],
+    "SUPERVISOR": ["operational_supervision", "approve_transfers", "view_all_workers", "view_evidence", "view_own_progress"],
+    "MANAGER": ["operational_supervision", "approve_transfers", "view_all_workers", "view_evidence", "rule_editing", "view_audit", "view_own_progress"],
+    "MAINTENANCE": ["operate_own_tasks", "equipment_status", "view_own_progress"],
+    "MATERIAL_HANDLER": ["operate_own_tasks", "material_movements", "view_own_progress"],
+    "ADMIN": ["manage_workers", "quality_approval", "rule_editing", "operational_supervision", "approve_transfers", "scenario_control", "view_all_workers", "view_evidence", "view_audit", "equipment_status", "material_movements", "release_gate", "perform_quality_inspection", "factory_configuration", "factory_reset"]
+  },
+  "worker_role_map": {
+    "PRODUCTION_OPERATOR": "OPERATOR",
+    "QUALITY_INSPECTOR": "INSPECTOR",
+    "QUALITY_SUPERVISOR": "QUALITY_SUPERVISOR",
+    "AREA_SUPERVISOR": "SUPERVISOR",
+    "SHIFT_MANAGER": "MANAGER",
+    "MAINTENANCE_TECHNICIAN": "MAINTENANCE",
+    "MATERIAL_HANDLER": "MATERIAL_HANDLER"
+  },
+  "app_kinds": {
+    "operator": ["OPERATOR", "INSPECTOR", "QUALITY_SUPERVISOR", "MAINTENANCE", "MATERIAL_HANDLER", "SUPERVISOR", "MANAGER"],
+    "admin": ["SUPERVISOR", "MANAGER", "QUALITY_SUPERVISOR", "ADMIN"]
+  }
+}

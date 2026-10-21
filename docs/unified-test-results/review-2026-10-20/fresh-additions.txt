@@ -1,0 +1,13 @@
+▶ fresh factory additions: scanner lookup, planned release, photo on failure
+  ✔ scanner lookup: an operator resolves a tank serial (any case) and a station label (22.684787ms)
+  ✔ work-order wizard: planned release is stored in plant time and validated (59.976891ms)
+  ✔ checklist "photo required when the answer fails": failed answer without a photo is refused, with a photo it is accepted (963.747982ms)
+✔ fresh factory additions: scanner lookup, planned release, photo on failure (1231.859142ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1466.137628
