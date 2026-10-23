@@ -324,16 +324,16 @@ button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid v
 @media(max-width:600px) { .viz {padding:14px} .viz-steps {grid-template-columns:1fr} .viz-bar-label {flex-wrap:wrap} .viz-flow {grid-template-columns:1fr} }
 
 /* ------------------------------------------------------------------ GiNi Assistant (Gemini chatbot) */
-.chat-dock { position: fixed; right: 18px; bottom: 18px; z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; pointer-events: none; }
+.chat-dock { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; pointer-events: none; }
 .chat-dock.operator { bottom: calc(76px + env(safe-area-inset-bottom)); }
 .chat-dock > * { pointer-events: auto; }
-.chat-fab { width: 56px; height: 56px; border-radius: 50%; border: none; background: var(--brand); color: var(--brand-ink); box-shadow: var(--shadow-lg); display: grid; place-items: center; cursor: pointer; transition: transform .12s, background .12s; }
+.chat-fab { width: 64px; height: 64px; border-radius: 50%; border: none; background: var(--brand); color: var(--brand-ink); box-shadow: var(--shadow-lg); display: grid; place-items: center; cursor: pointer; transition: transform .12s, background .12s; }
 .chat-fab:hover { transform: translateY(-1px); background: color-mix(in srgb, var(--brand) 88%, black); }
 .chat-fab.open { background: var(--surface); color: var(--text); border: 1px solid var(--line-strong); }
-.chat-panel { width: min(400px, calc(100vw - 32px)); height: min(600px, calc(100vh - 150px)); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; overflow: hidden; }
-.chat-dock.operator .chat-panel { height: min(560px, calc(100vh - 230px)); }
+.chat-panel { width: min(420px, calc(100vw - 32px)); height: min(620px, calc(100vh - 150px)); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; overflow: hidden; }
+.chat-dock.operator .chat-panel { height: min(580px, calc(100vh - 230px)); }
 .chat-head { display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 14px; border-bottom: 1px solid var(--line); background: var(--surface-2); }
-.chat-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; flex: none; }
+.chat-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; flex: none; }
 .chat-body { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
 .chat-msg { max-width: 88%; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
 .chat-msg p { margin: 0 0 6px; } .chat-msg p:last-child { margin-bottom: 0; }
@@ -356,5 +356,5 @@ button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid v
 .chat-input .textarea { min-height: 42px; max-height: 120px; resize: none; font-size: 14px; }
 .chat-input .btn { min-height: 42px; padding: 8px 12px; }
 .chat-foot { padding: 0 12px 8px; font-size: 11.5px; }
-@media (max-width: 640px) { .chat-dock { right: 12px; bottom: 12px; } .chat-dock.operator { bottom: calc(74px + env(safe-area-inset-bottom)); } .chat-panel { width: calc(100vw - 24px); } }
+@media (max-width: 640px) { .chat-dock { right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); } .chat-dock.operator { bottom: calc(74px + env(safe-area-inset-bottom)); } .chat-panel { width: calc(100vw - 24px); height: min(620px, calc(100vh - 120px)); } .chat-dock.operator .chat-panel { height: min(580px, calc(100vh - 200px)); } }
 @media print { .chat-dock { display: none; } }

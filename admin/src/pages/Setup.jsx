@@ -367,7 +367,11 @@ function ProductsTab({ m, reload, can }) {
           {!form.revise && <Field label="Route version"><input className="input mono" value={form.routeVersion} onChange={e => setForm({ ...form, routeVersion: e.target.value })} /></Field>}
         </div>
         <div className="field"><label>Route - operations in order (end with an inspection gate). Milestones: separate with “;” - the last one is recorded by finishing the work.</label>
-          <div className="table-wrap"><table className="table"><thead><tr><th>Seq</th><th>Op ID</th><th>Name</th><th>Kind</th><th>WC</th><th>Skill</th><th>Labour min</th><th>Elapsed min</th><th>Crew min/std/max</th><th>Gate (labour)</th><th>Milestones</th><th /></tr></thead>
+          <div className="table-wrap"><table className="table route-editor-table"><colgroup>
+            <col className="route-seq" /><col className="route-operation-id" /><col className="route-name" /><col className="route-kind" />
+            <col className="route-work-center" /><col className="route-skill" /><col className="route-labor" /><col className="route-elapsed" />
+            <col className="route-crew" /><col className="route-gate" /><col className="route-milestones" /><col className="route-action" />
+          </colgroup><thead><tr><th>Seq</th><th>Op ID</th><th>Name</th><th>Kind</th><th>WC</th><th>Skill</th><th>Labour min</th><th>Elapsed min</th><th>Crew min/std/max</th><th>Gate (labour)</th><th>Milestones</th><th /></tr></thead>
             <tbody>{form.operations.map((o, i) => <tr key={i}>
               <td><input className="input" style={{ width: 64 }} type="number" value={o.sequenceNo} onChange={e => setOp(i, 'sequenceNo', e.target.value)} aria-label="Sequence" /></td>
               <td><input className="input mono" style={{ width: 80 }} value={o.operationId} onChange={e => setOp(i, 'operationId', e.target.value.toUpperCase())} aria-label="Operation ID" /></td>
