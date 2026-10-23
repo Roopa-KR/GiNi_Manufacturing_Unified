@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "GiNi operator dev server",
+			"type": "shell",
+			"command": "npm run dev:operator",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "GiNi admin dev server",
+			"type": "shell",
+			"command": "npm run dev:admin",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "GiNi API dev server",
+			"type": "shell",
+			"command": "npm run dev:api",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

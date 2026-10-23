@@ -12,6 +12,7 @@ import DefectReport from './pages/DefectReport.jsx';
 import TaskView from './pages/TaskView.jsx';
 import TankPassport from './pages/TankPassport.jsx';
 import { ScanButton } from './components/Scan.jsx';
+import Assistant from './components/Assistant.jsx';
 
 export default function App() {
   return (
@@ -87,6 +88,7 @@ function Shell() {
           <Link to="/profile"><Icon name="profile" />Profile</Link>
         </div>
       </nav>
+      <Assistant />
     </div>
   );
 }

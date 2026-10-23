@@ -50,6 +50,7 @@ function createApp() {
   app.use('/api/sessions/:sid', require('./routes/views'));
   app.use('/api/sessions/:sid/evidence', require('./routes/evidence'));
   app.use('/api/admin', require('./routes/admin'));
+  app.use('/api/assistant', require('./routes/assistant'));   // GiNi Assistant (Gemini chatbot)
   app.get('/api/openapi.json', (req, res) => res.json(require('./openapi')));
   app.use('/api', notFoundHandler);
   app.use(errorHandler);

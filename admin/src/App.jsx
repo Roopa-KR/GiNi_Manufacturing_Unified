@@ -17,6 +17,7 @@ import Administration from './pages/Administration.jsx';
 import Setup, { SetupGuide } from './pages/Setup.jsx';
 import Dispatch from './pages/Dispatch.jsx';
 import { TankLink } from './components/PassportSections.jsx';
+import Assistant from './components/Assistant.jsx';
 
 function TankSearch() {
   const { session } = useApp();
@@ -130,6 +131,7 @@ function Shell() {
           {page}
         </main>
       </div>
+      <Assistant />
     </div>
   );
 }

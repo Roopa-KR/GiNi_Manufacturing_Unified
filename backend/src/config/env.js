@@ -76,6 +76,14 @@ function config() {
     loginRateMax: int(e.LOGIN_RATE_MAX, 10),
     loginRateWindowMin: int(e.LOGIN_RATE_WINDOW_MIN, 15),
     publicAdminBaseUrl: e.ADMIN_URL || 'http://localhost:5174',
+    // GiNi Assistant (Google Gemini). Server-side only - never exposed to the browser bundles.
+    gemini: {
+      apiKey: (e.GEMINI_API_KEY || '').trim(),
+      model: (e.GEMINI_MODEL || 'gemini-2.5-flash').trim(),
+      temperature: Number.isFinite(parseFloat(e.GEMINI_TEMPERATURE)) ? parseFloat(e.GEMINI_TEMPERATURE) : 0.3,
+      timeoutMs: int(e.GEMINI_TIMEOUT_MS, 25000),
+      ratePerMin: int(e.ASSISTANT_RATE_PER_MIN, 20),
+    },
   };
   c.allowedOrigins = [c.frontendUrl, c.adminUrl, ...c.extraOrigins].map(o => o.replace(/\/+$/, ''));
   c.isFresh = c.environment === 'FRESH_FACTORY';
